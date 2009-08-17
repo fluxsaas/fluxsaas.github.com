@@ -282,6 +282,6 @@ h2. Conclusion
 This is a really simple experiment for Gears. There are by far more complex possibility's to
 use Google Gears. The best thing is to read the "introduction":http://code.google.com/apis/gears/design.html.
 
-*Unfortunately Apple's Iphone does not support Gears. (Apple does not allow third party plugins for the safari browser)*
+*Unfortunately Apple's IPhone does not support Gears. (Apple does not allow third party plugins for the safari browser)*
 
 Thanks for reading !
