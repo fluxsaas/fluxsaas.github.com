@@ -6,7 +6,7 @@ title: Google Gears Experiment
 <p class="time-stamp">14 AUGUST 2009</p>
 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
-h2. The Result can be found <em>"here":/google-gears/</em>.
+h2. The Result can be found <em>"here":http://kallesaas.com/google-gears/</em>.
 
 You need to install "Google-Gears":http://gears.google.com/. to use this software.
 
@@ -16,20 +16,20 @@ h3. File Structure:
 
 <ul class="folders">
   <li>
-    <a href="/google-gears/" >google-gears</a>
+    <a href="http://kallesaas.com/google-gears/" >google-gears</a>
     <ul class="folders">
       <ul class="files">
-        <li><a href="/google-gears/index.html.txt" >index.html</a></li>
+        <li><a href="http://kallesaas.com/google-gears/index.html.txt" >index.html</a></li>
       </ul>      
-      <li><a href="/google-gears/stylesheets" >stylesheets</a></li>
+      <li><a href="http://kallesaas.com/google-gears/stylesheets" >stylesheets</a></li>
       <ul class="files">
-        <li><a href="/google-gears/stylesheets/default.css">default.css</a></li>
+        <li><a href="http://kallesaas.com/google-gears/stylesheets/default.css">default.css</a></li>
       </ul>
-      <li><a href="/google-gears/javascripts" >javascripts</a></li>
+      <li><a href="http://kallesaas.com/google-gears/javascripts" >javascripts</a></li>
       <ul class="files">
-        <li><a href="/google-gears/javascripts/application.js">application.js</a></li>
-        <li><a href="/google-gears/javascripts/gears_init.js">gears_init.js</a></li>
-        <li><a href="/google-gears/javascripts/vocabulary_creator.js">vocabulary_creator.js</a></li>
+        <li><a href="http://kallesaas.com/google-gears/javascripts/application.js">application.js</a></li>
+        <li><a href="http://kallesaas.com/google-gears/javascripts/gears_init.js">gears_init.js</a></li>
+        <li><a href="http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js">vocabulary_creator.js</a></li>
       </ul>
     </ul>
   </li>
@@ -41,7 +41,7 @@ h2. The Code
 
 h3. HTML
 
-You can find the full code of the <code>index.html</code> file "here":/google-gears/index.html.txt.
+You can find the full code of the <code>index.html</code> file "here":http://kallesaas.com/google-gears/index.html.txt.
 
 Important the correct javascript files:
 
@@ -70,7 +70,7 @@ You can download the <code>gears_init.js</code> "here":http://code.google.com/ap
 
 h3. Javascript
 
-You can find the Javascript code "here":/google-gears/javascripts/vocabulary_creator.js.
+You can find the Javascript code "here":http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js.
 
 Ok, lets get started!
 
