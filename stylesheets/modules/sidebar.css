@@ -1,0 +1,118 @@
+/* ------------------------------------ */
+/* -------->>>  ALLGEMEIN  <<<--------- */
+/* ------------------------------------ */
+
+#side h1, #side h2, #side h3, #side h4, #side h5{  
+  font-family: Gill Sans,Verdana;
+}
+
+
+/* ------------------------------------ */
+/* -------->>> SEARCH FORM <<<--------- */
+/* ------------------------------------ */
+
+#side{  
+  border-top: 5px solid #BEC6C6;
+  padding-top: 5px;
+}
+
+#side h2{
+  border-top: 5px solid #BEC6C6;
+  color: #BEC6C6;
+  padding: 5px 0;
+  text-indent: 0;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#side ul{
+  border-top: 1px dotted #AAAAAA;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;  
+  margin: 0 0 18px 0;
+}
+
+#side ul li{
+  background-image: none;
+  border-bottom: 1px dotted #EEEEEE;
+  color: #3F4646;
+  line-height: 1.5em;
+  padding: 3px 0;  
+}
+
+/* ------------------------------------ */
+/* -------->>> SEARCH FORM <<<--------- */
+/* ------------------------------------ */
+#cse{
+  margin: 0px 0 18px 0;
+}
+
+.gsc-search-box input.gsc-input {
+  padding-left: 3px;
+	width: 255px;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: top;
+	border: none;
+	/* background: #BEC6C6 url(http://www.mtv.com/sitewide/images/charlie/acsearch-bgLRG.gif) no-repeat scroll -8px -9px !important; */
+	font-size: 1.9em;
+	color: #BFBFBF;
+	border: 1px solid #ddd;
+}
+
+.gsc-search-box input.gsc-search-button {
+  border: none;
+  background: #fff url(http://www.mtv.com/sitewide/images/charlie/acsearch-bgLRG.gif) no-repeat scroll -8px -9px !important;
+	width: 32px;
+	height: 32px;
+	text-indent: -9000px;
+	cursor: pointer;
+}
+
+.gsc-search-box .gsc-branding{
+  display: none;
+}
+
+.gsc-search-box .gsc-clear-button{  
+}
+
+.gsc-search-box td.gsc-input, .gsc-search-box th, .gsc-search-box td, .gsc-search-box caption{
+  padding: 0em;
+}
+
+table.gsc-search-box td.gsc-input {
+  padding-right: 0 !important;
+}
+
+#side h2.search{
+  display: none;
+}
+
+/* ------------------------------------ */
+/* ------>>> RECENT PROJECTS <<<------- */
+/* ------------------------------------ */
+#side ul.featured-projects li{
+  padding: 12px 0;
+}
+#side ul.featured-projects li a img{
+  float: right;
+}
+
+#side ul.featured-projects li p, #side ul.featured-projects li h3{
+  margin-left: 0;
+}
+
+#side ul.featured-projects li{
+  clear: left;
+}
+
+
+
+
+
+
+
+

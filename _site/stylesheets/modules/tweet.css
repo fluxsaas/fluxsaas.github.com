@@ -1,0 +1,10 @@
+.tweet_list {
+  list-style-type: none;}
+  .tweet_list li {
+    overflow: auto;
+    padding: .5em; }
+  .tweet_list .tweet_avatar {
+    padding-right: 12px;
+    float: left; }
+    .tweet_list .tweet_avatar img {
+      vertical-align: middle; }

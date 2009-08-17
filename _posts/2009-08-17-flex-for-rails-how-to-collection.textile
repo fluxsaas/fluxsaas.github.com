@@ -1,0 +1,60 @@
+---
+layout: post
+title: Flex for Rails, how to collection
+---
+
+<p class="time-stamp">17 AUGUST 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+h2. Call JavaScript Function within FLex Applications
+
+A Simple way to call an JavaScript Function is to import the <code>ExternalInterface</code>  ( "liveDoc":http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html )
+and call the javaScript function
+
+
+<pre class="brush: as3;">
+  <mx:Script>
+    <![CDATA[
+      import flash.external.*;
+
+      public function debug(message:String) : void{       
+        if (ExternalInterface.available) {
+          ExternalInterface.call('console.log', message);
+        }
+      }
+    ]]>
+  </mx:Script>
+</pre>
+
+h2. Basic HTTP requests from Flex to Rails
+
+Call the Fuction <code>listCompositions()</code>.
+
+<pre class="brush: as3;">
+  import mx.rpc.events.ResultEvent;
+	
+	public function listCompositions():void{				
+		svcCompositionsList.send();
+	}
+	
+	private function handleCompositionsListResult(event:ResultEvent):void{
+		debug( event.result.toString() );				
+		var resultXML:XML = XML(event.result);
+	}
+</pre>
+
+<pre class="brush: xml;">
+  <mx:HTTPService id="svcCompositionsList" 
+      url="/editorial/compositions.xml" 
+      resultFormat="e4x" 
+      result="handleCompositionsListResult(event)" />
+
+  <mx:XMLListCollection id="collectionsXLC" 
+    source="{ XMLList( svcCompositionsList.lastResult.children() ) }" />
+
+  <mx:DataGrid width="100%" dataProvider="{collectionsXLC}" >
+      <mx:columns>
+          <mx:DataGridColumn dataField="name" headerText="Name"/>
+      </mx:columns>
+  </mx:DataGrid>
+</pre>

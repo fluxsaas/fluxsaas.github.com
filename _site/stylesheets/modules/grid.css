@@ -1,0 +1,20 @@
+/* grid.css */
+.container {
+  width: 925px; 
+  margin:0 0 0 24px;
+}
+
+.posts {
+  float: left;
+  width: 583px;
+  margin-right: 21px;
+}
+
+#side{
+  float: right;
+  width: 320px;  
+}
+
+.clearfix:after, .container:after, .featured-projects li:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+.clearfix, .container, .featured-projects li {display:block;}
+.clear, .featured-projects li {clear:both;}

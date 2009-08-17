@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
+    <title> Kalle Saas | Vovabularys </title>
+    
+    <script src="http://www.google.com/jsapi"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+      google.load("jquery", "1");
+    </script>
+    
+    <script src="javascripts/gears_init.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/vocabulary_creator.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+    
+    <link rel="stylesheet" href="stylesheets/default.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+</head><body>
+  <div class="container">
+    
+    <form method="post" action="" id="addVocabularyForm">
+    	<fieldset>
+    		<legend>Add Vocabular</legend>
+
+    		<p>
+    		  <label for="english">English</label><br/>
+    		  <input type="text" value="" id="english" name="english" class="text"/>
+    		</p>
+
+    		<p>
+    		  <label for="german">German</label><br/>
+    		  <input type="text" value="" id="german" name="german" class="text"/>
+    		</p>
+
+    		<p><input type="submit" value="Submit"/>
+    		  <input type="reset" value="Reset"/></p>
+
+    	</fieldset>
+    </form>
+    
+    <table id="vocabularys">
+      <thead>
+        <tr>
+          <th>English</th>
+          <th>German</th>
+        </tr>
+      </thead>
+      <tbody></tbody>      
+    </table>
+  </div>
+</body></html>

@@ -1,0 +1,17 @@
+body{
+  background-color: #fff;
+}
+
+.center, #footer, #header {
+  width: 700px;
+  margin: 24px;
+}
+
+#header{
+  margin: 24px 24px 18px 24px;
+}
+
+#header h1 a{
+  color: #444;
+  text-decoration: none;
+}

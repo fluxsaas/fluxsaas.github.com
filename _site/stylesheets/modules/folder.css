@@ -1,0 +1,11 @@
+ul.folders{
+  list-style: square inside url("/images/folder.png");
+}
+
+ul.folders li.folders{  
+  list-style: square inside url("/images/folder.png");
+}
+
+ul.files{
+  list-style: square inside url("/images/page_white.png");
+}

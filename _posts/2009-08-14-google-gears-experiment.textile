@@ -1,0 +1,287 @@
+---
+layout: post
+title: Google Gears Experiment
+---
+
+<p class="time-stamp">14 AUGUST 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+h2. The Result can be found <em>"here":/google-gears/</em>.
+
+You need to install "Google-Gears":http://gears.google.com/. to use this software.
+
+h2. The Setup
+
+h3. File Structure:
+
+<ul class="folders">
+  <li>
+    <a href="/google-gears/" >google-gears</a>
+    <ul class="folders">
+      <ul class="files">
+        <li><a href="/google-gears/index.html.txt" >index.html</a></li>
+      </ul>      
+      <li><a href="/google-gears/stylesheets" >stylesheets</a></li>
+      <ul class="files">
+        <li><a href="/google-gears/stylesheets/default.css">default.css</a></li>
+      </ul>
+      <li><a href="/google-gears/javascripts" >javascripts</a></li>
+      <ul class="files">
+        <li><a href="/google-gears/javascripts/application.js">application.js</a></li>
+        <li><a href="/google-gears/javascripts/gears_init.js">gears_init.js</a></li>
+        <li><a href="/google-gears/javascripts/vocabulary_creator.js">vocabulary_creator.js</a></li>
+      </ul>
+    </ul>
+  </li>
+</ul>
+
+
+
+h2. The Code
+
+h3. HTML
+
+You can find the full code of the <code>index.html</code> file "here":/google-gears/index.html.txt.
+
+Important the correct javascript files:
+
+<pre class="brush: html;">
+  ...
+  <head>
+      <script src="http://www.google.com/jsapi"></script>
+
+      <script type="text/javascript" charset="utf-8">
+        google.load("jquery", "1");
+      </script>
+
+      <script src="javascripts/gears_init.js" type="text/javascript" charset="utf-8"></script>
+      <script src="javascripts/vocabulary_creator.js" type="text/javascript" charset="utf-8"></script>
+      <script src="javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+      ...
+  </head>
+  <body>
+    ...
+</pre>
+
+I'm using the "Google AJAX Libraries API":http://code.google.com/intl/de-DE/apis/ajaxlibs/ to import the JQuery Library.
+
+You can download the <code>gears_init.js</code> "here":http://code.google.com/apis/gears/tools.html#gears_init.
+
+
+h3. Javascript
+
+You can find the Javascript code "here":/google-gears/javascripts/vocabulary_creator.js.
+
+Ok, lets get started!
+
+First, we create a Namespace and a Singleton that holds our Javascript code:
+
+<pre class="brush: js;">
+  if (!window.GG) {
+    var GG = { };
+  }
+
+  GG.VocabularyCreator = (function () { 
+    return {
+      init: function () {
+      }
+    };
+  })();  
+</pre>
+
+Now we can add some functionality.
+
+But wait, what do we actually need ? 
+
+We want to:
+
+* Add word's and theire translation to a list.
+* Display the List. 
+
+Okay, thats sounds not so complicated.
+
+Let's have a look at the "API":http://code.google.com/intl/de-DE/apis/gears/ for the "Database":http://code.google.com/intl/de-DE/apis/gears/api_database.html.
+
+The first example shows a bunch of JavaScript code:
+
+<pre class="brush: js;">
+  <script type="text/javascript" src="gears_init.js"></script>
+  <script type="text/javascript">
+  var db = google.gears.factory.create('beta.database');
+  db.open('database-test');
+  db.execute('create table if not exists Test' +
+             ' (Phrase text, Timestamp int)');
+  db.execute('insert into Test values (?, ?)', ['Monkey!', new Date().getTime()]);
+  var rs = db.execute('select * from Test order by Timestamp desc');
+
+  while (rs.isValidRow()) {
+    alert(rs.field(0) + '@' + rs.field(1));
+    rs.next();
+  }
+  rs.close();
+  </script>
+</pre>
+
+With this code we can:
+
+*Instantiate the Gears objects: ( see: http://tinyurl.com/nvdhuh )*
+<pre class="brush: js;">
+  var db = google.gears.factory.create('beta.database');
+</pre>
+
+*Open the Database to read and write:*
+<pre class="brush: js;">
+  db.open('database-test');
+</pre>
+
+*Execute <em>SQLite</em>:*
+<pre class="brush: js;">
+  // Create a SQLite table:
+  db.execute('create table if not exists Test' +
+             ' (Phrase text, Timestamp int)');  
+             
+  // Insert a value to the table:
+  db.execute('insert into Test values (?, ?)', ['Monkey!', new Date().getTime()]);
+</pre>
+
+*Read the content of the table:*
+<pre class="brush: js;">
+  // Execute SQLite
+  var rs = db.execute('select * from Test order by Timestamp desc');
+  
+  // loop over each row:
+  while (rs.isValidRow()) {
+    alert(rs.field(0) + '@' + rs.field(1));
+    rs.next();
+  }
+  
+  // close the database connection:
+  rs.close();
+</pre>
+
+That's almost all we need for our small app.
+
+Let's implement those basics in our app.
+
+We call the private <code>_initDatabase</code> function inside the <code>init()</code> function 
+to setup the Database:
+
+h3. The <code>init()</code> function.
+
+<pre class="brush: js;">
+  // init function:
+  return {
+    init: function () {
+      _initDatabase();
+    }
+  };
+</pre>
+
+h3. The <code>_initDatabase()</code> function. 
+
+More explanation can be found within the code:
+
+<pre class="brush: js;">
+    ...
+    
+    // set class variable's:
+    var db;
+    var databaseIsCreated = false;
+    
+    var _initDatabase = function () {
+      
+      // Check if Gears is installed.
+      if (window.google && google.gears) {
+        try {
+
+          // Instantiate Gears objects.
+          db = google.gears.factory.create('beta.database');
+
+          // check if the Database is available
+          if (db) {
+            
+            // open a database, see: http://tinyurl.com/l8z4gw
+            db.open('Translations');
+            
+            // Create the Table: EnglishGerman.
+            db.execute('create table if not exists EnglishGerman' + 
+                          ' (English varchar(255), German varchar(255), Timestamp int)');
+
+            databaseIsCreated = true;
+
+            // Initialize the UI at startup.
+            _displayTranslations();
+          }
+
+        } catch (ex) {
+          console.log('Could not create database: ' + ex.message);
+        }
+      }
+    };
+    ...
+  })();
+</pre>
+
+The structure of the table looks like:
+
+| NAME | English | German | Timestamp |
+| TYPE | varchar(255) | varchar(255) | date | 
+
+Now we have a full featured Gears Database in our hands, Horay!
+
+We can continue with adding content to the SQLLite Table. We do this by 
+observing (i use "JQuery":http://jquery.com/ ) the HTML Form and add the value's of 
+the input field's to the database:
+
+h3. The <code>_addObserver()</code> function.
+
+<pre class="brush: js;">
+  ...
+  var _addObserver = function () {
+    
+    // Adding the Form Observer
+    $('#addVocabularyForm').submit(function (event) {
+      var $this = $(this);
+
+      // Read the values of the input fields:
+      var german = $this.find('#german').val();
+      var english = $this.find('#english').val();
+      
+      try {
+        // Insert the new item.
+        var res = db.execute('insert into EnglishGerman values (?, ?, ?)', 
+              [english, german, new Date().getTime() ] );
+
+        // if the insertion was successfully, we can also add the entry to the HTML.
+        if (res) {
+          _addVocabularyToHtml(english, german);
+        }
+      } catch (exaption) {
+        console.log('could not insert entry:' + exaption);
+      }
+
+      // Prevent the default action.
+      event.preventDefault();
+    })
+  };
+  ...
+</pre>
+
+There is not much more to do. You can have a look at the <code>_addVocabularyToHtml</code> function:
+
+<pre class="brush: js;">
+  var Translations = function (english, german) {
+    $('#vocabularys tbody').prepend(
+      $('<tr><th>' + english + '</th><th>' + german + '</th></tr>')
+    )    
+  };
+</pre>
+
+h2. Conclusion
+
+This is a really simple experiment for Gears. There are by far more complex possibility's to
+use Google Gears. The best thing is to read the "introduction":http://code.google.com/apis/gears/design.html.
+
+*Unfortunately Apple's Iphone does not support Gears. (Apple does not allow third party plugins for the safari browser)*
+
+Thanks for reading !

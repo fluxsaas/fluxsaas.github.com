@@ -1,0 +1,3 @@
+$(function () {
+  VCB.VocabularyCreator.init()
+})
