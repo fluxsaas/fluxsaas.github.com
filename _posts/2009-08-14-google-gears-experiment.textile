@@ -25,13 +25,12 @@ h3. File Structure:
     <ul class="folders">      
       <li>
         <a href="http://kallesaas.com/google-gears/stylesheets" >stylesheets</a>
+        <ul class="files">
+          <li><a href="http://kallesaas.com/google-gears/stylesheets/default.css">default.css</a></li>
+        </ul>        
       </li>
     </ul>  
     
-    <ul class="files">
-      <li><a href="http://kallesaas.com/google-gears/stylesheets/default.css">default.css</a></li>
-    </ul>
-
     <ul class="folders">      
       <li>
         <a href="http://kallesaas.com/google-gears/javascripts" >javascripts</a>
