@@ -17,31 +17,20 @@ h3. File Structure:
 <ul class="folders">
   <li>
     <a href="http://kallesaas.com/google-gears/" >google-gears</a>
-    <ul class="folders">
-      <li>
-        <ul class="files">
-          <li><a href="http://kallesaas.com/google-gears/index.html.txt" >index.html</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="http://kallesaas.com/google-gears/stylesheets" >stylesheets</a>
-      </li>
-      
-      <li>
-        <ul class="files">
-          <li><a href="http://kallesaas.com/google-gears/stylesheets/default.css">default.css</a></li>
-        </ul>
-      </li>
-      
+    <ul class="files">
+      <li><a href="http://kallesaas.com/google-gears/index.html.txt" >index.html</a></li>
+    </ul>
+    <ul class="folders">      
+      <li><a href="http://kallesaas.com/google-gears/stylesheets" >stylesheets</a></li>
+      <ul class="files">
+        <li><a href="http://kallesaas.com/google-gears/stylesheets/default.css">default.css</a></li>
+      </ul>
       <li><a href="http://kallesaas.com/google-gears/javascripts" >javascripts</a></li>
-      <li>
-        <ul class="files">
-          <li><a href="http://kallesaas.com/google-gears/javascripts/application.js">application.js</a></li>
-          <li><a href="http://kallesaas.com/google-gears/javascripts/gears_init.js">gears_init.js</a></li>
-          <li><a href="http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js">vocabulary_creator.js</a></li>
-        </ul>
-      </li>
+      <ul class="files">
+        <li><a href="http://kallesaas.com/google-gears/javascripts/application.js">application.js</a></li>
+        <li><a href="http://kallesaas.com/google-gears/javascripts/gears_init.js">gears_init.js</a></li>
+        <li><a href="http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js">vocabulary_creator.js</a></li>
+      </ul>
     </ul>
   </li>
 </ul>
