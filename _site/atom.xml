@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="http://tom.preston-werner.com/"/>
- <updated>2009-08-17T20:32:40+02:00</updated>
+ <updated>2009-08-17T20:44:41+02:00</updated>
  <id>http://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -75,33 +75,33 @@ and call the javaScript function&lt;/p&gt;
    <id>http://tom.preston-werner.com/2009/08/14/google-gears-experiment</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;14 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/08/14/google-gears-experiment.html&quot;&gt;Google Gears Experiment&lt;/a&gt;&lt;/h1&gt;
-&lt;h2&gt;The Result can be found &lt;em&gt;&lt;a href=&quot;/google-gears/&quot;&gt;here&lt;/a&gt;&lt;/em&gt;.&lt;/h2&gt;
+&lt;h2&gt;The Result can be found &lt;em&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/&quot;&gt;here&lt;/a&gt;&lt;/em&gt;.&lt;/h2&gt;
 &lt;p&gt;You need to install &lt;a href=&quot;http://gears.google.com/&quot;&gt;Google-Gears&lt;/a&gt;. to use this software.&lt;/p&gt;
 &lt;h2&gt;The Setup&lt;/h2&gt;
 &lt;h3&gt;File Structure:&lt;/h3&gt;
 &lt;ul class=&quot;folders&quot;&gt;
 &lt;li&gt;
-&lt;a href=&quot;/google-gears/&quot; &gt;google-gears&lt;/a&gt;
+&lt;a href=&quot;http://kallesaas.com/google-gears/&quot; &gt;google-gears&lt;/a&gt;
 &lt;ul class=&quot;folders&quot;&gt;
 &lt;ul class=&quot;files&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;/google-gears/index.html.txt&quot; &gt;index.html&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/index.html.txt&quot; &gt;index.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/google-gears/stylesheets&quot; &gt;stylesheets&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets&quot; &gt;stylesheets&lt;/a&gt;&lt;/li&gt;
 &lt;ul class=&quot;files&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;/google-gears/stylesheets/default.css&quot;&gt;default.css&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets/default.css&quot;&gt;default.css&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/google-gears/javascripts&quot; &gt;javascripts&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts&quot; &gt;javascripts&lt;/a&gt;&lt;/li&gt;
 &lt;ul class=&quot;files&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;/google-gears/javascripts/application.js&quot;&gt;application.js&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/google-gears/javascripts/gears_init.js&quot;&gt;gears_init.js&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/google-gears/javascripts/vocabulary_creator.js&quot;&gt;vocabulary_creator.js&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/application.js&quot;&gt;application.js&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/gears_init.js&quot;&gt;gears_init.js&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js&quot;&gt;vocabulary_creator.js&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;The Code&lt;/h2&gt;
 &lt;h3&gt;&lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;&lt;/h3&gt;
-&lt;p&gt;You can find the full code of the &lt;code&gt;index.html&lt;/code&gt; file &lt;a href=&quot;/google-gears/index.html.txt&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can find the full code of the &lt;code&gt;index.html&lt;/code&gt; file &lt;a href=&quot;http://kallesaas.com/google-gears/index.html.txt&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Important the correct javascript files:&lt;/p&gt;
 &lt;pre class=&quot;brush: html;&quot;&gt;
   ...
@@ -123,7 +123,7 @@ and call the javaScript function&lt;/p&gt;
 &lt;p&gt;I&amp;#8217;m using the &lt;a href=&quot;http://code.google.com/intl/de-DE/apis/ajaxlibs/&quot;&gt;Google &lt;span class=&quot;caps&quot;&gt;AJAX&lt;/span&gt; Libraries &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;&lt;/a&gt; to import the JQuery Library.&lt;/p&gt;
 &lt;p&gt;You can download the &lt;code&gt;gears_init.js&lt;/code&gt; &lt;a href=&quot;http://code.google.com/apis/gears/tools.html#gears_init&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Javascript&lt;/h3&gt;
-&lt;p&gt;You can find the Javascript code &lt;a href=&quot;/google-gears/javascripts/vocabulary_creator.js&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can find the Javascript code &lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Ok, lets get started!&lt;/p&gt;
 &lt;p&gt;First, we create a Namespace and a Singleton that holds our Javascript code:&lt;/p&gt;
 &lt;pre class=&quot;brush: js;&quot;&gt;
