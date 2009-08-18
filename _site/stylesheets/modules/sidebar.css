@@ -96,8 +96,27 @@ table.gsc-search-box td.gsc-input {
 /* ------>>> RECENT PROJECTS <<<------- */
 /* ------------------------------------ */
 #side ul.featured-projects li{
-  padding: 12px 0;
+  padding: 10px 0;
 }
+
+#side ul.featured-projects li h3{
+  margin-bottom: 5px;
+}
+
+#side ul.featured-projects li a{
+  color: #444;
+  text-decoration: none;
+}
+
+#side ul.featured-projects li a:hover{
+  text-decoration: underline;
+}
+
+
+#side ul.featured-projects li p{
+  margin-bottom: 0em;
+}
+
 #side ul.featured-projects li a img{
   float: right;
 }
