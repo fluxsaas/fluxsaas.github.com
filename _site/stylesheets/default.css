@@ -14,3 +14,7 @@
 /* ---------->>> SYNTAX HIGHLIGHTING <<<---------- */
 @import url(/stylesheets/modules/shCore.css);
 @import url(/stylesheets/modules/shThemeDefault.css);
+
+
+/* ---------->>> font test <<<---------- */
+@import url(/stylesheets/modules/font_test.css);

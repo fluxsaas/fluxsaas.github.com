@@ -1,0 +1,18 @@
+ul.posts li p.time-stamp{
+  padding-bottom: 0em;
+}
+
+ul.posts li p.time-stamp, #header a{
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+} 
+
+ul.posts li h1, ul.posts.index li h2, h1,h2,h3,h4,h5,h6{
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+ul.posts, #side, #side h2 {
+  border-top: 2px solid #BEC6C6;
+  
+}

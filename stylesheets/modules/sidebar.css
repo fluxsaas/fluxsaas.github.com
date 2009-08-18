@@ -3,7 +3,8 @@
 /* ------------------------------------ */
 
 #side h1, #side h2, #side h3, #side h4, #side h5{  
-  font-family: Gill Sans,Verdana;
+  /*font-family: Gill Sans,Verdana;*/
+  font-family: Helvetica, Verdana, Arial;  
 }
 
 

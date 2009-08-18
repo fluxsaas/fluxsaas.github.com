@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="http://tom.preston-werner.com/"/>
- <updated>2009-08-18T10:00:22+02:00</updated>
+ <updated>2009-08-18T12:03:44+02:00</updated>
  <id>http://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -23,7 +23,7 @@
 &lt;pre class=&quot;brush: css;&quot;&gt;
   @font-face {
     font-family: &quot;Watusi&quot;;
-    src: url(&quot;http://www.example.com/fonts/watusi.ttf&quot;)
+    src: url(&quot;http://www.example.com/fonts/watusi.ttf&quot;);
     format(&quot;truetype&quot;);
   }
 
