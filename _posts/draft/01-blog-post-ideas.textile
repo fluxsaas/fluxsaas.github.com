@@ -1,0 +1,8 @@
+h2. Links
+
+* "JavaScript MVC":http://www.alistapart.com/articles/javascript-mvc/
+* "Mercurial":https://developer.mozilla.org/en/Mercurial
+
+h2. web roundup
+
+* list of links and ideas.
