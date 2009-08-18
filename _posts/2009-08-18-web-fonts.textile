@@ -1,0 +1,46 @@
+---
+layout: post
+title: Web Fonts
+---
+
+<p class="time-stamp">18 AUGUST 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1> 
+
+We all know about the possibility to include fonts via <code>CSS</code> in our web site:
+
+<pre class="brush: css;">
+  @font-face {
+    font-family: "Watusi";
+    src: url("http://www.example.com/fonts/watusi.ttf");
+    format("truetype");
+  }
+
+  h1 {
+    font-family: "Watusi", sans-serif;
+  }
+</pre>
+
+So, why don't we use this technique ?
+
+There are a few reasons:
+
+* *You may be violating* your End User Licensing Agreement (EULA) with the font foundry.
+* *No support* for this technique in Internet Explorer.
+
+There is an workaround available for the Internet Explorer by "Jon Tan":http://jontangerine.com/log/2008/10/font-face-in-ie-making-web-fonts-work. And there are Project on the way ( "typekit":http://blog.typekit.com/2009/05/27/introducing-typekit/ , "Typotheque":http://www.typotheque.com/news/typotheque_web_font_service_preview ) to handle the license and technology problems for you. It's just a matter of time when we can leave "sIFR":http://wiki.novemberborn.net/sifr3/ and Image Replacement technique's behind us. Horay!
+
+Read the full featured blog post about this issue by "Jeffrey Zeldman":http://www.zeldman.com/2009/08/17/web-fonts-and-standards/.
+
+
+*Ressources:*
+
+* "Jeffrey Zeldman article about web fonts and standards":http://www.zeldman.com/2009/08/17/web-fonts-and-standards/
+* "List of fonts available for @font-face embedding":http://webfonts.info/wiki/index.php?title=Fonts_available_for_%40font-face_embedding
+* "making web fonts work in IE":http://jontangerine.com/log/2008/10/font-face-in-ie-making-web-fonts-work
+* "introducing typekit":http://blog.typekit.com/2009/05/27/introducing-typekit/
+* "typotheque web font service preview":http://www.typotheque.com/news/typotheque_web_font_service_preview
+* "Sample by typotheque":http://www.typotheque.com/webfonts/sample.
+
+
+
+

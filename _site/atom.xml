@@ -4,13 +4,52 @@
  <title>Tom Preston-Werner</title>
  <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="http://tom.preston-werner.com/"/>
- <updated>2009-08-17T20:44:41+02:00</updated>
+ <updated>2009-08-18T10:00:22+02:00</updated>
  <id>http://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Web Fonts</title>
+   <link href="http://tom.preston-werner.com/2009/08/18/web-fonts.html"/>
+   <updated>2009-08-18T00:00:00+02:00</updated>
+   <id>http://tom.preston-werner.com/2009/08/18/web-fonts</id>
+   <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;18 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;/2009/08/18/web-fonts.html&quot;&gt;Web Fonts&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;We all know about the possibility to include fonts via &lt;code&gt;CSS&lt;/code&gt; in our web site:&lt;/p&gt;
+&lt;pre class=&quot;brush: css;&quot;&gt;
+  @font-face {
+    font-family: &quot;Watusi&quot;;
+    src: url(&quot;http://www.example.com/fonts/watusi.ttf&quot;)
+    format(&quot;truetype&quot;);
+  }
+
+  h1 {
+    font-family: &quot;Watusi&quot;, sans-serif;
+  }
+&lt;/pre&gt;
+&lt;p&gt;So, why don&amp;#8217;t we use this technique ?&lt;/p&gt;
+&lt;p&gt;There are a few reasons:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;You may be violating&lt;/strong&gt; your End User Licensing Agreement (&lt;span class=&quot;caps&quot;&gt;EULA&lt;/span&gt;) with the font foundry.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;No support&lt;/strong&gt; for this technique in Internet Explorer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is an workaround available for the Internet Explorer by &lt;a href=&quot;http://jontangerine.com/log/2008/10/font-face-in-ie-making-web-fonts-work&quot;&gt;Jon Tan&lt;/a&gt;. And there are Project on the way ( &lt;a href=&quot;http://blog.typekit.com/2009/05/27/introducing-typekit/&quot;&gt;typekit&lt;/a&gt; , &lt;a href=&quot;http://www.typotheque.com/news/typotheque_web_font_service_preview&quot;&gt;Typotheque&lt;/a&gt; ) to handle the license and technology problems for you. It&amp;#8217;s just a matter of time when we can leave &lt;a href=&quot;http://wiki.novemberborn.net/sifr3/&quot;&gt;sIFR&lt;/a&gt; and Image Replacement technique&amp;#8217;s behind us. Horay!&lt;/p&gt;
+&lt;p&gt;Read the full featured blog post about this issue by &lt;a href=&quot;http://www.zeldman.com/2009/08/17/web-fonts-and-standards/&quot;&gt;Jeffrey Zeldman&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ressources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.zeldman.com/2009/08/17/web-fonts-and-standards/&quot;&gt;Jeffrey Zeldman article about web fonts and standards&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://webfonts.info/wiki/index.php?title=Fonts_available_for_%40font-face_embedding&quot;&gt;List of fonts available for @font-face embedding&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://jontangerine.com/log/2008/10/font-face-in-ie-making-web-fonts-work&quot;&gt;making web fonts work in IE&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://blog.typekit.com/2009/05/27/introducing-typekit/&quot;&gt;introducing typekit&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.typotheque.com/news/typotheque_web_font_service_preview&quot;&gt;typotheque web font service preview&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.typotheque.com/webfonts/sample&quot;&gt;Sample by typotheque&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;li&gt;</content>
+ </entry>
  
  <entry>
    <title>Flex for Rails, how to collection</title>
@@ -82,20 +121,29 @@ and call the javaScript function&lt;/p&gt;
 &lt;ul class=&quot;folders&quot;&gt;
 &lt;li&gt;
 &lt;a href=&quot;http://kallesaas.com/google-gears/&quot; &gt;google-gears&lt;/a&gt;
+
+&lt;ul class=&quot;files&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/index.html.txt&quot; &gt;index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;ul class=&quot;folders&quot;&gt;
+&lt;li&gt;
+&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets&quot; &gt;stylesheets&lt;/a&gt;
 &lt;ul class=&quot;files&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/index.html.txt&quot; &gt;index.html&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets/default.css&quot;&gt;default.css&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets&quot; &gt;stylesheets&lt;/a&gt;&lt;/li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class=&quot;folders&quot;&gt;
+&lt;li&gt;
+&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts&quot; &gt;javascripts&lt;/a&gt;
 &lt;ul class=&quot;files&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets/default.css&quot;&gt;default.css&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/application.js&quot;&gt;application.js&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/gears_init.js&quot;&gt;gears_init.js&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js&quot;&gt;vocabulary_creator.js&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts&quot; &gt;javascripts&lt;/a&gt;&lt;/li&gt;
-&lt;ul class=&quot;files&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/application.js&quot;&gt;application.js&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/gears_init.js&quot;&gt;gears_init.js&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js&quot;&gt;vocabulary_creator.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -311,7 +359,7 @@ the input field&amp;#8217;s to the database:&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;This is a really simple experiment for Gears. There are by far more complex possibility&amp;#8217;s to&lt;br /&gt;
 use Google Gears. The best thing is to read the &lt;a href=&quot;http://code.google.com/apis/gears/design.html&quot;&gt;introduction&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Unfortunately Apple&amp;#8217;s Iphone does not support Gears. (Apple does not allow third party plugins for the safari browser)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Unfortunately Apple&amp;#8217;s IPhone does not support Gears. (Apple does not allow third party plugins for the safari browser)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Thanks for reading !&lt;/p&gt;</content>
  </entry>
  

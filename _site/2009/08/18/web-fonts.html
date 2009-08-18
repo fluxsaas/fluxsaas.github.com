@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
-	<title>Flex for Rails, how to collection</title>
+	<title>Web Fonts</title>
 	
   
   <script src="/javascripts/shCore.js" type="text/javascript" charset="utf-8"></script>
@@ -38,55 +38,38 @@
   
 <ul class="posts">
   <li class="post">
-    <p class="time-stamp">17 <span class="caps">AUGUST</span> 2009</p>
-<h1><a href="/2009/08/17/flex-for-rails-how-to-collection.html">Flex for Rails, how to collection</a></h1>
-<h2>Call JavaScript Function within FLex Applications</h2>
-<p>A Simple way to call an JavaScript Function is to import the <code>ExternalInterface</code>  ( <a href="http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html">liveDoc</a> )<br />
-and call the javaScript function</p>
+    <p class="time-stamp">18 <span class="caps">AUGUST</span> 2009</p>
+<h1><a href="/2009/08/18/web-fonts.html">Web Fonts</a></h1> 
+<p>We all know about the possibility to include fonts via <code>CSS</code> in our web site:</p>
+<pre class="brush: css;">
+  @font-face {
+    font-family: "Watusi";
+    src: url("http://www.example.com/fonts/watusi.ttf")
+    format("truetype");
+  }
 
-<pre class="brush: as3;">
-  &lt;mx:Script&gt;
-    &lt;![CDATA[
-      import flash.external.*;
-
-      public function debug(message:String) : void{       
-        if (ExternalInterface.available) {
-          ExternalInterface.call('console.log', message);
-        }
-      }
-    ]]&gt;
-  &lt;/mx:Script&gt;
+  h1 {
+    font-family: "Watusi", sans-serif;
+  }
 </pre>
-<h2>Basic <span class="caps">HTTP</span> requests from Flex to Rails</h2>
-<p>Call the Fuction <code>listCompositions()</code>.</p>
-<pre class="brush: as3;">
-  import mx.rpc.events.ResultEvent;
-	
-	public function listCompositions():void{				
-		svcCompositionsList.send();
-	}
-	
-	private function handleCompositionsListResult(event:ResultEvent):void{
-		debug( event.result.toString() );				
-		var resultXML:XML = XML(event.result);
-	}
-</pre>
-
-<pre class="brush: xml;">
-  &lt;mx:HTTPService id="svcCompositionsList" 
-      url="/editorial/compositions.xml" 
-      resultFormat="e4x" 
-      result="handleCompositionsListResult(event)" /&gt;
-
-  &lt;mx:XMLListCollection id="collectionsXLC" 
-    source="{ XMLList( svcCompositionsList.lastResult.children() ) }" /&gt;
-
-  &lt;mx:DataGrid width="100%" dataProvider="{collectionsXLC}" &gt;
-      &lt;mx:columns&gt;
-          &lt;mx:DataGridColumn dataField="name" headerText="Name"/&gt;
-      &lt;/mx:columns&gt;
-  &lt;/mx:DataGrid&gt;
-</pre>
+<p>So, why don&#8217;t we use this technique ?</p>
+<p>There are a few reasons:</p>
+<ul>
+	<li><strong>You may be violating</strong> your End User Licensing Agreement (<span class="caps">EULA</span>) with the font foundry.</li>
+	<li><strong>No support</strong> for this technique in Internet Explorer.</li>
+</ul>
+<p>There is an workaround available for the Internet Explorer by <a href="http://jontangerine.com/log/2008/10/font-face-in-ie-making-web-fonts-work">Jon Tan</a>. And there are Project on the way ( <a href="http://blog.typekit.com/2009/05/27/introducing-typekit/">typekit</a> , <a href="http://www.typotheque.com/news/typotheque_web_font_service_preview">Typotheque</a> ) to handle the license and technology problems for you. It&#8217;s just a matter of time when we can leave <a href="http://wiki.novemberborn.net/sifr3/">sIFR</a> and Image Replacement technique&#8217;s behind us. Horay!</p>
+<p>Read the full featured blog post about this issue by <a href="http://www.zeldman.com/2009/08/17/web-fonts-and-standards/">Jeffrey Zeldman</a>.</p>
+<p><strong>Ressources:</strong></p>
+<ul>
+	<li><a href="http://www.zeldman.com/2009/08/17/web-fonts-and-standards/">Jeffrey Zeldman article about web fonts and standards</a></li>
+	<li><a href="http://webfonts.info/wiki/index.php?title=Fonts_available_for_%40font-face_embedding">List of fonts available for @font-face embedding</a></li>
+	<li><a href="http://jontangerine.com/log/2008/10/font-face-in-ie-making-web-fonts-work">making web fonts work in IE</a></li>
+	<li><a href="http://blog.typekit.com/2009/05/27/introducing-typekit/">introducing typekit</a></li>
+	<li><a href="http://www.typotheque.com/news/typotheque_web_font_service_preview">typotheque web font service preview</a></li>
+	<li><a href="http://www.typotheque.com/webfonts/sample">Sample by typotheque</a>.</li>
+</ul>
+<li>
   </li>
 </ul>
 

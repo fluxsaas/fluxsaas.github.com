@@ -15,3 +15,17 @@ body{
   color: #444;
   text-decoration: none;
 }
+
+#header a{  
+  font-family: Gill Sans,Verdana;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #444444;
+}
+
+#header a:hover{
+  text-decoration: underline;
+}
+#header a.active{  
+  color: #CC3300;
+}
