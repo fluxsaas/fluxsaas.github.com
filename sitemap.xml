@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<url>
+<loc>http://kallesaas.com/</loc>
+<lastmod>2009-08-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.</priority>
+</url>
+<url>
+<loc>http://kallesaas.com/portfolio</loc>
+<lastmod>2009-08-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.</priority>
+</url>
+<url>
+<loc>http://kallesaas.com/2009/08/18/web-fonts.html</loc>
+<lastmod>2009-08-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.</priority>
+</url>
+<url>
+<loc>http://kallesaas.com/2009/08/17/flex-for-rails-how-to-collection.html</loc>
+<lastmod>2009-08-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.</priority>
+</url>
+<url>
+<loc>http://kallesaas.com/2009/08/14/google-gears-experiment.html</loc>
+<lastmod>2009-08-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.</priority>
+</url>
+</urlset>

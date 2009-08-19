@@ -1,0 +1,78 @@
+/* reset.css */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+
+body { 
+  font-size: 75%;
+  color: #333; 
+  background: #fff;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+/* grid.css */
+.container {
+  margin:0 0 0 24px;
+  float: left;
+  width: 583px;
+}
+
+/**/
+
+#header{
+  margin: 24px 24px 18px 24px;
+}
+
+#header h1 a{
+  color: #444;
+  text-decoration: none;
+}
+
+#header a{  
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #444444;
+  font-weight: bold;
+}
+
+#header a:hover{
+  text-decoration: underline;
+}
+#header a.active{  
+  color: #CC3300;
+}
+
+.container h1, .container p{
+  line-height: 38px;
+}
+
+.container h1{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.container p{
+  font-size: 30px;
+  margin-bottom: 0.5em;
+  font-weight: lighter;
+}
+
+.container p a, .container h1 a{
+  color: #333;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.container p a:hover, .container h1 a:hover{
+  text-decoration: underline;
+}
+
+.container p small{
+  font-size: 14px;
+}

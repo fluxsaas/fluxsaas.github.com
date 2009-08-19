@@ -1,0 +1,33 @@
+---
+layout: post
+title: Google Analytics Tricks.
+---
+
+<p class="time-stamp">18 AUGUST 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1> 
+
+
+from "Ian Pitts":http://iso-100.com/blog/post/updated-script-for-tracking-outbound-links-in-google-analytics-with-jquery/
+
+<pre class="brush: js;">
+  $('#content a:not(.popupwindow)').filter(function() {
+  	var theHref = this;
+  	if (theHref.hostname && theHref.hostname !== location.hostname) {
+  		$(theHref).not(".noAutoIcon").addClass("offSite");
+  		$(theHref).not(".noAutoLink").attr('target','_blank').bind('click keypress', function(event) {
+  			var code=event.charCode || event.keyCode;
+  			if (!code || (code && code == 13)) {
+  				if(pageTracker){
+  					var fixedLink = this.href;
+  					fixedLink = fixedLink.replace(/https?:\/\/(.*)/,"$1");
+  					fixedLink = '/outgoing/' + fixedLink;
+  					pageTracker._trackPageview(fixedLink);
+  				};
+  			};
+  		});
+  	};
+  });  
+</pre>
+
+more:
+http://www.geekology.co.za/blog/2009/08/speeding-up-google-analytics-load-times-with-jquery-plugin/

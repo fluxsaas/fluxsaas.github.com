@@ -1,0 +1,16 @@
+#disqus_thread{
+  width: 583px;
+  border-top: 2px dashed #BEC6C6;
+  -moz-border-radius: 5px;
+  padding: 10px;
+  margin-top: 24px;
+}
+
+#dsq-content .dsq-by {
+  display:none;
+}
+
+
+#dsq-options{
+  display: none;
+}
