@@ -1,22 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Tom Preston-Werner</title>
- <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
- <link href="http://tom.preston-werner.com/"/>
- <updated>2009-08-19T19:15:55+02:00</updated>
- <id>http://tom.preston-werner.com/</id>
+ <title>Kalle Saas</title>
+ <link href="http://kallesaas.com/atom.xml" rel="self"/>
+ <link href="http://kallesaas.com/"/>
+ <updated>2009-09-24T10:40:45+02:00</updated>
+ <id>http://kallesaas.com/</id>
  <author>
-   <name>Tom Preston-Werner</name>
-   <email>tom@mojombo.com</email>
+   <name>Kalle Saas</name>
+   <email>kalle@dynamicdudes.com</email>
  </author>
 
  
  <entry>
+   <title>Subdomains or Subfolders which are Better for Blogging (SEO) ?</title>
+   <link href="http://kallesaas.com/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo.html"/>
+   <updated>2009-09-24T00:00:00+02:00</updated>
+   <id>http://kallesaas.com/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo</id>
+   <content type="html">
+&lt;p class=&quot;time-stamp&quot;&gt;24 SEPTEMBER 2009&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo.html&quot;&gt;Subdomains or Subfolders which are Better for Blogging (SEO) ?&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;
+  I recently had to decide whether to use a subdomain &lt;code&gt;blog.2manycolours.com&lt;/code&gt; or an subdirectory &lt;code&gt;2manycolours.com/blog&lt;/code&gt;
+  for the Wordpress blog of my new project. As i'm not a SEO-Guy i 
+  &lt;a href=&quot;http://www.searchenginejournal.com/subdomains-or-subfolders-which-are-better-for-seo/6849/&quot;&gt;read&lt;/a&gt; 
+  &lt;a href=&quot;http://www.mattcutts.com/blog/subdomains-and-subdirectories/&quot;&gt;some&lt;/a&gt; 
+  &lt;a href=&quot;http://risetothetop.techwyse.com/search-engine-optimization/should-i-use-subdomains-or-subfolders-for-seo-benefit/&quot;&gt;articles&lt;/a&gt; 
+  about the issue.
+&lt;/p&gt;
+
+&lt;p&gt;
+  In conclusion i decided to use a Subfolder because:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Search engines view Subdomains as separate sites. Therefore they have the equivalency of separate domains.&lt;/li&gt;
+  &lt;li&gt;Sub domains have their own entity&lt;/li&gt;
+  &lt;li&gt;With a subfolder, both the inbound and internal linking structure favor the entire site.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+  But could i just setup 10 Subdomains to get more results listed in the google search ?
+&lt;/p&gt;
+
+&lt;p&gt;
+  Nope, because:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+  Google will show up to two results from each hostname/subdomain of a domain name.
+  &lt;br /&gt;
+  &lt;small&gt;from &lt;a href=&quot;http://www.mattcutts.com/blog/subdomains-and-subdirectories/&quot;&gt;Matt Cutts: Gadgets, Google, and SEO&lt;/a&gt;&lt;/small&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+  Thats not the way it works...
+&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Keep up with the assets on the production machine - Asset Host in Rails</title>
+   <link href="http://kallesaas.com/2009/09/17/rails-asset-host.html"/>
+   <updated>2009-09-17T00:00:00+02:00</updated>
+   <id>http://kallesaas.com/2009/09/17/rails-asset-host</id>
+   <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;17 &lt;span class=&quot;caps&quot;&gt;SEPTEMBER&lt;/span&gt; 2009&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;/2009/09/17/rails-asset-host.html&quot;&gt;Keep up with the assets on the production machine &amp;#8211; Asset Host in Rails&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;Sometimes you reach a point with a Website where it gets difficult to properly style the site if you don&amp;#8217;t have the right assets on your local machine. The database and the assets are always changing and growing due to user input.&lt;/p&gt;
+&lt;p&gt;You could alway download the latest assets, but sometimes there are to big to download or you just don&amp;#8217;t want to keep the assets on your local machine.&lt;/p&gt;
+&lt;p&gt;One solution to this problem is to set up an &lt;a href=&quot;http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html&quot;&gt;Asset Host&lt;/a&gt;. You can easily add an Asset Host in the &lt;code&gt;environments/development.rb&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;brush: ruby;&quot;&gt;
+    ActionController::Base.asset_host = &quot;assets.example.com&quot;
+&lt;/pre&gt;
+&lt;p&gt;Every single asset comes from the &lt;code&gt;assets.example.com&lt;/code&gt; host. Thats fine, until you realize that the javascript and css files comes from the host too (Yes, it took me about 15 min to realize why my changes in the css didnt&amp;#8217;t work ;).&lt;/p&gt;
+&lt;p&gt;So here is the solution for the problem:&lt;/p&gt;
+&lt;pre class=&quot;brush: ruby;&quot;&gt;
+ActionController::Base.asset_host = Proc.new { |source|
+     if source.starts_with?('/assets')
+       &quot;gameone.de&quot;
+     else
+       &quot;http://localhost:3000&quot;
+     end
+   }
+&lt;/pre&gt;
+&lt;p&gt;I put the code in an initializers and ignored it from git.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;initializers/config_local_asset_host.rb&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;brush: ruby;&quot;&gt;
+  if Rails.env == &quot;development&quot;
+    ActionController::Base.asset_host = Proc.new { |source|
+         if source.starts_with?('/assets')
+           &quot;gameone.de&quot;
+         else
+           &quot;http://localhost:3000&quot;
+         end
+       }
+  end
+&lt;/pre&gt;
+&lt;p&gt;Thx to &lt;a href=&quot;http://twitter.com/Soph&quot;&gt;@Soph&lt;/a&gt; to point me in the right direction !&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Web Fonts</title>
-   <link href="http://tom.preston-werner.com/2009/08/18/web-fonts.html"/>
+   <link href="http://kallesaas.com/2009/08/18/web-fonts.html"/>
    <updated>2009-08-18T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2009/08/18/web-fonts</id>
+   <id>http://kallesaas.com/2009/08/18/web-fonts</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;18 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/08/18/web-fonts.html&quot;&gt;Web Fonts&lt;/a&gt;&lt;/h1&gt; 
 &lt;p&gt;We all know about the possibility to include fonts via &lt;code&gt;CSS&lt;/code&gt; in our web site:&lt;/p&gt;
@@ -53,14 +140,28 @@
  
  <entry>
    <title>Flex for Rails, how to collection</title>
-   <link href="http://tom.preston-werner.com/2009/08/17/flex-for-rails-how-to-collection.html"/>
+   <link href="http://kallesaas.com/2009/08/17/flex-for-rails-how-to-collection.html"/>
    <updated>2009-08-17T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2009/08/17/flex-for-rails-how-to-collection</id>
+   <id>http://kallesaas.com/2009/08/17/flex-for-rails-how-to-collection</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;17 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/08/17/flex-for-rails-how-to-collection.html&quot;&gt;Flex for Rails, how to collection&lt;/a&gt;&lt;/h1&gt;
+&lt;p class=&quot;warning&quot;&gt;
+This post is work in progress.
+&lt;/p&gt;
+&lt;h2&gt;Fixing the rails &lt;code&gt;to_xml&lt;/code&gt; Method.&lt;/h2&gt;
+&lt;p&gt;If you want to access &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; Object you want to use the correct &lt;strong&gt;E4X&lt;/strong&gt; syntax such &lt;code&gt;rp.currentItem.asset_file_name&lt;/code&gt; and not &lt;code&gt;rp.currentItem['asset_file_name']&lt;/code&gt;. If you debug your Flex code and trace an &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; Object delivered from Rails you will see sth. like this:&lt;/p&gt;
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;elements type=&quot;array&quot;&amp;gt;
+    &amp;lt;element&amp;gt;
+      &amp;lt;asset-file-name&amp;gt;oberer-streifen-light-blue.png&amp;lt;/asset-file-name&amp;gt;
+      &amp;lt;id type=&quot;integer&quot;&amp;gt;1&amp;lt;/id&amp;gt;
+    &amp;lt;/element&amp;gt;
+  &amp;lt;/elements&amp;gt;  
+&lt;/pre&gt;
+&lt;p&gt;Unfortunately you can not access the &lt;code&gt;asset-file-name&lt;/code&gt; with the E4X &lt;code&gt;rp.currentItem.asset-file-name&lt;/code&gt; syntax because Flex try&amp;#8217;s to do a calculation (because of the &amp;#8220;-&amp;#8221;).&lt;/p&gt;
+&lt;p&gt;The solution is to fix the &lt;code&gt;to_xml&lt;/code&gt; Method. We can accomplish that by adding a file to  &lt;code&gt;config/initializers&lt;/code&gt; called &lt;code&gt;to_xml_fix.rb&lt;/code&gt;. The content of the file can be found &lt;a href=&quot;/code/to_xml_fix.rb.txt&quot;&gt;here&lt;/a&gt;. What it does is simply overwrite the &lt;code&gt;to_xml&lt;/code&gt; method with the same method but with an additional parameter: &lt;code&gt;to_xml(:dasherize =&amp;gt; false)&lt;/code&gt;. Restart the server and &lt;span class=&quot;caps&quot;&gt;BAM&lt;/span&gt;! It (should!) works just fine!&lt;/p&gt;
 &lt;h2&gt;Call JavaScript Function within FLex Applications&lt;/h2&gt;
-&lt;p&gt;A Simple way to call an JavaScript Function is to import the &lt;code&gt;ExternalInterface&lt;/code&gt;  ( &lt;a href=&quot;http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html&quot;&gt;liveDoc&lt;/a&gt; )&lt;br /&gt;
-and call the javaScript function&lt;/p&gt;
+&lt;p&gt;A Simple way to call an JavaScript Function is to import the &lt;code&gt;ExternalInterface&lt;/code&gt;  ( &lt;a href=&quot;http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html&quot;&gt;liveDoc&lt;/a&gt; ) and call the javaScript function&lt;/p&gt;
 
 &lt;pre class=&quot;brush: as3;&quot;&gt;
   &amp;lt;mx:Script&amp;gt;
@@ -104,14 +205,336 @@ and call the javaScript function&lt;/p&gt;
           &amp;lt;mx:DataGridColumn dataField=&quot;name&quot; headerText=&quot;Name&quot;/&amp;gt;
       &amp;lt;/mx:columns&amp;gt;
   &amp;lt;/mx:DataGrid&amp;gt;
-&lt;/pre&gt;</content>
+&lt;/pre&gt;
+&lt;h2&gt;Controlling the Cursor&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;buttonMode&lt;/code&gt; to get an &amp;#8220;Hand&amp;#8221; for the cursor.&lt;/p&gt;
+&lt;pre class=&quot;brush: as3;&quot;&gt;
+  private function onMouseOver(event:MouseEvent):void {
+  	currentElement.buttonMode = true;
+  }
+  private function onMouseOut(event:MouseEvent):void {
+  	currentElement.buttonMode = false;
+  }
+&lt;/pre&gt;
+&lt;h2&gt;Custom Events with Components&lt;/h2&gt;
+&lt;h3&gt;&lt;code&gt;Dialog.mxml&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;     
+  &amp;lt;mx:TitleWindow xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot;&amp;gt;
+
+  &amp;lt;mx:Metadata&amp;gt;
+    [Event(name=&quot;changeColour&quot;, type=&quot;com.too_many_colours.events.DialogEvent&quot;)]
+  &amp;lt;/mx:Metadata&amp;gt;
+
+  &amp;lt;mx:Script&amp;gt;
+    &amp;lt;![CDATA[
+      import flash.events.Event;
+      import flash.events.EventDispatcher;
+      import com.too_many_colours.events.DialogEvent;    		
+
+      private function changeColour(event:MouseEvent):void{    			            	
+        dispatchEvent(new DialogEvent( DialogEvent.CHANGE_COLOUR ));
+      }
+    ]]&amp;gt;
+  &amp;lt;/mx:Script&amp;gt;
+
+  &amp;lt;mx:Button label=&quot;Change Colour&quot; click=&quot;changeColour(event)&quot; /&amp;gt;
+
+  &amp;lt;/mx:TitleWindow&amp;gt;
+&lt;/pre&gt;
+&lt;h3&gt;&lt;code&gt;application.mxml&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+  &amp;lt;mx:Application xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; xmlns:comp=&quot;com.too_many_colours.components.*&quot;&amp;gt;
+  	&amp;lt;mx:Script&amp;gt;
+  		&amp;lt;![CDATA[  		  
+  			import com.too_many_colours.components.Dialog;
+        import mx.containers.TitleWindow;
+        
+        // import custom events
+        import com.too_many_colours.events.DialogEvent;
+
+  			private function changeColour(event:DialogEvent) : void {
+  				debug(isChanged.toString())
+  			}
+
+  			private var dialogWindow:Dialog;
+  			
+  			private function showDialog():void {
+  			  dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
+  			  
+  			  // add event listener
+  				dialogWindow.addEventListener( DialogEvent.CHANGE_COLOUR, changeColour);					
+        }
+  		]]&amp;gt;
+  	&amp;lt;/mx:Script&amp;gt;
+  &amp;lt;/mx:Application&amp;gt;
+&lt;/pre&gt;
+&lt;h3&gt;&lt;code&gt;DialogEvent.as&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;brush: as3;&quot;&gt;
+  package com.too_many_colours.events{
+  	import flash.events.Event;
+
+  	public class DialogEvent extends Event{
+  		public static const CHANGE_COLOUR:String = &quot;changeColour&quot;;
+
+  		public function DialogEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false){
+  			super(CHANGE_COLOUR, bubbles, cancelable);
+  		}
+  	}
+  }
+&lt;/pre&gt;
+&lt;h2&gt;Passing a reference to the calling component.&lt;/h2&gt;
+&lt;h3&gt;The main &lt;span class=&quot;caps&quot;&gt;MXML&lt;/span&gt; Document:&lt;/h3&gt;
+&lt;pre class=&quot;brush: as3;&quot;&gt;
+  [Bindable]
+  public var currentElementId:String;
+  
+  private function onMouseUp(event:MouseEvent) : void {
+		currentElementId = event.currentTarget.id		
+		showDialog();
+	}
+  
+  private function showDialog():void {
+  	dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
+  	dialogWindow.currentElementId = currentElementId; 
+  }
+&lt;/pre&gt;
+&lt;h3&gt;The &lt;code&gt;dialogWindow&lt;/code&gt; Component.&lt;/h3&gt;
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+  &amp;lt;mx:TitleWindow xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; &amp;gt;
+    &amp;lt;mx:Script&amp;gt;
+      &amp;lt;![CDATA[
+      [Bindable]
+      public var currentElementId:String;
+      ]]&amp;gt;
+    &amp;lt;/mx:Script&amp;gt;
+    &amp;lt;mx:Label text=&quot;{currentElementId}&quot; /&amp;gt;
+  &amp;lt;/mx:TitleWindow&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Reference: &lt;a href=&quot;http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html&quot;&gt;Passing a reference to the calling component&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Using the Repeater component to display elements from &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; object.&lt;/h2&gt;
+
+
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+  &amp;lt;mx:TitleWindow xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; &amp;gt;
+    &amp;lt;mx:Script&amp;gt;
+      &amp;lt;![CDATA[
+      [Bindable]
+			private var XMLBuendchenElements:XML = 
+				&amp;lt;elements&amp;gt;
+					&amp;lt;element&amp;gt;
+						&amp;lt;pos-x&amp;gt;200&amp;lt;/pos-x&amp;gt;
+						&amp;lt;pos-y&amp;gt;300&amp;lt;/pos-y&amp;gt;
+						&amp;lt;name&amp;gt;body&amp;lt;/name&amp;gt;
+						&amp;lt;source&amp;gt;/images/dummys/buendchen.png&amp;lt;/source&amp;gt;
+						&amp;lt;scale-x&amp;gt;0.1&amp;lt;/scale-x&amp;gt;
+						&amp;lt;scale-y&amp;gt;0.1&amp;lt;/scale-y&amp;gt;
+					&amp;lt;/element&amp;gt;
+					&amp;lt;element&amp;gt;
+						&amp;lt;pos-x&amp;gt;200&amp;lt;/pos-x&amp;gt;
+						&amp;lt;pos-y&amp;gt;300&amp;lt;/pos-y&amp;gt;
+						&amp;lt;name&amp;gt;body&amp;lt;/name&amp;gt;
+						&amp;lt;source&amp;gt;/images/dummys/buendchen-rot.png&amp;lt;/source&amp;gt;
+						&amp;lt;scale-x&amp;gt;0.1&amp;lt;/scale-x&amp;gt;
+						&amp;lt;scale-y&amp;gt;0.1&amp;lt;/scale-y&amp;gt;
+					&amp;lt;/element&amp;gt;
+				&amp;lt;/elements&amp;gt;;
+      ]]&amp;gt;
+    &amp;lt;/mx:Script&amp;gt;
+
+    &amp;lt;mx:VBox&amp;gt;
+    	&amp;lt;mx:Repeater id=&quot;rp&quot; dataProvider=&quot;{XMLBuendchenElements.element}&quot;&amp;gt;
+    		&amp;lt;mx:Image click=&quot;changeColour(event)&quot; source=&quot;{String(rp.currentItem.source)}&quot; scaleX=&quot;{String(rp.currentItem.scale-x)}&quot; scaleY=&quot;{String(rp.currentItem.scale-y)}&quot;  /&amp;gt;    	
+    	&amp;lt;/mx:Repeater&amp;gt;
+    &amp;lt;/mx:VBox&amp;gt;
+  &amp;lt;/mx:TitleWindow&amp;gt;
+&lt;/pre&gt;
+&lt;h2&gt;Passing request data with flashVars properties.&lt;/h2&gt;
+&lt;p&gt;How can i communicate between javascript and my &lt;span class=&quot;caps&quot;&gt;FLEX&lt;/span&gt; app ?&lt;/p&gt;
+&lt;p&gt;One solution it to pass flashvars within the swfobject creation.&lt;/p&gt;
+&lt;h3&gt;The Javascript&lt;/h3&gt;
+&lt;pre class=&quot;brush: js;&quot;&gt;
+  var flashvars = {
+    category: 2,      
+  };
+  
+  var params = false;    
+  var attributes = false;
+
+  var width = '936';
+  var height = '400';
+
+  swfobject.embedSWF('/flash/design_studio.swf', 'flash_design_studio', width, height, '9.0.0', '/flash/expressInstall.swf', flashvars, params, attributes);    
+&lt;/pre&gt;
+&lt;h3&gt;The Flex app:&lt;/h3&gt;
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+  &amp;lt;mx:Application 
+  	xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot;
+  	initialize=&quot;{init()}&quot;
+  	viewSourceURL=&quot;srcview/index.html&quot;&amp;gt;
+  	&amp;lt;mx:Script&amp;gt;
+      &amp;lt;![CDATA[
+        public var currentCategoryId:Number;
+        private function init () : void {
+        	// now you cann acces the flashvars:
+        	currentCategoryId = Application.application.parameters.category;
+        }
+      ]]&amp;gt;
+    &amp;lt;/mx:Script&amp;gt;
+ &amp;lt;/mx:Application&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Thats it!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There are more possibility&amp;#8217;s to communicate between javascript and flex, but thats one of the basics examples.&lt;/p&gt;
+&lt;h3&gt;Ressources&lt;/h3&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://livedocs.adobe.com/flex/3/html/help.html?content=passingarguments_3.html&quot;&gt;livedocs&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://blog.powerflasher.de/swfobject2/&quot;&gt;swfobject2 docu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Create a custom Loader to load Images from an &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; list and add custom parameters (ex. ID of the image).&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Long Headline but short solution:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The CustomImageLoader extends the Loader and accepts an image as &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CustomImageLoader.as&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;brush: as;&quot;&gt;
+  package com.too_many_colours.loader{
+  	import flash.display.Loader;
+
+  	public class CustomImageLoader extends Loader {
+  	    public var image:XML;
+
+  	    public function CustomImageLoader(image:XML= null) {
+  	            this.image = image;
+  	    }
+  	}
+  }
+&lt;/pre&gt;
+&lt;p&gt;Now you can simply use the CustomImageLoader as followed:&lt;/p&gt;
+&lt;pre class=&quot;brush: as;&quot;&gt;
+  var loader: CustomImageLoader = new CustomImageLoader(image);
+  loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
+  loader.image = &quot;some xml data&quot;;
+  loader.contentLoaderInfo.addEventListener(Event.COMPLETE, pngOnLoaded);
+&lt;/pre&gt;
+&lt;p&gt;And access the additional Parameters in the &lt;code&gt;handleImageLoaded&lt;/code&gt; function:&lt;/p&gt;
+&lt;pre class=&quot;brush: as;&quot;&gt;
+  private function handleImageLoaded(event:Event):void {
+    // access the additional parameter:
+  	var image:XML = (event.target.loader as CustomImageLoader).image;
+  	
+  	var element:Image = new Image();
+  	element.id = image.id;
+  	
+  	// access the usual content
+  	element.source = event.currentTarget.content				
+  }
+&lt;/pre&gt;
+&lt;h3&gt;Ressources&lt;/h3&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/762521/custom-as3-loader-class-that-uses-a-custom-loaderinfo-class&quot;&gt;stackoverflow 1&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/758322/how-do-i-modify-existing-as3-events-so-that-i-can-pass-data&quot;&gt;stackoverflow 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;ROLL_OVER vs MOUSE_OVER&lt;/h2&gt;
+&lt;p&gt;from &lt;a href=&quot;http://www.kirupa.com/forum/showthread.php?t=302169&quot;&gt;www.kirupa.com/forum&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;MOUSE_OVER will issue new rollover events for each child of a display object container containing multiple children. (ie: multiple buttons nested within a single container)&lt;/p&gt;
+&lt;p&gt;ROLL_OVER will issue only a single rollover event, regardless of the presence of multiple children within a display object container.&lt;br /&gt;
+This essentially bypasses the advantages/(or defects, depending on your construction methods) of AS3 event propagation.&lt;br /&gt;
+This might be useful for mitigating UI construction issues, with regard to default AS3 display list behaviors, but will probably require separate listeners for each button instance.&lt;br /&gt;
+ie: 30 buttons would require 30 event listeners.&lt;br /&gt;
+As far as I can see, this is essentially just a &amp;#8220;kludge&amp;#8221; that causes AS3 to act more like AS2.&lt;/p&gt;
+&lt;p&gt;For example:&lt;br /&gt;
+Attaching a MOUSE_OVER event listener to &amp;#8220;buttonGroup&amp;#8221; will register new rollover events for each of the children of buttonGroup.&lt;br /&gt;
+buttonGroup.addEventListener(MouseEvent.MOUSE_OVER , btnOver, false, 0, true);&lt;br /&gt;
+//limit mouse events to children only, and enable hand-cursor&lt;br /&gt;
+buttonGroup.mouseEnabled = false.&lt;br /&gt;
+buttonGroup.buttonMode = true.&lt;br /&gt;
+This allows a single listener to serve multiple nested children of the attached display object container.&lt;br /&gt;
+ie: you construct your button movieclips; name the instances; wrap them in the &amp;#8220;buttonGroup&amp;#8221; container; attach a set of MOUSE_OVER/MOUSE_OUT/MOUSE_DOWN etc&amp;#8230; listeners to &amp;#8220;buttonGroup&amp;#8221;.&lt;br /&gt;
+This is a good thing, and leverages AS3 event propagation to its fullest potential.&lt;/p&gt;
+&lt;p&gt;With regard to the OP issue, the problem is rooted in your construction methods, &lt;span class=&quot;caps&quot;&gt;IMO&lt;/span&gt;.&lt;br /&gt;
+Using a Tweening class for button over/out tweens is easier to implement and far more flexible.&lt;br /&gt;
+TweenLite/TweenMax, Tweener, or the built-in Tween class can be utilized to dramatically simplify your project.&lt;br /&gt;
+ie:function btnOver(evt:MouseEvent):void{&lt;br /&gt;
+//tween class methods here.&lt;br /&gt;
+}&lt;/p&gt;
+&lt;h2&gt;loading externel swf&lt;/h2&gt;
+&lt;p&gt;private function handleCategoryElemetsFindResult(event:ResultEvent):void{&lt;br /&gt;
+  // loading an external swf&lt;br /&gt;
+	var loader:SWFLoader = new SWFLoader();&lt;br /&gt;
+	loader.addEventListener(Event.&lt;span class=&quot;caps&quot;&gt;COMPLETE&lt;/span&gt;, onSwfLoaded);&lt;br /&gt;
+	loader.load(&amp;#8220;/flash/hoodie/body.swf&amp;#8221;);&lt;br /&gt;
+	test_atelier.addChild(loader);&lt;br /&gt;
+	loader.addEventListener(MouseEvent.&lt;span class=&quot;caps&quot;&gt;CLICK&lt;/span&gt;, swfOnclick);&lt;br /&gt;
+}&lt;/p&gt;
+&lt;p&gt;private function swfOnclick(event:Event):void{&lt;br /&gt;
+	new DebugMessage(&amp;#8216;asd&amp;#8217;);&lt;br /&gt;
+}&lt;/p&gt;
+&lt;p&gt;private function onSwfLoaded(event:Event):void{&lt;/p&gt;
+&lt;p&gt;test_atelier.addChild(event.currentTarget.content);&lt;br /&gt;
+}&lt;/p&gt;
+&lt;h2&gt;Simple draw example in flex&lt;/h2&gt;
+&lt;p&gt;Important to note that you have to create an &lt;code&gt;UIComponent&lt;/code&gt; and add the Shape to it. Than you&lt;br /&gt;
+can add it to the stage&amp;#8230;&lt;/p&gt;
+&lt;pre class=&quot;brush: as;&quot;&gt;
+  var materialColor:Shape = new Shape();				
+  var uiComponent:UIComponent = new UIComponent();
+
+  materialColor.graphics.clear();
+  materialColor.graphics.beginFill(0x007AAB);
+  materialColor.graphics.drawRoundRect(0, 0, 200, 200, 0, 0);
+  materialColor.graphics.endFill();
+  uiComponent.addChild(materialColor); 
+  testatelier.addChild(uiComponent);
+&lt;/pre&gt;
+&lt;h2&gt;Complex Masking in flex&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&quot;caps&quot;&gt;SVG&lt;/span&gt; ? nope, not working dynamicly !&lt;br /&gt;
+http://www.adobe.com/devnet/flex/quickstart/embedding_assets/#EmbeddingSvgFiles&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;caps&quot;&gt;SWF&lt;/span&gt; ?&lt;br /&gt;
+that works:&lt;br /&gt;
+&lt;mx:Image x=&quot;0&quot; y=&quot;0&quot; mask=&quot;{swfMask}&quot; id=&quot;hody&quot; source=&quot;/assets/materials/9/main-body.jpg&quot;/&gt;&lt;br /&gt;
+&lt;mx:Image x=&quot;0&quot; y=&quot;0&quot; id=&quot;swfMask&quot; source=&quot;/flash/hoodie/body.swf&quot;/&gt;&lt;/p&gt;
+&lt;p&gt;dynamicly and with eventlistener to!&lt;/p&gt;
+&lt;p&gt;// The jpg&lt;br /&gt;
+var elementImage:Image = new Image();&lt;br /&gt;
+elementImage.source = &amp;#8220;/assets/materials/9/main-body.jpg&amp;#8221;;&lt;br /&gt;
+elementImage.cacheAsBitmap = true;&lt;/p&gt;
+&lt;p&gt;// the mask&lt;br /&gt;
+var elementImageMask:Image = new Image();&lt;br /&gt;
+elementImageMask.source = &amp;#8220;/assets/elements/4/main-body-mask.png&amp;#8221;;&lt;br /&gt;
+elementImageMask.cacheAsBitmap = true;&lt;br /&gt;
+elementImage.mask = elementImageMask;&lt;/p&gt;
+&lt;p&gt;addChild(elementImageMask);&lt;br /&gt;
+addChild(elementImage);&lt;/p&gt;
+&lt;p&gt;elementImage.addEventListener(MouseEvent.MOUSE_OVER, function(event:MouseEvent):void{&lt;br /&gt;
+	var hittest = elementImage.mask.hitTestPoint(event.localX, event.localX, false);&lt;br /&gt;
+	new DebugMessage(hittest.toString());					&lt;br /&gt;
+});&lt;br /&gt;
+elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;// The jpg&lt;br /&gt;
+var elementImage:Image = new Image();&lt;br /&gt;
+elementImage.source = &amp;#8220;/assets/materials/9/main-body.jpg&amp;#8221;;&lt;br /&gt;
+elementImage.cacheAsBitmap = true;&lt;/p&gt;
+&lt;p&gt;// the mask&lt;br /&gt;
+var elementImageMask:SWFLoader = new SWFLoader()&lt;br /&gt;
+elementImageMask.load(&amp;#8220;/assets/elements/4/main-body-mask.png&amp;#8221;);&lt;br /&gt;
+elementImage.mask = elementImageMask;&lt;/p&gt;
+&lt;p&gt;addChild(elementImageMask);&lt;br /&gt;
+addChild(elementImage);&lt;/p&gt;
+&lt;p&gt;elementImage.addEventListener(MouseEvent.MOUSE_OVER, function(event:MouseEvent):void{&lt;br /&gt;
+var hittest = elementImage.mask.hitTestPoint(event.localX, event.localX, false);&lt;br /&gt;
+new DebugMessage(hittest.toString());					&lt;br /&gt;
+});&lt;br /&gt;
+elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);&lt;/p&gt;</content>
  </entry>
  
  <entry>
    <title>Google Gears Experiment</title>
-   <link href="http://tom.preston-werner.com/2009/08/14/google-gears-experiment.html"/>
+   <link href="http://kallesaas.com/2009/08/14/google-gears-experiment.html"/>
    <updated>2009-08-14T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2009/08/14/google-gears-experiment</id>
+   <id>http://kallesaas.com/2009/08/14/google-gears-experiment</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;14 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/08/14/google-gears-experiment.html&quot;&gt;Google Gears Experiment&lt;/a&gt;&lt;/h1&gt;
 &lt;h2&gt;The Result can be found &lt;em&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/&quot;&gt;here&lt;/a&gt;&lt;/em&gt;.&lt;/h2&gt;

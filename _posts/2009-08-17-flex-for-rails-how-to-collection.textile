@@ -6,10 +6,32 @@ title: Flex for Rails, how to collection
 <p class="time-stamp">17 AUGUST 2009</p>
 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
+<p class="warning">
+  This post is work in progress.
+</p>
+
+
+h2. Fixing the rails <code>to_xml</code> Method.
+
+If you want to access XML Object you want to use the correct *E4X* syntax such <code>rp.currentItem.asset_file_name</code> and not <code>rp.currentItem['asset_file_name']</code>. If you debug your Flex code and trace an XML Object delivered from Rails you will see sth. like this:
+
+<pre class="brush: xml;">
+  <elements type="array">
+    <element>
+      <asset-file-name>oberer-streifen-light-blue.png</asset-file-name>
+      <id type="integer">1</id>
+    </element>
+  </elements>  
+</pre>
+
+Unfortunately you can not access the <code>asset-file-name</code> with the E4X <code>rp.currentItem.asset-file-name</code> syntax because Flex try's to do a calculation (because of the "-").
+
+The solution is to fix the <code>to_xml</code> Method. We can accomplish that by adding a file to  <code>config/initializers</code> called <code>to_xml_fix.rb</code>. The content of the file can be found "here":/code/to_xml_fix.rb.txt. What it does is simply overwrite the <code>to_xml</code> method with the same method but with an additional parameter: <code>to_xml(:dasherize => false)</code>. Restart the server and BAM! It (should!) works just fine!
+
+
 h2. Call JavaScript Function within FLex Applications
 
-A Simple way to call an JavaScript Function is to import the <code>ExternalInterface</code>  ( "liveDoc":http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html )
-and call the javaScript function
+A Simple way to call an JavaScript Function is to import the <code>ExternalInterface</code>  ( "liveDoc":http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html ) and call the javaScript function
 
 
 <pre class="brush: as3;">
@@ -58,3 +80,402 @@ Call the Fuction <code>listCompositions()</code>.
       </mx:columns>
   </mx:DataGrid>
 </pre>
+
+
+h2. Controlling the Cursor
+
+Use the <code>buttonMode</code> to get an "Hand" for the cursor.
+
+<pre class="brush: as3;">
+  private function onMouseOver(event:MouseEvent):void {
+  	currentElement.buttonMode = true;
+  }
+  private function onMouseOut(event:MouseEvent):void {
+  	currentElement.buttonMode = false;
+  }
+</pre>
+
+
+h2. Custom Events with Components
+
+h3. <code>Dialog.mxml</code>
+
+<pre class="brush: xml;">
+  <?xml version="1.0" encoding="utf-8"?>     
+  <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml">
+
+  <mx:Metadata>
+    [Event(name="changeColour", type="com.too_many_colours.events.DialogEvent")]
+  </mx:Metadata>
+
+  <mx:Script>
+    <![CDATA[
+      import flash.events.Event;
+      import flash.events.EventDispatcher;
+      import com.too_many_colours.events.DialogEvent;    		
+
+      private function changeColour(event:MouseEvent):void{    			            	
+        dispatchEvent(new DialogEvent( DialogEvent.CHANGE_COLOUR ));
+      }
+    ]]>
+  </mx:Script>
+
+  <mx:Button label="Change Colour" click="changeColour(event)" />
+
+  </mx:TitleWindow>
+</pre>
+
+
+h3. <code>application.mxml</code>
+
+<pre class="brush: xml;">
+  <?xml version="1.0" encoding="utf-8"?>
+  <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:comp="com.too_many_colours.components.*">
+  	<mx:Script>
+  		<![CDATA[  		  
+  			import com.too_many_colours.components.Dialog;
+        import mx.containers.TitleWindow;
+        
+        // import custom events
+        import com.too_many_colours.events.DialogEvent;
+
+  			private function changeColour(event:DialogEvent) : void {
+  				debug(isChanged.toString())
+  			}
+
+  			private var dialogWindow:Dialog;
+  			
+  			private function showDialog():void {
+  			  dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
+  			  
+  			  // add event listener
+  				dialogWindow.addEventListener( DialogEvent.CHANGE_COLOUR, changeColour);					
+        }
+  		]]>
+  	</mx:Script>
+  </mx:Application>
+</pre>
+
+
+h3. <code>DialogEvent.as</code>
+
+<pre class="brush: as3;">
+  package com.too_many_colours.events{
+  	import flash.events.Event;
+
+  	public class DialogEvent extends Event{
+  		public static const CHANGE_COLOUR:String = "changeColour";
+
+  		public function DialogEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false){
+  			super(CHANGE_COLOUR, bubbles, cancelable);
+  		}
+  	}
+  }
+</pre>
+
+
+h2. Passing a reference to the calling component.
+
+h3. The main MXML Document:
+
+<pre class="brush: as3;">
+  [Bindable]
+  public var currentElementId:String;
+  
+  private function onMouseUp(event:MouseEvent) : void {
+		currentElementId = event.currentTarget.id		
+		showDialog();
+	}
+  
+  private function showDialog():void {
+  	dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
+  	dialogWindow.currentElementId = currentElementId; 
+  }
+</pre>
+
+h3. The <code>dialogWindow</code> Component.
+
+<pre class="brush: xml;">
+  <?xml version="1.0" encoding="utf-8"?>
+  <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" >
+    <mx:Script>
+      <![CDATA[
+      [Bindable]
+      public var currentElementId:String;
+      ]]>
+    </mx:Script>
+    <mx:Label text="{currentElementId}" />
+  </mx:TitleWindow>
+</pre>
+
+Reference: "Passing a reference to the calling component":http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html
+
+
+h2. Using the Repeater component to display elements from XML object.
+
+
+
+<pre class="brush: xml;">
+  <?xml version="1.0" encoding="utf-8"?>
+  <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" >
+    <mx:Script>
+      <![CDATA[
+      [Bindable]
+			private var XMLBuendchenElements:XML = 
+				<elements>
+					<element>
+						<pos-x>200</pos-x>
+						<pos-y>300</pos-y>
+						<name>body</name>
+						<source>/images/dummys/buendchen.png</source>
+						<scale-x>0.1</scale-x>
+						<scale-y>0.1</scale-y>
+					</element>
+					<element>
+						<pos-x>200</pos-x>
+						<pos-y>300</pos-y>
+						<name>body</name>
+						<source>/images/dummys/buendchen-rot.png</source>
+						<scale-x>0.1</scale-x>
+						<scale-y>0.1</scale-y>
+					</element>
+				</elements>;
+      ]]>
+    </mx:Script>
+
+    <mx:VBox>
+    	<mx:Repeater id="rp" dataProvider="{XMLBuendchenElements.element}">
+    		<mx:Image click="changeColour(event)" source="{String(rp.currentItem.source)}" scaleX="{String(rp.currentItem.scale-x)}" scaleY="{String(rp.currentItem.scale-y)}"  />    	
+    	</mx:Repeater>
+    </mx:VBox>
+  </mx:TitleWindow>
+</pre>
+
+
+h2. Passing request data with flashVars properties.
+
+How can i communicate between javascript and my FLEX app ?
+
+One solution it to pass flashvars within the swfobject creation.
+
+h3. The Javascript
+
+<pre class="brush: js;">
+  var flashvars = {
+    category: 2,      
+  };
+  
+  var params = false;    
+  var attributes = false;
+
+  var width = '936';
+  var height = '400';
+
+  swfobject.embedSWF('/flash/design_studio.swf', 'flash_design_studio', width, height, '9.0.0', '/flash/expressInstall.swf', flashvars, params, attributes);    
+</pre>
+
+h3. The Flex app:
+
+<pre class="brush: xml;">
+  <?xml version="1.0" encoding="utf-8"?>
+  <mx:Application 
+  	xmlns:mx="http://www.adobe.com/2006/mxml"
+  	initialize="{init()}"
+  	viewSourceURL="srcview/index.html">
+  	<mx:Script>
+      <![CDATA[
+        public var currentCategoryId:Number;
+        private function init () : void {
+        	// now you cann acces the flashvars:
+        	currentCategoryId = Application.application.parameters.category;
+        }
+      ]]>
+    </mx:Script>
+ </mx:Application>
+</pre>
+
+*Thats it!*
+
+There are more possibility's to communicate between javascript and flex, but thats one of the basics examples.
+
+h3. Ressources
+* "livedocs":http://livedocs.adobe.com/flex/3/html/help.html?content=passingarguments_3.html
+* "swfobject2 docu":http://blog.powerflasher.de/swfobject2/
+
+
+h2. Create a custom Loader to load Images from an XML list and add custom parameters (ex. ID of the image).
+
+*Long Headline but short solution:*
+
+The CustomImageLoader extends the Loader and accepts an image as XML.
+
+*CustomImageLoader.as*
+
+<pre class="brush: as;">
+  package com.too_many_colours.loader{
+  	import flash.display.Loader;
+
+  	public class CustomImageLoader extends Loader {
+  	    public var image:XML;
+
+  	    public function CustomImageLoader(image:XML= null) {
+  	            this.image = image;
+  	    }
+  	}
+  }
+</pre>
+
+Now you can simply use the CustomImageLoader as followed:
+
+<pre class="brush: as;">
+  var loader: CustomImageLoader = new CustomImageLoader(image);
+  loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
+  loader.image = "some xml data";
+  loader.contentLoaderInfo.addEventListener(Event.COMPLETE, pngOnLoaded);
+</pre>
+
+
+And access the additional Parameters in the <code>handleImageLoaded</code> function:
+
+<pre class="brush: as;">
+  private function handleImageLoaded(event:Event):void {
+    // access the additional parameter:
+  	var image:XML = (event.target.loader as CustomImageLoader).image;
+  	
+  	var element:Image = new Image();
+  	element.id = image.id;
+  	
+  	// access the usual content
+  	element.source = event.currentTarget.content				
+  }
+</pre>
+
+
+h3. Ressources
+* "stackoverflow 1":http://stackoverflow.com/questions/762521/custom-as3-loader-class-that-uses-a-custom-loaderinfo-class
+* "stackoverflow 2":http://stackoverflow.com/questions/758322/how-do-i-modify-existing-as3-events-so-that-i-can-pass-data
+
+
+h2. ROLL_OVER vs MOUSE_OVER
+
+from "www.kirupa.com/forum":http://www.kirupa.com/forum/showthread.php?t=302169
+
+MOUSE_OVER will issue new rollover events for each child of a display object container containing multiple children. (ie: multiple buttons nested within a single container)
+
+ROLL_OVER will issue only a single rollover event, regardless of the presence of multiple children within a display object container.
+This essentially bypasses the advantages/(or defects, depending on your construction methods) of AS3 event propagation.
+This might be useful for mitigating UI construction issues, with regard to default AS3 display list behaviors, but will probably require separate listeners for each button instance.
+ie: 30 buttons would require 30 event listeners.
+As far as I can see, this is essentially just a "kludge" that causes AS3 to act more like AS2.
+
+For example:
+Attaching a MOUSE_OVER event listener to "buttonGroup" will register new rollover events for each of the children of buttonGroup.
+buttonGroup.addEventListener(MouseEvent.MOUSE_OVER , btnOver, false, 0, true);
+//limit mouse events to children only, and enable hand-cursor
+buttonGroup.mouseEnabled = false.
+buttonGroup.buttonMode = true.
+This allows a single listener to serve multiple nested children of the attached display object container.
+ie: you construct your button movieclips; name the instances; wrap them in the "buttonGroup" container; attach a set of MOUSE_OVER/MOUSE_OUT/MOUSE_DOWN etc... listeners to "buttonGroup".
+This is a good thing, and leverages AS3 event propagation to its fullest potential.
+
+With regard to the OP issue, the problem is rooted in your construction methods, IMO.
+Using a Tweening class for button over/out tweens is easier to implement and far more flexible.
+TweenLite/TweenMax, Tweener, or the built-in Tween class can be utilized to dramatically simplify your project.
+ie:function btnOver(evt:MouseEvent):void{
+//tween class methods here.
+}
+
+
+h2. loading externel swf
+
+private function handleCategoryElemetsFindResult(event:ResultEvent):void{
+  // loading an external swf
+	var loader:SWFLoader = new SWFLoader();
+	loader.addEventListener(Event.COMPLETE, onSwfLoaded);
+	loader.load("/flash/hoodie/body.swf");
+	test_atelier.addChild(loader);
+	loader.addEventListener(MouseEvent.CLICK, swfOnclick);
+}
+			
+private function swfOnclick(event:Event):void{
+	new DebugMessage('asd');
+}
+
+private function onSwfLoaded(event:Event):void{
+	
+	test_atelier.addChild(event.currentTarget.content);
+}
+
+
+h2. Simple draw example in flex
+
+Important to note that you have to create an <code>UIComponent</code> and add the Shape to it. Than you
+can add it to the stage...
+
+<pre class="brush: as;">
+  var materialColor:Shape = new Shape();				
+  var uiComponent:UIComponent = new UIComponent();
+
+  materialColor.graphics.clear();
+  materialColor.graphics.beginFill(0x007AAB);
+  materialColor.graphics.drawRoundRect(0, 0, 200, 200, 0, 0);
+  materialColor.graphics.endFill();
+  uiComponent.addChild(materialColor); 
+  testatelier.addChild(uiComponent);
+</pre>
+
+
+h2. Complex Masking in flex
+
+SVG ? nope, not working dynamicly !
+http://www.adobe.com/devnet/flex/quickstart/embedding_assets/#EmbeddingSvgFiles
+
+SWF ?
+that works:
+<mx:Image x="0" y="0" mask="{swfMask}" id="hody" source="/assets/materials/9/main-body.jpg"/>
+<mx:Image x="0" y="0" id="swfMask" source="/flash/hoodie/body.swf"/>
+
+dynamicly and with eventlistener to!
+
+
+
+// The jpg
+var elementImage:Image = new Image();
+elementImage.source = "/assets/materials/9/main-body.jpg";
+elementImage.cacheAsBitmap = true;
+
+// the mask
+var elementImageMask:Image = new Image();
+elementImageMask.source = "/assets/elements/4/main-body-mask.png";
+elementImageMask.cacheAsBitmap = true;
+elementImage.mask = elementImageMask;
+
+addChild(elementImageMask);
+addChild(elementImage);
+
+elementImage.addEventListener(MouseEvent.MOUSE_OVER, function(event:MouseEvent):void{
+	var hittest = elementImage.mask.hitTestPoint(event.localX, event.localX, false);
+	new DebugMessage(hittest.toString());					
+});
+elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
+				
+				
+				
+// The jpg
+var elementImage:Image = new Image();
+elementImage.source = "/assets/materials/9/main-body.jpg";
+elementImage.cacheAsBitmap = true;
+
+// the mask
+var elementImageMask:SWFLoader = new SWFLoader()
+elementImageMask.load("/assets/elements/4/main-body-mask.png");
+elementImage.mask = elementImageMask;
+
+addChild(elementImageMask);
+addChild(elementImage);
+
+elementImage.addEventListener(MouseEvent.MOUSE_OVER, function(event:MouseEvent):void{
+var hittest = elementImage.mask.hitTestPoint(event.localX, event.localX, false);
+new DebugMessage(hittest.toString());					
+});
+elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);

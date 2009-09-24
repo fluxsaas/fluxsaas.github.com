@@ -1,8 +1,18 @@
 h2. Links
 
+* *javascript loads javascript, best performance: parsing vs loading time. book?*
+* "javascript translation and printf":http://fluxsaas.github.com/client_side_technical_specification
 * "JavaScript MVC":http://www.alistapart.com/articles/javascript-mvc/
+* "JavaScript MVC":http://ajaxian.com/archives/taking-javascript-all-the-way-with-mvc
+
 * "Mercurial":https://developer.mozilla.org/en/Mercurial
+* "file structure for css and javascript best practice"
+* "Client Side Technical Specification, eigene und andere im netz. sass cs javascript html":http://fluxsaas.github.com/client_side_technical_specification
 
-h2. web roundup
+* "http://testswarm.com/":http://testswarm.com/
 
-* list of links and ideas.
+* *web roundup* list of links and ideas.
+
+
+* http://99designs.com
+* http://www.12designer.com
