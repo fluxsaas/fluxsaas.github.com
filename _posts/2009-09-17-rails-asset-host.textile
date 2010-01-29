@@ -1,0 +1,50 @@
+---
+layout: post
+title: Keep up with the assets on the production machine - Asset Host in Rails
+---
+
+<p class="time-stamp">17 SEPTEMBER 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1> 
+
+Sometimes you reach a point with a Website where it gets difficult to properly style the site if you don't have the right assets on your local machine. The database and the assets are always changing and growing due to user input.
+
+You could alway download the latest assets, but sometimes there are to big to download or you just don't want to keep the assets on your local machine. 
+
+One solution to this problem is to set up an "Asset Host":http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html. You can easily add an Asset Host in the <code>environments/development.rb</code>
+
+<pre class="brush: ruby;">
+    ActionController::Base.asset_host = "assets.example.com"
+</pre>
+
+Every single asset comes from the <code>assets.example.com</code> host. Thats fine, until you realize that the javascript and css files comes from the host too (Yes, it took me about 15 min to realize why my changes in the css didnt't work ;). 
+
+So here is the solution for the problem:
+
+<pre class="brush: ruby;">
+ActionController::Base.asset_host = Proc.new { |source|
+     if source.starts_with?('/assets')
+       "gameone.de"
+     else
+       "http://localhost:3000"
+     end
+   }
+</pre>
+
+I put the code in an initializers and ignored it from git.
+
+*<code>initializers/config_local_asset_host.rb</code>*
+
+<pre class="brush: ruby;">
+  if Rails.env == "development"
+    ActionController::Base.asset_host = Proc.new { |source|
+         if source.starts_with?('/assets')
+           "gameone.de"
+         else
+           "http://localhost:3000"
+         end
+       }
+  end
+</pre>
+
+
+Thx to "@Soph":http://twitter.com/Soph to point me in the right direction !

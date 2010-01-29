@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Kalle Saas, Client Side Blog</title>
+	<title>Keep up with the assets on the production machine - Asset Host in Rails</title>
 	
   <meta content="Kalle Saas" name="author"/>
   
@@ -46,48 +46,73 @@
 
 <div class="container">
   
-<ul class="posts index">
-  
-    <li class="post">
-      <p class="time-stamp">29 Jan 2010</p>
-      <h2><a href="/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions.html">Use the Firefox Profile Manager to install Multiple Firefox Versions.</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">25 Nov 2009</p>
-      <h2><a href="/2009/11/25/Sass-textmate-bundle.html">Sass Textmate Bundle with alternative syntax</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">22 Nov 2009</p>
-      <h2><a href="/2009/11/22/flex-and-rails-communication.html">Restful Communication Between Flex And Rails  (GET, POST, PUT)</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">29 Sep 2009</p>
-      <h2><a href="/2009/09/29/javascript-localization.html">How to do localization with Javascript</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">24 Sep 2009</p>
-      <h2><a href="/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo.html">Subdomains or Subfolders which are Better for Blogging (SEO) ?</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">17 Sep 2009</p>
-      <h2><a href="/2009/09/17/rails-asset-host.html">Keep up with the assets on the production machine - Asset Host in Rails</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">18 Aug 2009</p>
-      <h2><a href="/2009/08/18/web-fonts.html">Web Fonts</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">17 Aug 2009</p>
-      <h2><a href="/2009/08/17/flex-for-rails-how-to-collection.html">Flex for Rails, how to collection</a></h2>
-    </li>
-  
+<ul class="posts">
+  <li class="post">
+    <p class="time-stamp">17 <span class="caps">SEPTEMBER</span> 2009</p>
+<h1><a href="/2009/09/17/rails-asset-host.html">Keep up with the assets on the production machine &#8211; Asset Host in Rails</a></h1> 
+<p>Sometimes you reach a point with a Website where it gets difficult to properly style the site if you don&#8217;t have the right assets on your local machine. The database and the assets are always changing and growing due to user input.</p>
+<p>You could alway download the latest assets, but sometimes there are to big to download or you just don&#8217;t want to keep the assets on your local machine.</p>
+<p>One solution to this problem is to set up an <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html">Asset Host</a>. You can easily add an Asset Host in the <code>environments/development.rb</code></p>
+<pre class="brush: ruby;">
+    ActionController::Base.asset_host = "assets.example.com"
+</pre>
+<p>Every single asset comes from the <code>assets.example.com</code> host. Thats fine, until you realize that the javascript and css files comes from the host too (Yes, it took me about 15 min to realize why my changes in the css didnt&#8217;t work ;).</p>
+<p>So here is the solution for the problem:</p>
+<pre class="brush: ruby;">
+ActionController::Base.asset_host = Proc.new { |source|
+     if source.starts_with?('/assets')
+       "gameone.de"
+     else
+       "http://localhost:3000"
+     end
+   }
+</pre>
+<p>I put the code in an initializers and ignored it from git.</p>
+<p><strong><code>initializers/config_local_asset_host.rb</code></strong></p>
+<pre class="brush: ruby;">
+  if Rails.env == "development"
+    ActionController::Base.asset_host = Proc.new { |source|
+         if source.starts_with?('/assets')
+           "gameone.de"
+         else
+           "http://localhost:3000"
+         end
+       }
+  end
+</pre>
+<p>Thx to <a href="http://twitter.com/Soph">@Soph</a> to point me in the right direction !</p>
+  </li>
+  <li>
+    <p class="postmetadata alt">
+		  <span class="addthis_toolbox addthis_default_style">
+			  <a class="addthis_button_facebook">
+			   <img src="/images/addthis/facebook_16.png"/>
+			  </a>
+        <a class="addthis_button_twitter">
+          <img src="/images/addthis/twitter_16.png"/>
+        </a>
+        <a class="addthis_button_misterwong_de"></a>
+        <a class="addthis_button_myspace">
+          <img src="/images/addthis/myspace_16.png"/>
+        </a>
+        <a class="addthis_button_wordpress">
+          <img src="/images/addthis/wordpress_16.png"/>
+        </a>
+        <a class="addthis_button_digg">
+          <img src="/images/addthis/digg_16.png"/>
+        </a>
+        <span class="addthis_separator">|</span>
+        <a class="addthis_button_expanded">More</a>
+        <span class="spezial">
+          <a class="addthis_button_email"></a>
+          <a class="addthis_button_print"></a>
+        </span>
+      </span>
+    </p>
+  </li>
+  <li>
+    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kallesaas/embed.js"></script><noscript><a href="http://kallesaas.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </li>
 </ul>
 
 <div id="side">
@@ -146,7 +171,7 @@
     <li>
       <h3><a target="_new" href="http://manuelmeurer.com/">http://manuelmeurer.com/</a></h3>
       <p>Rails Programmer</p>
-    </li>
+    </li>        
   </ul>  
 
   <h2>Twitter</h2>

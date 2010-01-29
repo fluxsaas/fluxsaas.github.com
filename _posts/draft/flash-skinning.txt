@@ -1,0 +1,5 @@
+http://www.timovirtanen.com/2009/02/08/flex-component-kit-and-flash-cs-4/
+
+http://www.adobe.com/devnet/flex/articles/skins_styles_04.html
+
+http://www.adobe.com/cfusion/entitlement/index.cfm?e=flex_skins

@@ -1,0 +1,53 @@
+---
+layout: post
+title: How to do localization with Javascript
+---
+
+<p class="time-stamp">29 SEPTEMBER 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+<p>
+</p>
+
+<pre class="brush: js;">
+	if (!window.iG1) {
+	    var iG1 = {};
+	}
+
+	iG1 = {
+		hideURLbar: function () {
+			window.scrollTo(0, 1);
+			alert('asd')
+		},
+
+		init:  function () {
+			setTimeout(iG1.hideURLbar, 0);
+		}
+	};
+
+	$(function() {
+	  iG1.init();
+	});
+</pre>
+
+http://developer.apple.com/mac/library/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html
+
+
+https://addons.mozilla.org/en-US/firefox/addon/59
+
+
+<a href="http://www.smashingmagazine.com/2009/09/27/showcase-of-designs-optimized-for-iphone/">showcase-of-designs-optimized-for-iphone</a>
+
+<a href="http://www.marketcircle.com/iphoney/">iphoney offline simulator</a>
+<a href="http://www.testiphone.com/">iphone online simulator</a>
+
+<a href="http://www.bravenewcode.com/blog/">inspiration</a>
+
+
+<a href="http://www.engageinteractive.co.uk/blog/2008/06/19/tutorial-building-a-website-for-the-iphone/">Tutorial: Building a website for the iPhone</a>
+
+<a href="http://matthewjamestaylor.com/blog/perfect-multi-column-liquid-layouts">Perfect multi-column CSS liquid layouts - iPhone compatible</a>
+
+<a href="http://flyosity.com/application-design/iphone-application-design-patterns.php">iphone-application-design-patterns</a>
+
+<a href="http://www.cssiphone.com/">cssiphone</a>

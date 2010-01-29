@@ -1,0 +1,112 @@
+---
+layout: post
+title: How to do localization with Javascript
+---
+
+<p class="time-stamp">29 SEPTEMBER 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+<p>
+  During AJAX requests or when toggling the state of interface elements, JavaScript may be used to display messages to the User.
+  The translate function provides an easy way to translate these messages.
+</p> 
+
+<h3>How To Use</h3>
+<p>Any JavaScript code that needed to use a string would reference the LOCALIZATION object rather then embedding a string:</p>
+<p>You can pass a string with an <strong>"%s"</strong> inside which can be used for string substitution.</p>
+
+<pre class="brush: js;">
+  LOCALIZATION.WARNING: 'Achtung vor dem %s, er ist gefährlich !'
+</pre>
+
+<pre class="brush: js;">
+  alert(translate(LOCALIZATION.WARNING, "Zauberer"));
+</pre>
+
+
+<h3>The <code>localization.[de|en|fr|...].js</code></h3>
+
+<p>
+  If you use the LOCALIZATION Object throughout your code, you need only to change the Strings in the
+  localization file.
+</p>
+
+<p>The german localization file could look like this:</p>
+
+<p><code>localization.de.js</code></p>
+
+<pre class="brush: js;">
+  // Example
+  var LOCALIZATION = {
+    LANGUAGE: 'GERMAN',
+    WARNING: 'Achtung vor dem %s, er ist gefährlich !',
+    LOADING: 'Bitte warten, Daten werden geladen',
+    WELCOME: 'Hallo %s, wie geht\'s dir ?'
+  };
+</pre>
+
+<p>Make sure that this file is loaded before any other file, which uses the localization.</p>
+  
+<h3><code>translate.js</code></h3>
+<pre class="brush: js;">                
+  (function () {
+    if (!window.translate) {
+      /** 
+       * this global function is for string substitution
+       * @property {string} string to translate.
+       * @property {string} as much 
+       * return STRING
+       */         
+      window.translate = function(){
+        var html = [ ];
+        var arguments = arguments;
+        var string = arguments[0];
+
+        var objIndex = 0;
+        var reg = /%s/;
+        var parts = [ ];
+
+        /** 
+         * analyze the string, extract the parts with the %s identifier.
+         */               
+        for ( var m = reg.exec(string); m; m = reg.exec(string) ) {  
+          // m[0][0] gives undefined in IE
+          parts.push(string.substr(0, m[0][0] === "%" ? m.index : m.index));
+          parts.push("%s");
+          string = string.substr( m.index+m[0].length );
+        }
+        parts.push(string);
+
+        /** 
+         * analyze the parts, replace the %s with the given arguments. 
+         * beware of undefined!
+         */               
+        for (var i = 0; i < parts.length; ++i){
+            var part = parts[i];
+            if (part && part == "%s"){
+              var object = arguments[++objIndex];
+              if (object == undefined) {
+                html.push("%s");
+              }else{
+                html.push(object);
+              };
+            }else{
+              html.push(part);
+            }            
+        }
+
+        /** 
+         * Join the array and return as string.
+         */
+        return html.join('');
+      }
+    };
+  })();
+</pre>
+
+<p>
+  You can find a test page <a target="_new" href="/examples/translate/">here</a> and the translate.js file <a target="_new" href="/code/translate.js">here</a>.
+</p>
+<p>
+  The code is inspired by the firebug function and the PHP printf function.
+</p>

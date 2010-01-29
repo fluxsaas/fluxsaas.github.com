@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Kalle Saas, Client Side Blog</title>
+	<title>Restful Communication Between Flex And Rails  (GET, POST, PUT)</title>
 	
   <meta content="Kalle Saas" name="author"/>
   
@@ -46,48 +46,128 @@
 
 <div class="container">
   
-<ul class="posts index">
+<ul class="posts">
+  <li class="post">
+    <p class="time-stamp">22 <span class="caps">NOVEMBER</span> 2009</p>
+<h1><a href="/2009/11/22/flex-and-rails-communication.html">Restful Communication Between Flex And Rails  (<span class="caps">GET</span>, <span class="caps">POST</span>, <span class="caps">PUT</span>)</a></h1>
+<h3>Some working examples of HTTPService Requests:</h3>
+<h4><span class="caps">GET</span> Request</h4>
+<pre class="brush: as3;">  
+  // HTTPService GET Request
+  private function getShiftList():void{
+    svcShiftsIndex.url = "/schedules/"+scheduleId+"/shifts.xml";
+    svcShiftsIndex.send();
+  }
+</pre>
+
+<pre class="brush: xml;">
+  &lt;mx:HTTPService id="svcShiftsIndex"
+      resultFormat="e4x"
+      method="GET"
+      fault="handleShiftsIndexFaultResult(event)"
+      result="handleShiftsIndexResult(event)" 
+    /&gt;  
+</pre>
+<h4><span class="caps">PUT</span> Request</h4>
+<p>Make sure to pass the <code>authenticity_token</code> in the url to keep a valid xml structure.</p>
+<pre class="brush: as3;">    
+// HTTPService PUT Request
+private function handleShiftChanged(event:*):void{
+  svcShiftsUpdate.url = "/schedules/" + scheduleId + 
+                        "/shifts/" + event.shift.shiftId + '.xml' + 
+                        '?authenticity_token='+authenticityToken;
+
+  var params:XML = XML(
+    '&lt;shift&gt;'+
+      '&lt;category_id&gt;1&lt;/category_id&gt;'+
+    '&lt;/shift&gt;'
+  );
+
+  svcShiftsUpdate.method  = 'POST';
   
-    <li class="post">
-      <p class="time-stamp">29 Jan 2010</p>
-      <h2><a href="/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions.html">Use the Firefox Profile Manager to install Multiple Firefox Versions.</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">25 Nov 2009</p>
-      <h2><a href="/2009/11/25/Sass-textmate-bundle.html">Sass Textmate Bundle with alternative syntax</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">22 Nov 2009</p>
-      <h2><a href="/2009/11/22/flex-and-rails-communication.html">Restful Communication Between Flex And Rails  (GET, POST, PUT)</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">29 Sep 2009</p>
-      <h2><a href="/2009/09/29/javascript-localization.html">How to do localization with Javascript</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">24 Sep 2009</p>
-      <h2><a href="/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo.html">Subdomains or Subfolders which are Better for Blogging (SEO) ?</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">17 Sep 2009</p>
-      <h2><a href="/2009/09/17/rails-asset-host.html">Keep up with the assets on the production machine - Asset Host in Rails</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">18 Aug 2009</p>
-      <h2><a href="/2009/08/18/web-fonts.html">Web Fonts</a></h2>
-    </li>
-  
-    <li class="post">
-      <p class="time-stamp">17 Aug 2009</p>
-      <h2><a href="/2009/08/17/flex-for-rails-how-to-collection.html">Flex for Rails, how to collection</a></h2>
-    </li>
-  
+  // IMPORTANT TO CONNECT TO THE PUT ACTION IN RAILS
+  svcShiftsUpdate.headers = {
+    X_HTTP_METHOD_OVERRIDE: 'PUT'
+  };
+
+  svcShiftsUpdate.send(params);
+}     
+</pre>
+
+<pre class="brush: xml;">  
+  &lt;mx:HTTPService id="svcShiftsCreate"
+      contentType="application/xml"
+      resultFormat="e4x"
+      method="POST"
+      fault="handleShiftsCreateFaultResult(event)"
+      result="handleShiftsCreateResult(event)" 
+    /&gt;  
+</pre>
+<h4><span class="caps">POST</span> Request</h4>
+<p>Make sure to pass the authenticity_token in the url to keep a valid xml structure.</p>
+<pre class="brush: as3;">    
+  // HTTPService POST Request
+  private function handleShiftCreated(event:ShiftControllerEvent):void {
+    svcShiftsCreate.url = "/schedules/" + scheduleId + 
+                          "/shifts.xml?authenticity_token="+authenticityToken;
+
+    var xmlParams:XML = XML(
+      '&lt;shift&gt;'+
+        '&lt;category_id&gt;1&lt;/category_id&gt;'+
+      '&lt;/shift&gt;'
+    );
+
+    svcShiftsCreate.send(xmlParams);
+    ShiftSequencer.reDrawShifts();
+  }  
+</pre>
+
+<pre class="brush: xml;">
+  &lt;mx:HTTPService id="svcShiftsUpdate"
+      contentType="application/xml"  
+      resultFormat="e4x"
+      result="handleShiftsUpdateResult(event)"
+      fault="handleShiftsUpdateFaultResult(event)"
+    /&gt;    
+</pre>
+<p><strong>Ressources:</strong></p>
+<ul>
+	<li><a href="http://blog.dt.org/index.php/tag/flex/">blog.dt.org</a></li>
+	<li><a href="http://tinyurl.com/yde2k8z">Adobe</a></li>
+</ul>
+<li>
+  </li>
+  <li>
+    <p class="postmetadata alt">
+		  <span class="addthis_toolbox addthis_default_style">
+			  <a class="addthis_button_facebook">
+			   <img src="/images/addthis/facebook_16.png"/>
+			  </a>
+        <a class="addthis_button_twitter">
+          <img src="/images/addthis/twitter_16.png"/>
+        </a>
+        <a class="addthis_button_misterwong_de"></a>
+        <a class="addthis_button_myspace">
+          <img src="/images/addthis/myspace_16.png"/>
+        </a>
+        <a class="addthis_button_wordpress">
+          <img src="/images/addthis/wordpress_16.png"/>
+        </a>
+        <a class="addthis_button_digg">
+          <img src="/images/addthis/digg_16.png"/>
+        </a>
+        <span class="addthis_separator">|</span>
+        <a class="addthis_button_expanded">More</a>
+        <span class="spezial">
+          <a class="addthis_button_email"></a>
+          <a class="addthis_button_print"></a>
+        </span>
+      </span>
+    </p>
+  </li>
+  <li>
+    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kallesaas/embed.js"></script><noscript><a href="http://kallesaas.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </li>
 </ul>
 
 <div id="side">
@@ -146,7 +226,7 @@
     <li>
       <h3><a target="_new" href="http://manuelmeurer.com/">http://manuelmeurer.com/</a></h3>
       <p>Rails Programmer</p>
-    </li>
+    </li>        
   </ul>  
 
   <h2>Twitter</h2>

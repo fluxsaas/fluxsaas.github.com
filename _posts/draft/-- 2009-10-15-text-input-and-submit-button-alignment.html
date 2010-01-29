@@ -1,0 +1,43 @@
+---
+layout: post
+title: Text input and submit button alignment
+---
+
+<p class="time-stamp">10 OKTOBER 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+<h3>How do i align an submit button and a text field in a form ?</h3>
+
+<pre class="brush: xml;">
+  <form>
+    <label>
+      Gutschein
+      <input type="text"/>
+    </label>
+    <button>
+      Einlösen
+    </button>
+  </form>
+</pre>
+
+<pre class="brush: css;">
+  form input{
+  	font-size: 11px;
+  	margin: 0 0 0 2px;
+  	width: 150px;
+  	height: 13px;
+  }
+  form button{
+  	vertical-align: bottom;
+  }
+  
+  *html form button {
+  	position: relative;
+  	top: -1px;
+  }  
+</pre>
+
+
+<p>
+  The small tips are the Best: <a href="http://www.csswoes.com/2008/04/06/text-input-and-submit-button-alignment/" alt="Text input and submit button alignment">Text input and submit button alignment.</a> THX !
+</p> 

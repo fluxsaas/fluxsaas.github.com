@@ -4,7 +4,7 @@
  <title>Kalle Saas</title>
  <link href="http://kallesaas.com/atom.xml" rel="self"/>
  <link href="http://kallesaas.com/"/>
- <updated>2010-01-29T12:59:22+01:00</updated>
+ <updated>2010-01-29T13:06:55+01:00</updated>
  <id>http://kallesaas.com/</id>
  <author>
    <name>Kalle Saas</name>
@@ -14,11 +14,11 @@
  
  <entry>
    <title>Use the Firefox Profile Manager to install Multiple Firefox Versions.</title>
-   <link href="http://kallesaas.com/2009/11/25/Sass-textmate-bundle.html"/>
-   <updated>2009-11-25T00:00:00+01:00</updated>
-   <id>http://kallesaas.com/2009/11/25/Sass-textmate-bundle</id>
+   <link href="http://kallesaas.com/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions.html"/>
+   <updated>2010-01-29T00:00:00+01:00</updated>
+   <id>http://kallesaas.com/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;29 &lt;span class=&quot;caps&quot;&gt;JANUAR&lt;/span&gt; 2010&lt;/p&gt;
-&lt;h1&gt;&lt;a href=&quot;/2009/11/25/Sass-textmate-bundle.html&quot;&gt;Use the Firefox Profile Manager to install Multiple Firefox Versions.&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href=&quot;/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions.html&quot;&gt;Use the Firefox Profile Manager to install Multiple Firefox Versions.&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;For my recent project i needed to install an old Firefox version. To prevent Firefox to overwrite my exitsting profile, i found an solution to manage multiple profiles for different Firefox installations:&lt;/p&gt;
 &lt;p&gt;You can manage you profiles with this command: (Mac OS X)&lt;/p&gt;
 &lt;pre class=&quot;brush: ruby;&quot;&gt;
@@ -33,6 +33,28 @@
 	&lt;li&gt;Firefox Profile: &lt;a href=&quot;http://www.firefox-browser.de/wiki/Profilmanager#Mac_OS_X&quot; alt=&quot;firefox profil manager&quot;&gt;german&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;shortcut to launch a specific firefox profile on mac: &lt;a href=&quot;http://weblogs.mozillazine.org/asa/archives/2008/08/shortcut_to_lau.html&quot; alt=&quot;firefox profil manager&quot;&gt;english&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Sass Textmate Bundle with alternative syntax</title>
+   <link href="http://kallesaas.com/2009/11/25/Sass-textmate-bundle.html"/>
+   <updated>2009-11-25T00:00:00+01:00</updated>
+   <id>http://kallesaas.com/2009/11/25/Sass-textmate-bundle</id>
+   <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;25 &lt;span class=&quot;caps&quot;&gt;NOVEMBE&lt;/span&gt; 2009&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;/2009/11/25/Sass-textmate-bundle.html&quot;&gt;Sass Textmate Bundle with alternative syntax&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;If you prefer the alternative Sass syntax:&lt;/p&gt;
+&lt;pre class=&quot;brush: css;&quot;&gt;
+  .comments    
+    .pagination
+      margin: 10px 0 10px 0
+      text-align: center
+      font-size: 14px
+      span
+        color: #fff
+        margin: 0 1px 0 1px
+        padding: 4px 6px 2px  
+&lt;/pre&gt;
+&lt;p&gt;then you should check out my small Textmate Bundle on &lt;a href=&quot;http://github.com/fluxsaas/sass-textmate-bundle&quot; alt=&quot;Sass Textmate Bundle&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
  
  <entry>

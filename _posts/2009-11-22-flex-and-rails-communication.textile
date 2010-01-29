@@ -1,0 +1,104 @@
+---
+layout: post
+title: Restful Communication Between Flex And Rails  (GET, POST, PUT)
+---
+
+<p class="time-stamp">22 NOVEMBER 2009</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+h3. Some working examples of HTTPService Requests:
+
+h4. GET Request
+
+<pre class="brush: as3;">  
+  // HTTPService GET Request
+  private function getShiftList():void{
+    svcShiftsIndex.url = "/schedules/"+scheduleId+"/shifts.xml";
+    svcShiftsIndex.send();
+  }
+</pre>
+
+<pre class="brush: xml;">
+  <mx:HTTPService id="svcShiftsIndex"
+      resultFormat="e4x"
+      method="GET"
+      fault="handleShiftsIndexFaultResult(event)"
+      result="handleShiftsIndexResult(event)" 
+    />  
+</pre>
+
+h4. PUT Request
+
+Make sure to pass the <code>authenticity_token</code> in the url to keep a valid xml structure.
+
+<pre class="brush: as3;">    
+// HTTPService PUT Request
+private function handleShiftChanged(event:*):void{
+  svcShiftsUpdate.url = "/schedules/" + scheduleId + 
+                        "/shifts/" + event.shift.shiftId + '.xml' + 
+                        '?authenticity_token='+authenticityToken;
+
+  var params:XML = XML(
+    '<shift>'+
+      '<category_id>1</category_id>'+
+    '</shift>'
+  );
+
+  svcShiftsUpdate.method  = 'POST';
+  
+  // IMPORTANT TO CONNECT TO THE PUT ACTION IN RAILS
+  svcShiftsUpdate.headers = {
+    X_HTTP_METHOD_OVERRIDE: 'PUT'
+  };
+
+  svcShiftsUpdate.send(params);
+}     
+</pre>  
+
+<pre class="brush: xml;">  
+  <mx:HTTPService id="svcShiftsCreate"
+      contentType="application/xml"
+      resultFormat="e4x"
+      method="POST"
+      fault="handleShiftsCreateFaultResult(event)"
+      result="handleShiftsCreateResult(event)" 
+    />  
+</pre>
+
+
+h4. POST Request
+
+Make sure to pass the authenticity_token in the url to keep a valid xml structure.
+
+<pre class="brush: as3;">    
+  // HTTPService POST Request
+  private function handleShiftCreated(event:ShiftControllerEvent):void {
+    svcShiftsCreate.url = "/schedules/" + scheduleId + 
+                          "/shifts.xml?authenticity_token="+authenticityToken;
+
+    var xmlParams:XML = XML(
+      '<shift>'+
+        '<category_id>1</category_id>'+
+      '</shift>'
+    );
+
+    svcShiftsCreate.send(xmlParams);
+    ShiftSequencer.reDrawShifts();
+  }  
+</pre>
+
+<pre class="brush: xml;">
+  <mx:HTTPService id="svcShiftsUpdate"
+      contentType="application/xml"  
+      resultFormat="e4x"
+      result="handleShiftsUpdateResult(event)"
+      fault="handleShiftsUpdateFaultResult(event)"
+    />    
+</pre>
+
+
+*Ressources:*
+* "blog.dt.org":http://blog.dt.org/index.php/tag/flex/
+* "Adobe":http://tinyurl.com/yde2k8z
+
+

@@ -1,0 +1,27 @@
+---
+layout: post
+title: Use the Firefox Profile Manager to install Multiple Firefox Versions.
+---
+
+<p class="time-stamp">29 JANUAR 2010</p>
+<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+For my recent project i needed to install an old Firefox version. To prevent Firefox to overwrite my exitsting profile, i found an solution to manage multiple profiles for different Firefox installations:
+
+You can manage you profiles with this command: (Mac OS X) 
+
+<pre class="brush: ruby;">
+  /Applications/firefox.app/Contents/MacOS/firefox-bin -P
+  Or
+  /Applications/firefox.app/Contents/MacOS/firefox -P
+</pre>
+
+<img src="/images/cms/firefox-profile.png" width="300" alt="Firefox Profile">
+
+You can download all Firefox versions here: <a href="http://ftp.mozilla.org/pub/mozilla.org/mozilla.org/firefox/releases/" alt="firefox versions">ftp.mozilla.org/</a>
+
+Check this link for more details:
+
+* Firefox Profile: <a href="http://www.firefox-browser.de/wiki/Profilmanager#Mac_OS_X" alt="firefox profil manager">german</a>
+* shortcut to launch a specific firefox profile on mac: <a href="http://weblogs.mozillazine.org/asa/archives/2008/08/shortcut_to_lau.html" alt="firefox profil manager">english</a>
+
