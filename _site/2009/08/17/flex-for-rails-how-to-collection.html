@@ -25,6 +25,12 @@
 	<script src="/javascripts/jquery.tweet.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
 	
+	<script type="text/javascript">
+  var addthis_config = {
+       username: "fluxsaas"
+  }
+  </script>
+  
 	<link rel="stylesheet" href="/stylesheets/default.css" type="text/css" media="screen" charset="utf-8" />
 </head>
 
@@ -78,16 +84,36 @@ This post is work in progress.
 <h2>Basic <span class="caps">HTTP</span> requests from Flex to Rails</h2>
 <p>Call the Fuction <code>listCompositions()</code>.</p>
 <pre class="brush: as3;">
-  import mx.rpc.events.ResultEvent;
-	
-	public function listCompositions():void{				
-		svcCompositionsList.send();
-	}
-	
-	private function handleCompositionsListResult(event:ResultEvent):void{
-		debug( event.result.toString() );				
-		var resultXML:XML = XML(event.result);
-	}
+  private function handleShiftChanged(event:*):void{
+    svcShiftsUpdate.url = 	"/schedules/" + scheduleId + "/shifts/" + event.shift.shiftId + '.xml' + 
+    '?authenticity_token='+authenticityToken + 
+    '&amp;_method=PUT';
+
+    var xmlParams:XML = XML('&lt;shift&gt;'+
+      '&lt;starts_at&gt;&lt;/starts_at&gt;' +
+      '&lt;ends_at&gt;&lt;/ends_at&gt;' +
+      '&lt;category_id&gt;1&lt;/category_id&gt;'+
+      '&lt;/shift&gt;');
+
+    svcShiftsUpdate.method = 'POST';
+    svcShiftsUpdate.headers = {X_HTTP_METHOD_OVERRIDE: 'PUT'};										
+
+    svcShiftsUpdate.send(xmlParams);
+    ShiftSequencer.reDrawShifts();	
+  }			
+
+private function handleShiftCreated(event:ShiftControllerEvent):void {
+svcShiftsCreate.url = "/schedules/" + scheduleId + "/shifts.xml?authenticity_token="+authenticityToken;
+
+var xmlParams:XML = XML('&lt;shift&gt;'+
+'&lt;starts_at&gt;'+DateHelper.minutesToRubyDate(event.shift.startTime, event.shift.cwday, this.scheduleBop)+'&lt;/starts_at&gt;' +
+'&lt;ends_at&gt;'+DateHelper.minutesToRubyDate(event.shift.endTime, event.shift.cwday, this.scheduleBop)+'&lt;/ends_at&gt;' +
+'&lt;category_id&gt;'+1+'&lt;/category_id&gt;'+
+'&lt;/shift&gt;');
+
+svcShiftsCreate.send(xmlParams);
+ShiftSequencer.reDrawShifts();
+}
 </pre>
 
 <pre class="brush: xml;">
@@ -96,14 +122,6 @@ This post is work in progress.
       resultFormat="e4x" 
       result="handleCompositionsListResult(event)" /&gt;
 
-  &lt;mx:XMLListCollection id="collectionsXLC" 
-    source="{ XMLList( svcCompositionsList.lastResult.children() ) }" /&gt;
-
-  &lt;mx:DataGrid width="100%" dataProvider="{collectionsXLC}" &gt;
-      &lt;mx:columns&gt;
-          &lt;mx:DataGridColumn dataField="name" headerText="Name"/&gt;
-      &lt;/mx:columns&gt;
-  &lt;/mx:DataGrid&gt;
 </pre>
 <h2>Controlling the Cursor</h2>
 <p>Use the <code>buttonMode</code> to get an &#8220;Hand&#8221; for the cursor.</p>
@@ -214,8 +232,6 @@ This post is work in progress.
 </pre>
 <p>Reference: <a href="http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html">Passing a reference to the calling component</a></p>
 <h2>Using the Repeater component to display elements from <span class="caps">XML</span> object.</h2>
-
-
 <pre class="brush: xml;">
   &lt;?xml version="1.0" encoding="utf-8"?&gt;
   &lt;mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" &gt;
@@ -297,7 +313,7 @@ This post is work in progress.
 <p><strong>Long Headline but short solution:</strong></p>
 <p>The CustomImageLoader extends the Loader and accepts an image as <span class="caps">XML</span>.</p>
 <p><strong>CustomImageLoader.as</strong></p>
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   package com.too_many_colours.loader{
   	import flash.display.Loader;
 
@@ -311,14 +327,14 @@ This post is work in progress.
   }
 </pre>
 <p>Now you can simply use the CustomImageLoader as followed:</p>
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   var loader: CustomImageLoader = new CustomImageLoader(image);
   loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
   loader.image = "some xml data";
   loader.contentLoaderInfo.addEventListener(Event.COMPLETE, pngOnLoaded);
 </pre>
 <p>And access the additional Parameters in the <code>handleImageLoaded</code> function:</p>
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   private function handleImageLoaded(event:Event):void {
     // access the additional parameter:
   	var image:XML = (event.target.loader as CustomImageLoader).image;
@@ -376,7 +392,7 @@ ie:function btnOver(evt:MouseEvent):void{<br />
 <h2>Simple draw example in flex</h2>
 <p>Important to note that you have to create an <code>UIComponent</code> and add the Shape to it. Than you<br />
 can add it to the stage&#8230;</p>
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   var materialColor:Shape = new Shape();				
   var uiComponent:UIComponent = new UIComponent();
 
@@ -429,11 +445,40 @@ new DebugMessage(hittest.toString());					<br />
 elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);</p>
   </li>
   <li>
+    <p class="postmetadata alt">
+		  <span class="addthis_toolbox addthis_default_style">
+			  <a class="addthis_button_facebook">
+			   <img src="/images/addthis/facebook_16.png"/>
+			  </a>
+        <a class="addthis_button_twitter">
+          <img src="/images/addthis/twitter_16.png"/>
+        </a>
+        <a class="addthis_button_misterwong_de"></a>
+        <a class="addthis_button_myspace">
+          <img src="/images/addthis/myspace_16.png"/>
+        </a>
+        <a class="addthis_button_wordpress">
+          <img src="/images/addthis/wordpress_16.png"/>
+        </a>
+        <a class="addthis_button_digg">
+          <img src="/images/addthis/digg_16.png"/>
+        </a>
+        <span class="addthis_separator">|</span>
+        <a class="addthis_button_expanded">More</a>
+        <span class="spezial">
+          <a class="addthis_button_email"></a>
+          <a class="addthis_button_print"></a>
+        </span>
+      </span>
+    </p>
+  </li>
+  <li>
     <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kallesaas/embed.js"></script><noscript><a href="http://kallesaas.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </li>
 </ul>
 
 <div id="side">
+  
   <!-- Google Custom Search Element -->
   <div id="cse" style="width:100%;">Loading</div>
   <script src="http://www.google.com/jsapi" type="text/javascript"></script>
@@ -443,34 +488,53 @@ elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);</p>
       new google.search.CustomSearchControl('014833945590601956149:dzk6i0prdom').draw('cse');
     }, true);
   </script>
-
+  
+  <h2>RSS-Feed</h2>
+  <p><a href="http://feeds.feedburner.com/kalle-saas" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;<a href="http://feeds.feedburner.com/kalle-saas" rel="alternate" type="application/rss+xml">Subscribe in a reader</a></p>
+  
   <h2>Featured Projects</h2>
-  <ul class="featured-projects">
+  <ul class="links">
     <li>
       <a target="_new" href="http://2manycolours.com"><img src="/images/2manycolours_logo.png" alt="2manycolours LOGO" width="60" /></a>      
       <h3><a target="_new" href="http://2manycolours.com">2ManyColours</a></h3>
-      <p>It's all about your Style! </p>
+      <p>Mass Customization Fashion Label from Germany</p>
     </li>
     <li>
       <a target="_new" href="http://gameone.de"><img src="/images/gameone.png" width="100" alt="gameone LOGO" /></a>
       <h3><a target="_new" href="http://gameone.de">GameOne - MTV</a></h3>
-      <p>MTV GameOne - Die Blog- und Community-Seite zur ersten Games TV-Sendung auf MTV.</p>
+      <p>Blog- and Community site for the first Game-TV-Show on MTV Germany.</p>
     </li>
     <li>
       <a target="_new" href="http://mtvhome.de/"><img src="/images/MTV_HOME.jpg" width="100" alt="MTV - HOME LOGO" /></a>
       <h3><a target="_new" href="http://mtvhome.de/">MTVHome - MTV</a></h3>
       <p>
-        MTV Home íst einer der vielen Microsites die auf dem MTV eigenen Microsite-CMS besteht.
+        MTV Home is one of MTV Microsite's wich runs on the new developed Rails-Microsite-Engine at MTV Germany.
       </p>
     </li>
     <li>
       <a target="_new" href="http://clubnick.de"><img src="/images/clubnick.png" width="100" alt="MTV CLUBNICK -LOGO" /></a>
       <h3><a target="_new" href="http://clubnick.de">ClubNick - MTV</a></h3>
       <p>
-        Spiele- und Lernplattform für Kinder.
+        Game-Based Learning Platform for kids.
       </p>
     </li>    
   </ul>
+  
+  <h2>Family & Friends</h2>
+  <ul class="links">
+    <li>
+      <h3><a target="_new" href="http://lottasaas.com">http://lottasaas.com</a></h3>
+      <p>Modéliste . Creative Pattern Cutter</p>
+    </li>    
+    <li>
+      <h3><a target="_new" href="http://rubyphunk.com/">http://rubyphunk.com/</a></h3>
+      <p>Rails Programmer</p>
+    </li>        
+    <li>
+      <h3><a target="_new" href="http://manuelmeurer.com/">http://manuelmeurer.com/</a></h3>
+      <p>Rails Programmer</p>
+    </li>        
+  </ul>  
 
   <h2>Twitter</h2>
   <div id="tweet">Please Enable your Javascript</div>
@@ -506,6 +570,7 @@ document.write('<script charset="utf-8" type="text/javascript" src="http://disqu
 //]]>
 </script>
 
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
 
 </body>
 </html>

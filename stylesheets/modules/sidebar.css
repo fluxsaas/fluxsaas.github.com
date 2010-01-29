@@ -95,37 +95,37 @@ table.gsc-search-box td.gsc-input {
 /* ------------------------------------ */
 /* ------>>> RECENT PROJECTS <<<------- */
 /* ------------------------------------ */
-#side ul.featured-projects li{
+#side ul.links li{
   padding: 10px 0;
 }
 
-#side ul.featured-projects li h3{
+#side ul.links li h3{
   margin-bottom: 5px;
 }
 
-#side ul.featured-projects li a{
+#side ul.links li a{
   color: #444;
   text-decoration: none;
 }
 
-#side ul.featured-projects li a:hover{
+#side ul.links li a:hover{
   text-decoration: underline;
 }
 
 
-#side ul.featured-projects li p{
+#side ul.links li p{
   margin-bottom: 0em;
 }
 
-#side ul.featured-projects li a img{
+#side ul.links li a img{
   float: right;
 }
 
-#side ul.featured-projects li p, #side ul.featured-projects li h3{
+#side ul.links li p, #side ul.links li h3{
   margin-left: 0;
 }
 
-#side ul.featured-projects li{
+#side ul.links li{
   clear: left;
 }
 

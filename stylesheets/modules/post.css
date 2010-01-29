@@ -68,3 +68,143 @@ ul.posts.index li h2 a{
 ul.posts.index li h2 a:hover{
   text-decoration: underline;
 }
+
+
+body.readable-blog-post .postmetadata small{
+  display: none;
+}
+
+body.readable-blog-post #wrapper{
+  display: none;
+}
+
+
+/* readabillity */
+.post h1 a.readability {
+  position: relative;
+  bottom: -9px;
+  display: block;
+  background: url(http://www.famfamfam.com/lab/icons/silk/icons/arrow_out.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  text-indent: -9000px;
+  margin-right: 7px;
+  float: right;
+  cursor: pointer;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter: alpha(opacity=50); }
+  h1 a.readability:hover {
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100); }
+
+#readability-underlay {
+  z-index: 90000;
+  width: 100%;
+  position: absolute;
+  left: 0em;
+  top: 0em;
+  background-color: #fff;
+  padding-top: 20px; }
+  #readability-underlay .readTools {
+    height: 150px;
+    left: 10px;
+    position: fixed;
+    top: 10px;
+    width: 34px;
+    z-index: 100; }
+    #readability-underlay .readTools a {
+      display: block;
+      height: 34px;
+      width: 34px;
+      text-indent: -9000px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      opacity: 0.5;
+      -moz-opacity: 0.5;
+      filter: alpha(opacity=50); }
+    #readability-underlay .readTools a:hover {
+      opacity: 1;
+      -moz-opacity: 1;
+      filter: alpha(opacity=100); }
+  #readability-underlay .readability-close {
+    background: url(http://staging.gameone.de/images/icons/read-refresh.png) no-repeat; }
+  #readability-underlay .readability-medium {
+    background: transparent url(http://staging.gameone.de/images/icons/read-a-medium.png) no-repeat scroll 0 0 }
+  #readability-underlay .readability-bigger {
+    background: transparent url(http://staging.gameone.de/images/icons/read-a-plus.png) no-repeat scroll 0 0 }
+  #readability-underlay .readability-smaller {
+    background: url(http://staging.gameone.de/images/icons/read-a-minus.png) no-repeat; }
+
+#readability-overlay {
+  position: relative;
+  z-index: 100;
+  margin: 0 auto;
+  width: 600px;
+  color: #222222;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+  #readability-overlay h1, #readability-overlay blockquote, #readability-overlay h2, #readability-overlay h3, #readability-overlay h4, #readability-overlay strong {
+    color: #222;
+  }
+  #readability-overlay strong{
+    font-weight: bold;
+  }
+  #readability-overlay .postmetadata{
+    background-color: #fff;
+  }
+  #readability-overlay h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    color: #222;
+    line-height: 1.4em;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold; }
+  #readability-overlay .post.single {
+    font-size: 1em;
+    text-align: left;
+    line-height: 1.4em;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    background: #fff;
+    color: #222; }
+    #readability-overlay .post.single a {
+      color: blue;
+      text-decoration: underline; }
+    #readability-overlay .post.single p {
+      line-height: 1.4em; }
+  #readability-overlay .post_meta, #readability-overlay #comments, #readability-overlay .pagination, #readability-overlay .comments, #readability-overlay #respond, #readability-overlay .gallery, #readability-overlay a.readability {
+    display: none; }
+
+#readability-overlay.big {
+  font-size: 26px; }
+
+#readability-overlay.medium {
+  font-size: 18px; }
+
+#readability-overlay.small {
+  font-size: 12px; }
+
+.postmetadata{
+  padding: 10px;
+  -moz-border-radius: 6px;
+  -webkit-border: 6px;
+  background-color:#ddd;
+}
+
+.postmetadata .addthis_toolbox{
+  display: block;
+}
+
+.postmetadata .addthis_toolbox a img{
+  display: inline;
+  border: none;
+  float: left;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.postmetadata .addthis_toolbox span.spezial{
+  float: right;
+}

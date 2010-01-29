@@ -53,16 +53,36 @@ h2. Basic HTTP requests from Flex to Rails
 Call the Fuction <code>listCompositions()</code>.
 
 <pre class="brush: as3;">
-  import mx.rpc.events.ResultEvent;
-	
-	public function listCompositions():void{				
-		svcCompositionsList.send();
-	}
-	
-	private function handleCompositionsListResult(event:ResultEvent):void{
-		debug( event.result.toString() );				
-		var resultXML:XML = XML(event.result);
-	}
+  private function handleShiftChanged(event:*):void{
+    svcShiftsUpdate.url = 	"/schedules/" + scheduleId + "/shifts/" + event.shift.shiftId + '.xml' + 
+    '?authenticity_token='+authenticityToken + 
+    '&_method=PUT';
+
+    var xmlParams:XML = XML('<shift>'+
+      '<starts_at></starts_at>' +
+      '<ends_at></ends_at>' +
+      '<category_id>1</category_id>'+
+      '</shift>');
+
+    svcShiftsUpdate.method = 'POST';
+    svcShiftsUpdate.headers = {X_HTTP_METHOD_OVERRIDE: 'PUT'};										
+
+    svcShiftsUpdate.send(xmlParams);
+    ShiftSequencer.reDrawShifts();	
+  }			
+
+private function handleShiftCreated(event:ShiftControllerEvent):void {
+svcShiftsCreate.url = "/schedules/" + scheduleId + "/shifts.xml?authenticity_token="+authenticityToken;
+
+var xmlParams:XML = XML('<shift>'+
+'<starts_at>'+DateHelper.minutesToRubyDate(event.shift.startTime, event.shift.cwday, this.scheduleBop)+'</starts_at>' +
+'<ends_at>'+DateHelper.minutesToRubyDate(event.shift.endTime, event.shift.cwday, this.scheduleBop)+'</ends_at>' +
+'<category_id>'+1+'</category_id>'+
+'</shift>');
+
+svcShiftsCreate.send(xmlParams);
+ShiftSequencer.reDrawShifts();
+}
 </pre>
 
 <pre class="brush: xml;">
@@ -71,14 +91,6 @@ Call the Fuction <code>listCompositions()</code>.
       resultFormat="e4x" 
       result="handleCompositionsListResult(event)" />
 
-  <mx:XMLListCollection id="collectionsXLC" 
-    source="{ XMLList( svcCompositionsList.lastResult.children() ) }" />
-
-  <mx:DataGrid width="100%" dataProvider="{collectionsXLC}" >
-      <mx:columns>
-          <mx:DataGridColumn dataField="name" headerText="Name"/>
-      </mx:columns>
-  </mx:DataGrid>
 </pre>
 
 
@@ -213,8 +225,6 @@ Reference: "Passing a reference to the calling component":http://www.adobe.com/l
 
 h2. Using the Repeater component to display elements from XML object.
 
-
-
 <pre class="brush: xml;">
   <?xml version="1.0" encoding="utf-8"?>
   <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" >
@@ -311,7 +321,7 @@ The CustomImageLoader extends the Loader and accepts an image as XML.
 
 *CustomImageLoader.as*
 
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   package com.too_many_colours.loader{
   	import flash.display.Loader;
 
@@ -327,7 +337,7 @@ The CustomImageLoader extends the Loader and accepts an image as XML.
 
 Now you can simply use the CustomImageLoader as followed:
 
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   var loader: CustomImageLoader = new CustomImageLoader(image);
   loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
   loader.image = "some xml data";
@@ -337,7 +347,7 @@ Now you can simply use the CustomImageLoader as followed:
 
 And access the additional Parameters in the <code>handleImageLoaded</code> function:
 
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   private function handleImageLoaded(event:Event):void {
     // access the additional parameter:
   	var image:XML = (event.target.loader as CustomImageLoader).image;
@@ -412,7 +422,7 @@ h2. Simple draw example in flex
 Important to note that you have to create an <code>UIComponent</code> and add the Shape to it. Than you
 can add it to the stage...
 
-<pre class="brush: as;">
+<pre class="brush: actionscript3;">
   var materialColor:Shape = new Shape();				
   var uiComponent:UIComponent = new UIComponent();
 

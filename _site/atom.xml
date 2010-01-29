@@ -4,13 +4,246 @@
  <title>Kalle Saas</title>
  <link href="http://kallesaas.com/atom.xml" rel="self"/>
  <link href="http://kallesaas.com/"/>
- <updated>2009-09-24T10:40:45+02:00</updated>
+ <updated>2010-01-29T12:59:22+01:00</updated>
  <id>http://kallesaas.com/</id>
  <author>
    <name>Kalle Saas</name>
    <email>kalle@dynamicdudes.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Use the Firefox Profile Manager to install Multiple Firefox Versions.</title>
+   <link href="http://kallesaas.com/2009/11/25/Sass-textmate-bundle.html"/>
+   <updated>2009-11-25T00:00:00+01:00</updated>
+   <id>http://kallesaas.com/2009/11/25/Sass-textmate-bundle</id>
+   <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;29 &lt;span class=&quot;caps&quot;&gt;JANUAR&lt;/span&gt; 2010&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;/2009/11/25/Sass-textmate-bundle.html&quot;&gt;Use the Firefox Profile Manager to install Multiple Firefox Versions.&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;For my recent project i needed to install an old Firefox version. To prevent Firefox to overwrite my exitsting profile, i found an solution to manage multiple profiles for different Firefox installations:&lt;/p&gt;
+&lt;p&gt;You can manage you profiles with this command: (Mac OS X)&lt;/p&gt;
+&lt;pre class=&quot;brush: ruby;&quot;&gt;
+  /Applications/firefox.app/Contents/MacOS/firefox-bin -P
+  Or
+  /Applications/firefox.app/Contents/MacOS/firefox -P
+&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;/images/cms/firefox-profile.png&quot; width=&quot;300&quot; alt=&quot;Firefox Profile&quot;&gt;&lt;/p&gt;
+&lt;p&gt;You can download all Firefox versions here: &lt;a href=&quot;http://ftp.mozilla.org/pub/mozilla.org/mozilla.org/firefox/releases/&quot; alt=&quot;firefox versions&quot;&gt;ftp.mozilla.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check this link for more details:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Firefox Profile: &lt;a href=&quot;http://www.firefox-browser.de/wiki/Profilmanager#Mac_OS_X&quot; alt=&quot;firefox profil manager&quot;&gt;german&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;shortcut to launch a specific firefox profile on mac: &lt;a href=&quot;http://weblogs.mozillazine.org/asa/archives/2008/08/shortcut_to_lau.html&quot; alt=&quot;firefox profil manager&quot;&gt;english&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Restful Communication Between Flex And Rails  (GET, POST, PUT)</title>
+   <link href="http://kallesaas.com/2009/11/22/flex-and-rails-communication.html"/>
+   <updated>2009-11-22T00:00:00+01:00</updated>
+   <id>http://kallesaas.com/2009/11/22/flex-and-rails-communication</id>
+   <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;22 &lt;span class=&quot;caps&quot;&gt;NOVEMBER&lt;/span&gt; 2009&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;/2009/11/22/flex-and-rails-communication.html&quot;&gt;Restful Communication Between Flex And Rails  (&lt;span class=&quot;caps&quot;&gt;GET&lt;/span&gt;, &lt;span class=&quot;caps&quot;&gt;POST&lt;/span&gt;, &lt;span class=&quot;caps&quot;&gt;PUT&lt;/span&gt;)&lt;/a&gt;&lt;/h1&gt;
+&lt;h3&gt;Some working examples of HTTPService Requests:&lt;/h3&gt;
+&lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;GET&lt;/span&gt; Request&lt;/h4&gt;
+&lt;pre class=&quot;brush: as3;&quot;&gt;  
+  // HTTPService GET Request
+  private function getShiftList():void{
+    svcShiftsIndex.url = &quot;/schedules/&quot;+scheduleId+&quot;/shifts.xml&quot;;
+    svcShiftsIndex.send();
+  }
+&lt;/pre&gt;
+
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;mx:HTTPService id=&quot;svcShiftsIndex&quot;
+      resultFormat=&quot;e4x&quot;
+      method=&quot;GET&quot;
+      fault=&quot;handleShiftsIndexFaultResult(event)&quot;
+      result=&quot;handleShiftsIndexResult(event)&quot; 
+    /&amp;gt;  
+&lt;/pre&gt;
+&lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;PUT&lt;/span&gt; Request&lt;/h4&gt;
+&lt;p&gt;Make sure to pass the &lt;code&gt;authenticity_token&lt;/code&gt; in the url to keep a valid xml structure.&lt;/p&gt;
+&lt;pre class=&quot;brush: as3;&quot;&gt;    
+// HTTPService PUT Request
+private function handleShiftChanged(event:*):void{
+  svcShiftsUpdate.url = &quot;/schedules/&quot; + scheduleId + 
+                        &quot;/shifts/&quot; + event.shift.shiftId + '.xml' + 
+                        '?authenticity_token='+authenticityToken;
+
+  var params:XML = XML(
+    '&amp;lt;shift&amp;gt;'+
+      '&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;'+
+    '&amp;lt;/shift&amp;gt;'
+  );
+
+  svcShiftsUpdate.method  = 'POST';
+  
+  // IMPORTANT TO CONNECT TO THE PUT ACTION IN RAILS
+  svcShiftsUpdate.headers = {
+    X_HTTP_METHOD_OVERRIDE: 'PUT'
+  };
+
+  svcShiftsUpdate.send(params);
+}     
+&lt;/pre&gt;
+
+&lt;pre class=&quot;brush: xml;&quot;&gt;  
+  &amp;lt;mx:HTTPService id=&quot;svcShiftsCreate&quot;
+      contentType=&quot;application/xml&quot;
+      resultFormat=&quot;e4x&quot;
+      method=&quot;POST&quot;
+      fault=&quot;handleShiftsCreateFaultResult(event)&quot;
+      result=&quot;handleShiftsCreateResult(event)&quot; 
+    /&amp;gt;  
+&lt;/pre&gt;
+&lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;POST&lt;/span&gt; Request&lt;/h4&gt;
+&lt;p&gt;Make sure to pass the authenticity_token in the url to keep a valid xml structure.&lt;/p&gt;
+&lt;pre class=&quot;brush: as3;&quot;&gt;    
+  // HTTPService POST Request
+  private function handleShiftCreated(event:ShiftControllerEvent):void {
+    svcShiftsCreate.url = &quot;/schedules/&quot; + scheduleId + 
+                          &quot;/shifts.xml?authenticity_token=&quot;+authenticityToken;
+
+    var xmlParams:XML = XML(
+      '&amp;lt;shift&amp;gt;'+
+        '&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;'+
+      '&amp;lt;/shift&amp;gt;'
+    );
+
+    svcShiftsCreate.send(xmlParams);
+    ShiftSequencer.reDrawShifts();
+  }  
+&lt;/pre&gt;
+
+&lt;pre class=&quot;brush: xml;&quot;&gt;
+  &amp;lt;mx:HTTPService id=&quot;svcShiftsUpdate&quot;
+      contentType=&quot;application/xml&quot;  
+      resultFormat=&quot;e4x&quot;
+      result=&quot;handleShiftsUpdateResult(event)&quot;
+      fault=&quot;handleShiftsUpdateFaultResult(event)&quot;
+    /&amp;gt;    
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Ressources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://blog.dt.org/index.php/tag/flex/&quot;&gt;blog.dt.org&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://tinyurl.com/yde2k8z&quot;&gt;Adobe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;li&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>How to do localization with Javascript</title>
+   <link href="http://kallesaas.com/2009/09/29/javascript-localization.html"/>
+   <updated>2009-09-29T00:00:00+02:00</updated>
+   <id>http://kallesaas.com/2009/09/29/javascript-localization</id>
+   <content type="html">
+&lt;p class=&quot;time-stamp&quot;&gt;29 SEPTEMBER 2009&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;/2009/09/29/javascript-localization.html&quot;&gt;How to do localization with Javascript&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;
+  During AJAX requests or when toggling the state of interface elements, JavaScript may be used to display messages to the User.
+  The translate function provides an easy way to translate these messages.
+&lt;/p&gt; 
+
+&lt;h3&gt;How To Use&lt;/h3&gt;
+&lt;p&gt;Any JavaScript code that needed to use a string would reference the LOCALIZATION object rather then embedding a string:&lt;/p&gt;
+&lt;p&gt;You can pass a string with an &lt;strong&gt;&quot;%s&quot;&lt;/strong&gt; inside which can be used for string substitution.&lt;/p&gt;
+
+&lt;pre class=&quot;brush: js;&quot;&gt;
+  LOCALIZATION.WARNING: 'Achtung vor dem %s, er ist gefährlich !'
+&lt;/pre&gt;
+
+&lt;pre class=&quot;brush: js;&quot;&gt;
+  alert(translate(LOCALIZATION.WARNING, &quot;Zauberer&quot;));
+&lt;/pre&gt;
+
+
+&lt;h3&gt;The &lt;code&gt;localization.[de|en|fr|...].js&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;
+  If you use the LOCALIZATION Object throughout your code, you need only to change the Strings in the
+  localization file.
+&lt;/p&gt;
+
+&lt;p&gt;The german localization file could look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;localization.de.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre class=&quot;brush: js;&quot;&gt;
+  // Example
+  var LOCALIZATION = {
+    LANGUAGE: 'GERMAN',
+    WARNING: 'Achtung vor dem %s, er ist gefährlich !',
+    LOADING: 'Bitte warten, Daten werden geladen',
+    WELCOME: 'Hallo %s, wie geht\'s dir ?'
+  };
+&lt;/pre&gt;
+
+&lt;p&gt;Make sure that this file is loaded before any other file, which uses the localization.&lt;/p&gt;
+  
+&lt;h3&gt;&lt;code&gt;translate.js&lt;/code&gt;&lt;/h3&gt;
+&lt;pre class=&quot;brush: js;&quot;&gt;                
+  (function () {
+    if (!window.translate) {
+      /** 
+       * this global function is for string substitution
+       * @property {string} string to translate.
+       * @property {string} as much 
+       * return STRING
+       */         
+      window.translate = function(){
+        var html = [ ];
+        var arguments = arguments;
+        var string = arguments[0];
+
+        var objIndex = 0;
+        var reg = /%s/;
+        var parts = [ ];
+
+        /** 
+         * analyze the string, extract the parts with the %s identifier.
+         */               
+        for ( var m = reg.exec(string); m; m = reg.exec(string) ) {  
+          // m[0][0] gives undefined in IE
+          parts.push(string.substr(0, m[0][0] === &quot;%&quot; ? m.index : m.index));
+          parts.push(&quot;%s&quot;);
+          string = string.substr( m.index+m[0].length );
+        }
+        parts.push(string);
+
+        /** 
+         * analyze the parts, replace the %s with the given arguments. 
+         * beware of undefined!
+         */               
+        for (var i = 0; i &lt; parts.length; ++i){
+            var part = parts[i];
+            if (part &amp;&amp; part == &quot;%s&quot;){
+              var object = arguments[++objIndex];
+              if (object == undefined) {
+                html.push(&quot;%s&quot;);
+              }else{
+                html.push(object);
+              };
+            }else{
+              html.push(part);
+            }            
+        }
+
+        /** 
+         * Join the array and return as string.
+         */
+        return html.join('');
+      }
+    };
+  })();
+&lt;/pre&gt;
+
+&lt;p&gt;
+  You can find a test page &lt;a target=&quot;_new&quot; href=&quot;/examples/translate/&quot;&gt;here&lt;/a&gt; and the translate.js file &lt;a target=&quot;_new&quot; href=&quot;/code/translate.js&quot;&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+  The code is inspired by the firebug function and the PHP printf function.
+&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Subdomains or Subfolders which are Better for Blogging (SEO) ?</title>
@@ -179,16 +412,36 @@ This post is work in progress.
 &lt;h2&gt;Basic &lt;span class=&quot;caps&quot;&gt;HTTP&lt;/span&gt; requests from Flex to Rails&lt;/h2&gt;
 &lt;p&gt;Call the Fuction &lt;code&gt;listCompositions()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&quot;brush: as3;&quot;&gt;
-  import mx.rpc.events.ResultEvent;
-	
-	public function listCompositions():void{				
-		svcCompositionsList.send();
-	}
-	
-	private function handleCompositionsListResult(event:ResultEvent):void{
-		debug( event.result.toString() );				
-		var resultXML:XML = XML(event.result);
-	}
+  private function handleShiftChanged(event:*):void{
+    svcShiftsUpdate.url = 	&quot;/schedules/&quot; + scheduleId + &quot;/shifts/&quot; + event.shift.shiftId + '.xml' + 
+    '?authenticity_token='+authenticityToken + 
+    '&amp;amp;_method=PUT';
+
+    var xmlParams:XML = XML('&amp;lt;shift&amp;gt;'+
+      '&amp;lt;starts_at&amp;gt;&amp;lt;/starts_at&amp;gt;' +
+      '&amp;lt;ends_at&amp;gt;&amp;lt;/ends_at&amp;gt;' +
+      '&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;'+
+      '&amp;lt;/shift&amp;gt;');
+
+    svcShiftsUpdate.method = 'POST';
+    svcShiftsUpdate.headers = {X_HTTP_METHOD_OVERRIDE: 'PUT'};										
+
+    svcShiftsUpdate.send(xmlParams);
+    ShiftSequencer.reDrawShifts();	
+  }			
+
+private function handleShiftCreated(event:ShiftControllerEvent):void {
+svcShiftsCreate.url = &quot;/schedules/&quot; + scheduleId + &quot;/shifts.xml?authenticity_token=&quot;+authenticityToken;
+
+var xmlParams:XML = XML('&amp;lt;shift&amp;gt;'+
+'&amp;lt;starts_at&amp;gt;'+DateHelper.minutesToRubyDate(event.shift.startTime, event.shift.cwday, this.scheduleBop)+'&amp;lt;/starts_at&amp;gt;' +
+'&amp;lt;ends_at&amp;gt;'+DateHelper.minutesToRubyDate(event.shift.endTime, event.shift.cwday, this.scheduleBop)+'&amp;lt;/ends_at&amp;gt;' +
+'&amp;lt;category_id&amp;gt;'+1+'&amp;lt;/category_id&amp;gt;'+
+'&amp;lt;/shift&amp;gt;');
+
+svcShiftsCreate.send(xmlParams);
+ShiftSequencer.reDrawShifts();
+}
 &lt;/pre&gt;
 
 &lt;pre class=&quot;brush: xml;&quot;&gt;
@@ -197,14 +450,6 @@ This post is work in progress.
       resultFormat=&quot;e4x&quot; 
       result=&quot;handleCompositionsListResult(event)&quot; /&amp;gt;
 
-  &amp;lt;mx:XMLListCollection id=&quot;collectionsXLC&quot; 
-    source=&quot;{ XMLList( svcCompositionsList.lastResult.children() ) }&quot; /&amp;gt;
-
-  &amp;lt;mx:DataGrid width=&quot;100%&quot; dataProvider=&quot;{collectionsXLC}&quot; &amp;gt;
-      &amp;lt;mx:columns&amp;gt;
-          &amp;lt;mx:DataGridColumn dataField=&quot;name&quot; headerText=&quot;Name&quot;/&amp;gt;
-      &amp;lt;/mx:columns&amp;gt;
-  &amp;lt;/mx:DataGrid&amp;gt;
 &lt;/pre&gt;
 &lt;h2&gt;Controlling the Cursor&lt;/h2&gt;
 &lt;p&gt;Use the &lt;code&gt;buttonMode&lt;/code&gt; to get an &amp;#8220;Hand&amp;#8221; for the cursor.&lt;/p&gt;
@@ -315,8 +560,6 @@ This post is work in progress.
 &lt;/pre&gt;
 &lt;p&gt;Reference: &lt;a href=&quot;http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html&quot;&gt;Passing a reference to the calling component&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Using the Repeater component to display elements from &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; object.&lt;/h2&gt;
-
-
 &lt;pre class=&quot;brush: xml;&quot;&gt;
   &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
   &amp;lt;mx:TitleWindow xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; &amp;gt;
@@ -398,7 +641,7 @@ This post is work in progress.
 &lt;p&gt;&lt;strong&gt;Long Headline but short solution:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The CustomImageLoader extends the Loader and accepts an image as &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CustomImageLoader.as&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&quot;brush: as;&quot;&gt;
+&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
   package com.too_many_colours.loader{
   	import flash.display.Loader;
 
@@ -412,14 +655,14 @@ This post is work in progress.
   }
 &lt;/pre&gt;
 &lt;p&gt;Now you can simply use the CustomImageLoader as followed:&lt;/p&gt;
-&lt;pre class=&quot;brush: as;&quot;&gt;
+&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
   var loader: CustomImageLoader = new CustomImageLoader(image);
   loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
   loader.image = &quot;some xml data&quot;;
   loader.contentLoaderInfo.addEventListener(Event.COMPLETE, pngOnLoaded);
 &lt;/pre&gt;
 &lt;p&gt;And access the additional Parameters in the &lt;code&gt;handleImageLoaded&lt;/code&gt; function:&lt;/p&gt;
-&lt;pre class=&quot;brush: as;&quot;&gt;
+&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
   private function handleImageLoaded(event:Event):void {
     // access the additional parameter:
   	var image:XML = (event.target.loader as CustomImageLoader).image;
@@ -477,7 +720,7 @@ ie:function btnOver(evt:MouseEvent):void{&lt;br /&gt;
 &lt;h2&gt;Simple draw example in flex&lt;/h2&gt;
 &lt;p&gt;Important to note that you have to create an &lt;code&gt;UIComponent&lt;/code&gt; and add the Shape to it. Than you&lt;br /&gt;
 can add it to the stage&amp;#8230;&lt;/p&gt;
-&lt;pre class=&quot;brush: as;&quot;&gt;
+&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
   var materialColor:Shape = new Shape();				
   var uiComponent:UIComponent = new UIComponent();
 
@@ -528,262 +771,6 @@ var hittest = elementImage.mask.hitTestPoint(event.localX, event.localX, false);
 new DebugMessage(hittest.toString());					&lt;br /&gt;
 });&lt;br /&gt;
 elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Google Gears Experiment</title>
-   <link href="http://kallesaas.com/2009/08/14/google-gears-experiment.html"/>
-   <updated>2009-08-14T00:00:00+02:00</updated>
-   <id>http://kallesaas.com/2009/08/14/google-gears-experiment</id>
-   <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;14 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
-&lt;h1&gt;&lt;a href=&quot;/2009/08/14/google-gears-experiment.html&quot;&gt;Google Gears Experiment&lt;/a&gt;&lt;/h1&gt;
-&lt;h2&gt;The Result can be found &lt;em&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/&quot;&gt;here&lt;/a&gt;&lt;/em&gt;.&lt;/h2&gt;
-&lt;p&gt;You need to install &lt;a href=&quot;http://gears.google.com/&quot;&gt;Google-Gears&lt;/a&gt;. to use this software.&lt;/p&gt;
-&lt;h2&gt;The Setup&lt;/h2&gt;
-&lt;h3&gt;File Structure:&lt;/h3&gt;
-&lt;ul class=&quot;folders&quot;&gt;
-&lt;li&gt;
-&lt;a href=&quot;http://kallesaas.com/google-gears/&quot; &gt;google-gears&lt;/a&gt;
-
-&lt;ul class=&quot;files&quot;&gt;
-      &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/index.html.txt&quot; &gt;index.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ul class=&quot;folders&quot;&gt;
-&lt;li&gt;
-&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets&quot; &gt;stylesheets&lt;/a&gt;
-&lt;ul class=&quot;files&quot;&gt;
-          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/stylesheets/default.css&quot;&gt;default.css&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ul class=&quot;folders&quot;&gt;
-&lt;li&gt;
-&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts&quot; &gt;javascripts&lt;/a&gt;
-&lt;ul class=&quot;files&quot;&gt;
-          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/application.js&quot;&gt;application.js&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/gears_init.js&quot;&gt;gears_init.js&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js&quot;&gt;vocabulary_creator.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;The Code&lt;/h2&gt;
-&lt;h3&gt;&lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;&lt;/h3&gt;
-&lt;p&gt;You can find the full code of the &lt;code&gt;index.html&lt;/code&gt; file &lt;a href=&quot;http://kallesaas.com/google-gears/index.html.txt&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Important the correct javascript files:&lt;/p&gt;
-&lt;pre class=&quot;brush: html;&quot;&gt;
-  ...
-  &amp;lt;head&amp;gt;
-      &amp;lt;script src=&quot;http://www.google.com/jsapi&quot;&amp;gt;&amp;lt;/script&amp;gt;
-
-      &amp;lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&amp;gt;
-        google.load(&quot;jquery&quot;, &quot;1&quot;);
-      &amp;lt;/script&amp;gt;
-
-      &amp;lt;script src=&quot;javascripts/gears_init.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&amp;gt;&amp;lt;/script&amp;gt;
-      &amp;lt;script src=&quot;javascripts/vocabulary_creator.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&amp;gt;&amp;lt;/script&amp;gt;
-      &amp;lt;script src=&quot;javascripts/application.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&amp;gt;&amp;lt;/script&amp;gt;
-      ...
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;
-    ...
-&lt;/pre&gt;
-&lt;p&gt;I&amp;#8217;m using the &lt;a href=&quot;http://code.google.com/intl/de-DE/apis/ajaxlibs/&quot;&gt;Google &lt;span class=&quot;caps&quot;&gt;AJAX&lt;/span&gt; Libraries &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;&lt;/a&gt; to import the JQuery Library.&lt;/p&gt;
-&lt;p&gt;You can download the &lt;code&gt;gears_init.js&lt;/code&gt; &lt;a href=&quot;http://code.google.com/apis/gears/tools.html#gears_init&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Javascript&lt;/h3&gt;
-&lt;p&gt;You can find the Javascript code &lt;a href=&quot;http://kallesaas.com/google-gears/javascripts/vocabulary_creator.js&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Ok, lets get started!&lt;/p&gt;
-&lt;p&gt;First, we create a Namespace and a Singleton that holds our Javascript code:&lt;/p&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  if (!window.GG) {
-    var GG = { };
-  }
-
-  GG.VocabularyCreator = (function () { 
-    return {
-      init: function () {
-      }
-    };
-  })();  
-&lt;/pre&gt;
-&lt;p&gt;Now we can add some functionality.&lt;/p&gt;
-&lt;p&gt;But wait, what do we actually need ?&lt;/p&gt;
-&lt;p&gt;We want to:&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;Add word&amp;#8217;s and theire translation to a list.&lt;/li&gt;
-	&lt;li&gt;Display the List.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Okay, thats sounds not so complicated.&lt;/p&gt;
-&lt;p&gt;Let&amp;#8217;s have a look at the &lt;a href=&quot;http://code.google.com/intl/de-DE/apis/gears/&quot;&gt;&lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;&lt;/a&gt; for the &lt;a href=&quot;http://code.google.com/intl/de-DE/apis/gears/api_database.html&quot;&gt;Database&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The first example shows a bunch of JavaScript code:&lt;/p&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  &amp;lt;script type=&quot;text/javascript&quot; src=&quot;gears_init.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
-  &amp;lt;script type=&quot;text/javascript&quot;&amp;gt;
-  var db = google.gears.factory.create('beta.database');
-  db.open('database-test');
-  db.execute('create table if not exists Test' +
-             ' (Phrase text, Timestamp int)');
-  db.execute('insert into Test values (?, ?)', ['Monkey!', new Date().getTime()]);
-  var rs = db.execute('select * from Test order by Timestamp desc');
-
-  while (rs.isValidRow()) {
-    alert(rs.field(0) + '@' + rs.field(1));
-    rs.next();
-  }
-  rs.close();
-  &amp;lt;/script&amp;gt;
-&lt;/pre&gt;
-&lt;p&gt;With this code we can:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Instantiate the Gears objects: ( see: http://tinyurl.com/nvdhuh )&lt;/strong&gt;&lt;br /&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;&lt;br /&gt;
-  var db = google.gears.factory.create(&amp;#8216;beta.database&amp;#8217;);&lt;br /&gt;
-&lt;/pre&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Open the Database to read and write:&lt;/strong&gt;&lt;br /&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;&lt;br /&gt;
-  db.open(&amp;#8216;database-test&amp;#8217;);&lt;br /&gt;
-&lt;/pre&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Execute &lt;em&gt;SQLite&lt;/em&gt;:&lt;/strong&gt;&lt;br /&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;&lt;br /&gt;
-  // Create a SQLite table:&lt;br /&gt;
-  db.execute(&amp;#8216;create table if not exists Test&amp;#8217; +&lt;br /&gt;
-             &amp;#8217; (Phrase text, Timestamp int)&amp;#8217;);&lt;/p&gt;
-// Insert a value to the table:
-db.execute(&amp;#8216;insert into Test values (?, ?)&amp;#8217;, [&amp;#8216;Monkey!&amp;#8217;, new Date().getTime()]);
-&lt;p&gt;&lt;/pre&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Read the content of the table:&lt;/strong&gt;&lt;br /&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;&lt;br /&gt;
-  // Execute SQLite&lt;br /&gt;
-  var rs = db.execute(&amp;#8216;select * from Test order by Timestamp desc&amp;#8217;);&lt;/p&gt;
-// loop over each row:
-while (rs.isValidRow()) {
-alert(rs.field(0) + &amp;#8216;@&amp;#8217; + rs.field(1));
-rs.next();
-}
-
-// close the database connection:
-rs.close();
-&lt;p&gt;&lt;/pre&gt;&lt;/p&gt;
-&lt;p&gt;That&amp;#8217;s almost all we need for our small app.&lt;/p&gt;
-&lt;p&gt;Let&amp;#8217;s implement those basics in our app.&lt;/p&gt;
-&lt;p&gt;We call the private &lt;code&gt;_initDatabase&lt;/code&gt; function inside the &lt;code&gt;init()&lt;/code&gt; function &lt;br /&gt;
-to setup the Database:&lt;/p&gt;
-&lt;h3&gt;The &lt;code&gt;init()&lt;/code&gt; function.&lt;/h3&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  // init function:
-  return {
-    init: function () {
-      _initDatabase();
-    }
-  };
-&lt;/pre&gt;
-&lt;h3&gt;The &lt;code&gt;_initDatabase()&lt;/code&gt; function.&lt;/h3&gt;
-&lt;p&gt;More explanation can be found within the code:&lt;/p&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;
-    ...
-    
-    // set class variable's:
-    var db;
-    var databaseIsCreated = false;
-    
-    var _initDatabase = function () {
-      
-      // Check if Gears is installed.
-      if (window.google &amp;amp;&amp;amp; google.gears) {
-        try {
-
-          // Instantiate Gears objects.
-          db = google.gears.factory.create('beta.database');
-
-          // check if the Database is available
-          if (db) {
-            
-            // open a database, see: http://tinyurl.com/l8z4gw
-            db.open('Translations');
-            
-            // Create the Table: EnglishGerman.
-            db.execute('create table if not exists EnglishGerman' + 
-                          ' (English varchar(255), German varchar(255), Timestamp int)');
-
-            databaseIsCreated = true;
-
-            // Initialize the UI at startup.
-            _displayTranslations();
-          }
-
-        } catch (ex) {
-          console.log('Could not create database: ' + ex.message);
-        }
-      }
-    };
-    ...
-  })();
-&lt;/pre&gt;
-&lt;p&gt;The structure of the table looks like:&lt;/p&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;td&gt; &lt;span class=&quot;caps&quot;&gt;NAME&lt;/span&gt; &lt;/td&gt;
-		&lt;td&gt; English &lt;/td&gt;
-		&lt;td&gt; German &lt;/td&gt;
-		&lt;td&gt; Timestamp &lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt; &lt;span class=&quot;caps&quot;&gt;TYPE&lt;/span&gt; &lt;/td&gt;
-		&lt;td&gt; varchar(255) &lt;/td&gt;
-		&lt;td&gt; varchar(255) &lt;/td&gt;
-		&lt;td&gt; date &lt;/td&gt;
-&lt;/table&gt;
-&lt;p&gt;Now we have a full featured Gears Database in our hands, Horay!&lt;/p&gt;
-&lt;p&gt;We can continue with adding content to the SQLLite Table. We do this by &lt;br /&gt;
-observing (i use &lt;a href=&quot;http://jquery.com/&quot;&gt;JQuery&lt;/a&gt; ) the &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; Form and add the value&amp;#8217;s of &lt;br /&gt;
-the input field&amp;#8217;s to the database:&lt;/p&gt;
-&lt;h3&gt;The &lt;code&gt;_addObserver()&lt;/code&gt; function.&lt;/h3&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  ...
-  var _addObserver = function () {
-    
-    // Adding the Form Observer
-    $('#addVocabularyForm').submit(function (event) {
-      var $this = $(this);
-
-      // Read the values of the input fields:
-      var german = $this.find('#german').val();
-      var english = $this.find('#english').val();
-      
-      try {
-        // Insert the new item.
-        var res = db.execute('insert into EnglishGerman values (?, ?, ?)', 
-              [english, german, new Date().getTime() ] );
-
-        // if the insertion was successfully, we can also add the entry to the HTML.
-        if (res) {
-          _addVocabularyToHtml(english, german);
-        }
-      } catch (exaption) {
-        console.log('could not insert entry:' + exaption);
-      }
-
-      // Prevent the default action.
-      event.preventDefault();
-    })
-  };
-  ...
-&lt;/pre&gt;
-&lt;p&gt;There is not much more to do. You can have a look at the &lt;code&gt;_addVocabularyToHtml&lt;/code&gt; function:&lt;/p&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  var Translations = function (english, german) {
-    $('#vocabularys tbody').prepend(
-      $('&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;' + english + '&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;' + german + '&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;')
-    )    
-  };
-&lt;/pre&gt;
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;This is a really simple experiment for Gears. There are by far more complex possibility&amp;#8217;s to&lt;br /&gt;
-use Google Gears. The best thing is to read the &lt;a href=&quot;http://code.google.com/apis/gears/design.html&quot;&gt;introduction&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Unfortunately Apple&amp;#8217;s IPhone does not support Gears. (Apple does not allow third party plugins for the safari browser)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Thanks for reading !&lt;/p&gt;</content>
  </entry>
  
  

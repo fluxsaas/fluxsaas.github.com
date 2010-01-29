@@ -16,8 +16,7 @@
     $("#tweet").tweet({
         username: "fluxsaas",
         avatar_size: 32,
-        count: 7,
+        count: 7
     });    
-  };
-
+  }
 })();
