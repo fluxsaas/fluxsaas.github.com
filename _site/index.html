@@ -7,29 +7,18 @@
 	<title>Kalle Saas, Client Side Blog</title>
 	
   <meta content="Kalle Saas" name="author"/>
+  <meta name="description" content=" This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
   
-  <meta name="description" content="This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
+  
+
+  <meta content="Kalle Saas" name="author"/>
   
   <link type="application/atom+xml" title="Kalle Saas Client Site Blog" rel="alternate" href="http://feeds.feedburner.com/kalle-saas"/>
   
-  
-  <script src="/javascripts/shCore.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushAS3.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushCss.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushXml.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushRuby.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushJScript.js" type="text/javascript" charset="utf-8"></script>      
 	<script src="/javascripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/jquery.tweet.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
-	
-	<script type="text/javascript">
-  var addthis_config = {
-       username: "fluxsaas"
-  }
-  </script>
+
   
 	<link rel="stylesheet" href="/stylesheets/default.css" type="text/css" media="screen" charset="utf-8" />
 </head>
@@ -49,42 +38,66 @@
 <ul class="posts index">
   
     <li class="post">
-      <p class="time-stamp">29 Jan 2010</p>
+      <p class="time-stamp">
+        29 Jan 2010 | 
+        <a href="/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions.html">Use the Firefox Profile Manager to install Multiple Firefox Versions.</a></h2>
     </li>
   
     <li class="post">
-      <p class="time-stamp">25 Nov 2009</p>
+      <p class="time-stamp">
+        25 Nov 2009 | 
+        <a href="/2009/11/25/Sass-textmate-bundle.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2009/11/25/Sass-textmate-bundle.html">Sass Textmate Bundle with alternative syntax</a></h2>
     </li>
   
     <li class="post">
-      <p class="time-stamp">22 Nov 2009</p>
+      <p class="time-stamp">
+        22 Nov 2009 | 
+        <a href="/2009/11/22/flex-and-rails-communication.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2009/11/22/flex-and-rails-communication.html">Restful Communication Between Flex And Rails  (GET, POST, PUT)</a></h2>
     </li>
   
     <li class="post">
-      <p class="time-stamp">29 Sep 2009</p>
+      <p class="time-stamp">
+        29 Sep 2009 | 
+        <a href="/2009/09/29/javascript-localization.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2009/09/29/javascript-localization.html">How to do localization with Javascript</a></h2>
     </li>
   
     <li class="post">
-      <p class="time-stamp">24 Sep 2009</p>
+      <p class="time-stamp">
+        24 Sep 2009 | 
+        <a href="/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo.html">Subdomains or Subfolders which are Better for Blogging (SEO) ?</a></h2>
     </li>
   
     <li class="post">
-      <p class="time-stamp">17 Sep 2009</p>
+      <p class="time-stamp">
+        17 Sep 2009 | 
+        <a href="/2009/09/17/rails-asset-host.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2009/09/17/rails-asset-host.html">Keep up with the assets on the production machine - Asset Host in Rails</a></h2>
     </li>
   
     <li class="post">
-      <p class="time-stamp">18 Aug 2009</p>
+      <p class="time-stamp">
+        18 Aug 2009 | 
+        <a href="/2009/08/18/web-fonts.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2009/08/18/web-fonts.html">Web Fonts</a></h2>
     </li>
   
     <li class="post">
-      <p class="time-stamp">17 Aug 2009</p>
+      <p class="time-stamp">
+        17 Aug 2009 | 
+        <a href="/2009/08/17/flex-for-rails-how-to-collection.html#disqus_thread"></a>
+      </p>
       <h2><a href="/2009/08/17/flex-for-rails-how-to-collection.html">Flex for Rails, how to collection</a></h2>
     </li>
   
@@ -159,6 +172,21 @@
 </div>
 
 <script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
@@ -167,23 +195,6 @@ try {
 var pageTracker = _gat._getTracker("UA-3399121-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-
-<script type="text/javascript">
-//<![CDATA[
-(function() {
-var links = document.getElementsByTagName('a');
-var query = '?';
-for(var i = 0; i < links.length; i++) {
-if(links[i].href.indexOf('#disqus_thread') >= 0) {
-query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-}
-}
-document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
-})();
-//]]>
-</script>
-
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
 
 </body>
 </html>

@@ -4,34 +4,42 @@ title: Restful Communication Between Flex And Rails  (GET, POST, PUT)
 ---
 
 <p class="time-stamp">22 NOVEMBER 2009</p>
+<div id="tweetme-iframe">
+  <script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>  
+</div>
 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
 h3. Some working examples of HTTPService Requests:
 
 h4. GET Request
 
-<pre class="brush: as3;">  
+{% highlight actionscript %}
   // HTTPService GET Request
   private function getShiftList():void{
     svcShiftsIndex.url = "/schedules/"+scheduleId+"/shifts.xml";
     svcShiftsIndex.send();
   }
-</pre>
+{% endhighlight %}
 
-<pre class="brush: xml;">
+{% highlight xml %}
+
   <mx:HTTPService id="svcShiftsIndex"
       resultFormat="e4x"
       method="GET"
       fault="handleShiftsIndexFaultResult(event)"
       result="handleShiftsIndexResult(event)" 
     />  
-</pre>
+
+{% endhighlight %}
+
 
 h4. PUT Request
 
 Make sure to pass the <code>authenticity_token</code> in the url to keep a valid xml structure.
 
-<pre class="brush: as3;">    
+{% highlight ActionScript %}
+
 // HTTPService PUT Request
 private function handleShiftChanged(event:*):void{
   svcShiftsUpdate.url = "/schedules/" + scheduleId + 
@@ -53,9 +61,11 @@ private function handleShiftChanged(event:*):void{
 
   svcShiftsUpdate.send(params);
 }     
-</pre>  
 
-<pre class="brush: xml;">  
+{% endhighlight %}
+
+
+{% highlight xml %}
   <mx:HTTPService id="svcShiftsCreate"
       contentType="application/xml"
       resultFormat="e4x"
@@ -63,14 +73,14 @@ private function handleShiftChanged(event:*):void{
       fault="handleShiftsCreateFaultResult(event)"
       result="handleShiftsCreateResult(event)" 
     />  
-</pre>
+{% endhighlight %}
 
 
 h4. POST Request
 
 Make sure to pass the authenticity_token in the url to keep a valid xml structure.
 
-<pre class="brush: as3;">    
+{% highlight actionscript %}
   // HTTPService POST Request
   private function handleShiftCreated(event:ShiftControllerEvent):void {
     svcShiftsCreate.url = "/schedules/" + scheduleId + 
@@ -85,16 +95,16 @@ Make sure to pass the authenticity_token in the url to keep a valid xml structur
     svcShiftsCreate.send(xmlParams);
     ShiftSequencer.reDrawShifts();
   }  
-</pre>
+{% endhighlight %}
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <mx:HTTPService id="svcShiftsUpdate"
       contentType="application/xml"  
       resultFormat="e4x"
       result="handleShiftsUpdateResult(event)"
       fault="handleShiftsUpdateFaultResult(event)"
     />    
-</pre>
+{% endhighlight %}
 
 
 *Ressources:*

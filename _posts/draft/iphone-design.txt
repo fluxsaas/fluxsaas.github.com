@@ -9,7 +9,7 @@ title: How to do localization with Javascript
 <p>
 </p>
 
-<pre class="brush: js;">
+{% highlight javascript %}
 	if (!window.iG1) {
 	    var iG1 = {};
 	}
@@ -28,7 +28,7 @@ title: How to do localization with Javascript
 	$(function() {
 	  iG1.init();
 	});
-</pre>
+{% endhighlight %}
 
 http://developer.apple.com/mac/library/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html
 

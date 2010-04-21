@@ -4,7 +4,18 @@ title: Flex for Rails, how to collection
 ---
 
 <p class="time-stamp">17 AUGUST 2009</p>
-<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+<div id="tweetme-iframe">
+  <script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>  
+</div>
+<div id="tweetme-iframe">
+  <script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>  
+</div>
+
+<h1>
+  <a href="{{ page.url }}">{{ page.title }}</a>
+</h1>
 
 <p class="warning">
   This post is work in progress.
@@ -15,14 +26,14 @@ h2. Fixing the rails <code>to_xml</code> Method.
 
 If you want to access XML Object you want to use the correct *E4X* syntax such <code>rp.currentItem.asset_file_name</code> and not <code>rp.currentItem['asset_file_name']</code>. If you debug your Flex code and trace an XML Object delivered from Rails you will see sth. like this:
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <elements type="array">
     <element>
       <asset-file-name>oberer-streifen-light-blue.png</asset-file-name>
       <id type="integer">1</id>
     </element>
   </elements>  
-</pre>
+{% endhighlight %}
 
 Unfortunately you can not access the <code>asset-file-name</code> with the E4X <code>rp.currentItem.asset-file-name</code> syntax because Flex try's to do a calculation (because of the "-").
 
@@ -34,7 +45,7 @@ h2. Call JavaScript Function within FLex Applications
 A Simple way to call an JavaScript Function is to import the <code>ExternalInterface</code>  ( "liveDoc":http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html ) and call the javaScript function
 
 
-<pre class="brush: as3;">
+{% highlight actionscript %}
   <mx:Script>
     <![CDATA[
       import flash.external.*;
@@ -46,13 +57,13 @@ A Simple way to call an JavaScript Function is to import the <code>ExternalInter
       }
     ]]>
   </mx:Script>
-</pre>
+{% endhighlight %}
 
 h2. Basic HTTP requests from Flex to Rails
 
 Call the Fuction <code>listCompositions()</code>.
 
-<pre class="brush: as3;">
+{% highlight actionscript %}
   private function handleShiftChanged(event:*):void{
     svcShiftsUpdate.url = 	"/schedules/" + scheduleId + "/shifts/" + event.shift.shiftId + '.xml' + 
     '?authenticity_token='+authenticityToken + 
@@ -83,36 +94,36 @@ var xmlParams:XML = XML('<shift>'+
 svcShiftsCreate.send(xmlParams);
 ShiftSequencer.reDrawShifts();
 }
-</pre>
+{% endhighlight %}
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <mx:HTTPService id="svcCompositionsList" 
       url="/editorial/compositions.xml" 
       resultFormat="e4x" 
       result="handleCompositionsListResult(event)" />
 
-</pre>
+{% endhighlight %}
 
 
 h2. Controlling the Cursor
 
 Use the <code>buttonMode</code> to get an "Hand" for the cursor.
 
-<pre class="brush: as3;">
+{% highlight actionscript %}
   private function onMouseOver(event:MouseEvent):void {
   	currentElement.buttonMode = true;
   }
   private function onMouseOut(event:MouseEvent):void {
   	currentElement.buttonMode = false;
   }
-</pre>
+{% endhighlight %}
 
 
 h2. Custom Events with Components
 
 h3. <code>Dialog.mxml</code>
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <?xml version="1.0" encoding="utf-8"?>     
   <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml">
 
@@ -135,12 +146,12 @@ h3. <code>Dialog.mxml</code>
   <mx:Button label="Change Colour" click="changeColour(event)" />
 
   </mx:TitleWindow>
-</pre>
+{% endhighlight %}
 
 
 h3. <code>application.mxml</code>
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <?xml version="1.0" encoding="utf-8"?>
   <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:comp="com.too_many_colours.components.*">
   	<mx:Script>
@@ -166,12 +177,12 @@ h3. <code>application.mxml</code>
   		]]>
   	</mx:Script>
   </mx:Application>
-</pre>
+{% endhighlight %}
 
 
 h3. <code>DialogEvent.as</code>
 
-<pre class="brush: as3;">
+{% highlight actionscript %}
   package com.too_many_colours.events{
   	import flash.events.Event;
 
@@ -183,14 +194,14 @@ h3. <code>DialogEvent.as</code>
   		}
   	}
   }
-</pre>
+{% endhighlight %}
 
 
 h2. Passing a reference to the calling component.
 
 h3. The main MXML Document:
 
-<pre class="brush: as3;">
+{% highlight actionscript %}
   [Bindable]
   public var currentElementId:String;
   
@@ -203,11 +214,11 @@ h3. The main MXML Document:
   	dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
   	dialogWindow.currentElementId = currentElementId; 
   }
-</pre>
+{% endhighlight %}
 
 h3. The <code>dialogWindow</code> Component.
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <?xml version="1.0" encoding="utf-8"?>
   <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" >
     <mx:Script>
@@ -218,14 +229,14 @@ h3. The <code>dialogWindow</code> Component.
     </mx:Script>
     <mx:Label text="{currentElementId}" />
   </mx:TitleWindow>
-</pre>
+{% endhighlight %}
 
 Reference: "Passing a reference to the calling component":http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html
 
 
 h2. Using the Repeater component to display elements from XML object.
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <?xml version="1.0" encoding="utf-8"?>
   <mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" >
     <mx:Script>
@@ -259,7 +270,7 @@ h2. Using the Repeater component to display elements from XML object.
     	</mx:Repeater>
     </mx:VBox>
   </mx:TitleWindow>
-</pre>
+{% endhighlight %}
 
 
 h2. Passing request data with flashVars properties.
@@ -270,7 +281,7 @@ One solution it to pass flashvars within the swfobject creation.
 
 h3. The Javascript
 
-<pre class="brush: js;">
+{% highlight javascript %}
   var flashvars = {
     category: 2,      
   };
@@ -282,11 +293,11 @@ h3. The Javascript
   var height = '400';
 
   swfobject.embedSWF('/flash/design_studio.swf', 'flash_design_studio', width, height, '9.0.0', '/flash/expressInstall.swf', flashvars, params, attributes);    
-</pre>
+{% endhighlight %}
 
 h3. The Flex app:
 
-<pre class="brush: xml;">
+{% highlight xml %}
   <?xml version="1.0" encoding="utf-8"?>
   <mx:Application 
   	xmlns:mx="http://www.adobe.com/2006/mxml"
@@ -302,7 +313,7 @@ h3. The Flex app:
       ]]>
     </mx:Script>
  </mx:Application>
-</pre>
+{% endhighlight %}
 
 *Thats it!*
 
@@ -321,7 +332,7 @@ The CustomImageLoader extends the Loader and accepts an image as XML.
 
 *CustomImageLoader.as*
 
-<pre class="brush: actionscript3;">
+{% highlight actionscript %}
   package com.too_many_colours.loader{
   	import flash.display.Loader;
 
@@ -333,21 +344,21 @@ The CustomImageLoader extends the Loader and accepts an image as XML.
   	    }
   	}
   }
-</pre>
+{% endhighlight %}
 
 Now you can simply use the CustomImageLoader as followed:
 
-<pre class="brush: actionscript3;">
+{% highlight actionscript %}
   var loader: CustomImageLoader = new CustomImageLoader(image);
   loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
   loader.image = "some xml data";
   loader.contentLoaderInfo.addEventListener(Event.COMPLETE, pngOnLoaded);
-</pre>
+{% endhighlight %}
 
 
 And access the additional Parameters in the <code>handleImageLoaded</code> function:
 
-<pre class="brush: actionscript3;">
+{% highlight actionscript %}
   private function handleImageLoaded(event:Event):void {
     // access the additional parameter:
   	var image:XML = (event.target.loader as CustomImageLoader).image;
@@ -358,7 +369,7 @@ And access the additional Parameters in the <code>handleImageLoaded</code> funct
   	// access the usual content
   	element.source = event.currentTarget.content				
   }
-</pre>
+{% endhighlight %}
 
 
 h3. Ressources
@@ -422,7 +433,7 @@ h2. Simple draw example in flex
 Important to note that you have to create an <code>UIComponent</code> and add the Shape to it. Than you
 can add it to the stage...
 
-<pre class="brush: actionscript3;">
+{% highlight actionscript %}
   var materialColor:Shape = new Shape();				
   var uiComponent:UIComponent = new UIComponent();
 
@@ -432,7 +443,7 @@ can add it to the stage...
   materialColor.graphics.endFill();
   uiComponent.addChild(materialColor); 
   testatelier.addChild(uiComponent);
-</pre>
+{% endhighlight %}
 
 
 h2. Complex Masking in flex

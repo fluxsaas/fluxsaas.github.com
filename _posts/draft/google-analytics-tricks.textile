@@ -9,7 +9,7 @@ title: Google Analytics Tricks.
 
 from "Ian Pitts":http://iso-100.com/blog/post/updated-script-for-tracking-outbound-links-in-google-analytics-with-jquery/
 
-<pre class="brush: js;">
+{% highlight javascript %}
   $('#content a:not(.popupwindow)').filter(function() {
   	var theHref = this;
   	if (theHref.hostname && theHref.hostname !== location.hostname) {
@@ -27,7 +27,7 @@ from "Ian Pitts":http://iso-100.com/blog/post/updated-script-for-tracking-outbou
   		});
   	};
   });  
-</pre>
+{% endhighlight %}
 
 more:
 http://www.geekology.co.za/blog/2009/08/speeding-up-google-analytics-load-times-with-jquery-plugin/

@@ -4,6 +4,10 @@ title: How to do localization with Javascript
 ---
 
 <p class="time-stamp">29 SEPTEMBER 2009</p>
+<div id="tweetme-iframe">
+  <script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>  
+</div>
 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
 <p>
@@ -15,13 +19,13 @@ title: How to do localization with Javascript
 <p>Any JavaScript code that needed to use a string would reference the LOCALIZATION object rather then embedding a string:</p>
 <p>You can pass a string with an <strong>"%s"</strong> inside which can be used for string substitution.</p>
 
-<pre class="brush: js;">
+{% highlight javascript %}
   LOCALIZATION.WARNING: 'Achtung vor dem %s, er ist gefährlich !'
-</pre>
+{% endhighlight %}
 
-<pre class="brush: js;">
+{% highlight javascript %}
   alert(translate(LOCALIZATION.WARNING, "Zauberer"));
-</pre>
+{% endhighlight %}
 
 
 <h3>The <code>localization.[de|en|fr|...].js</code></h3>
@@ -35,7 +39,7 @@ title: How to do localization with Javascript
 
 <p><code>localization.de.js</code></p>
 
-<pre class="brush: js;">
+{% highlight javascript %}
   // Example
   var LOCALIZATION = {
     LANGUAGE: 'GERMAN',
@@ -43,12 +47,12 @@ title: How to do localization with Javascript
     LOADING: 'Bitte warten, Daten werden geladen',
     WELCOME: 'Hallo %s, wie geht\'s dir ?'
   };
-</pre>
+{% endhighlight %}
 
 <p>Make sure that this file is loaded before any other file, which uses the localization.</p>
   
 <h3><code>translate.js</code></h3>
-<pre class="brush: js;">                
+{% highlight javascript %}                
   (function () {
     if (!window.translate) {
       /** 
@@ -102,7 +106,7 @@ title: How to do localization with Javascript
       }
     };
   })();
-</pre>
+{% endhighlight %}
 
 <p>
   You can find a test page <a target="_new" href="/examples/translate/">here</a> and the translate.js file <a target="_new" href="/code/translate.js">here</a>.

@@ -4,7 +4,7 @@
  <title>Kalle Saas</title>
  <link href="http://kallesaas.com/atom.xml" rel="self"/>
  <link href="http://kallesaas.com/"/>
- <updated>2010-04-13T15:40:25+02:00</updated>
+ <updated>2010-04-21T18:36:07+02:00</updated>
  <id>http://kallesaas.com/</id>
  <author>
    <name>Kalle Saas</name>
@@ -18,15 +18,18 @@
    <updated>2010-01-29T00:00:00+01:00</updated>
    <id>http://kallesaas.com/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;29 &lt;span class=&quot;caps&quot;&gt;JANUAR&lt;/span&gt; 2010&lt;/p&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
 &lt;h1&gt;&lt;a href=&quot;/2010/01/29/use-the-firefox-profile-manager-to-install-multiple-firefox-versions.html&quot;&gt;Use the Firefox Profile Manager to install Multiple Firefox Versions.&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;For my recent project i needed to install an old Firefox version. To prevent Firefox to overwrite my exitsting profile, i found an solution to manage multiple profiles for different Firefox installations:&lt;/p&gt;
 &lt;p&gt;You can manage you profiles with this command: (Mac OS X)&lt;/p&gt;
-&lt;pre class=&quot;brush: ruby;&quot;&gt;
-  /Applications/firefox.app/Contents/MacOS/firefox-bin -P
-  Or
-  /Applications/firefox.app/Contents/MacOS/firefox -P
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;sr&quot;&gt;/Applications/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firefox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Contents&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;MacOS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firefox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;Or&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;sr&quot;&gt;  /Applications/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firefox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Contents&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;MacOS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;/images/cms/firefox-profile.png&quot; width=&quot;300&quot; alt=&quot;Firefox Profile&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&quot;/images/cms/firefox-profile.png&quot; width=&quot;300&quot; alt=&quot;Firefox Profile&quot;&gt;&lt;/p&gt;
 &lt;p&gt;You can download all Firefox versions here: &lt;a href=&quot;http://ftp.mozilla.org/pub/mozilla.org/mozilla.org/firefox/releases/&quot; alt=&quot;firefox versions&quot;&gt;ftp.mozilla.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Check this link for more details:&lt;/p&gt;
 &lt;ul&gt;
@@ -41,20 +44,23 @@
    <updated>2009-11-25T00:00:00+01:00</updated>
    <id>http://kallesaas.com/2009/11/25/Sass-textmate-bundle</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;25 &lt;span class=&quot;caps&quot;&gt;NOVEMBE&lt;/span&gt; 2009&lt;/p&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/11/25/Sass-textmate-bundle.html&quot;&gt;Sass Textmate Bundle with alternative syntax&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;If you prefer the alternative Sass syntax:&lt;/p&gt;
-&lt;pre class=&quot;brush: css;&quot;&gt;
-  .comments    
-    .pagination
-      margin: 10px 0 10px 0
-      text-align: center
-      font-size: 14px
-      span
-        color: #fff
-        margin: 0 1px 0 1px
-        padding: 4px 6px 2px  
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nc&quot;&gt;.comments&lt;/span&gt;    
+    &lt;span class=&quot;nc&quot;&gt;.pagination&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;center&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;14px&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#fff&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1px&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;4px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;6px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;2px&lt;/span&gt;  
 &lt;/pre&gt;
-&lt;p&gt;then you should check out my small Textmate Bundle on &lt;a href=&quot;http://github.com/fluxsaas/sass-textmate-bundle&quot; alt=&quot;Sass Textmate Bundle&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;</content>
+&lt;/div&gt;&lt;p&gt;then you should check out my small Textmate Bundle on &lt;a href=&quot;http://github.com/fluxsaas/sass-textmate-bundle&quot; alt=&quot;Sass Textmate Bundle&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -63,88 +69,64 @@
    <updated>2009-11-22T00:00:00+01:00</updated>
    <id>http://kallesaas.com/2009/11/22/flex-and-rails-communication</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;22 &lt;span class=&quot;caps&quot;&gt;NOVEMBER&lt;/span&gt; 2009&lt;/p&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/11/22/flex-and-rails-communication.html&quot;&gt;Restful Communication Between Flex And Rails  (&lt;span class=&quot;caps&quot;&gt;GET&lt;/span&gt;, &lt;span class=&quot;caps&quot;&gt;POST&lt;/span&gt;, &lt;span class=&quot;caps&quot;&gt;PUT&lt;/span&gt;)&lt;/a&gt;&lt;/h1&gt;
 &lt;h3&gt;Some working examples of HTTPService Requests:&lt;/h3&gt;
 &lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;GET&lt;/span&gt; Request&lt;/h4&gt;
-&lt;pre class=&quot;brush: as3;&quot;&gt;  
-  // HTTPService GET Request
-  private function getShiftList():void{
-    svcShiftsIndex.url = &quot;/schedules/&quot;+scheduleId+&quot;/shifts.xml&quot;;
-    svcShiftsIndex.send();
-  }
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;c1&quot;&gt;// HTTPService GET Request&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getShiftList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/schedules/&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scheduleId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/shifts.xml&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;mx:HTTPService id=&quot;svcShiftsIndex&quot;
-      resultFormat=&quot;e4x&quot;
-      method=&quot;GET&quot;
-      fault=&quot;handleShiftsIndexFaultResult(event)&quot;
-      result=&quot;handleShiftsIndexResult(event)&quot; 
-    /&amp;gt;  
+&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:HTTPService&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;svcShiftsIndex&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;resultFormat=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;e4x&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;fault=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;handleShiftsIndexFaultResult(event)&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;result=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;handleShiftsIndexResult(event)&amp;quot;&lt;/span&gt; 
+    &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;  
 &lt;/pre&gt;
-&lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;PUT&lt;/span&gt; Request&lt;/h4&gt;
+&lt;/div&gt;&lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;PUT&lt;/span&gt; Request&lt;/h4&gt;
 &lt;p&gt;Make sure to pass the &lt;code&gt;authenticity_token&lt;/code&gt; in the url to keep a valid xml structure.&lt;/p&gt;
-&lt;pre class=&quot;brush: as3;&quot;&gt;    
-// HTTPService PUT Request
-private function handleShiftChanged(event:*):void{
-  svcShiftsUpdate.url = &quot;/schedules/&quot; + scheduleId + 
-                        &quot;/shifts/&quot; + event.shift.shiftId + '.xml' + 
-                        '?authenticity_token='+authenticityToken;
+&lt;/notextile&gt;
 
-  var params:XML = XML(
-    '&amp;lt;shift&amp;gt;'+
-      '&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;'+
-    '&amp;lt;/shift&amp;gt;'
-  );
 
-  svcShiftsUpdate.method  = 'POST';
-  
-  // IMPORTANT TO CONNECT TO THE PUT ACTION IN RAILS
-  svcShiftsUpdate.headers = {
-    X_HTTP_METHOD_OVERRIDE: 'PUT'
-  };
-
-  svcShiftsUpdate.send(params);
-}     
+&lt;notextile&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:HTTPService&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;svcShiftsCreate&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;contentType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;application/xml&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;resultFormat=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;e4x&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;fault=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;handleShiftsCreateFaultResult(event)&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;result=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;handleShiftsCreateResult(event)&amp;quot;&lt;/span&gt; 
+    &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;  
 &lt;/pre&gt;
-
-&lt;pre class=&quot;brush: xml;&quot;&gt;  
-  &amp;lt;mx:HTTPService id=&quot;svcShiftsCreate&quot;
-      contentType=&quot;application/xml&quot;
-      resultFormat=&quot;e4x&quot;
-      method=&quot;POST&quot;
-      fault=&quot;handleShiftsCreateFaultResult(event)&quot;
-      result=&quot;handleShiftsCreateResult(event)&quot; 
-    /&amp;gt;  
-&lt;/pre&gt;
-&lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;POST&lt;/span&gt; Request&lt;/h4&gt;
+&lt;/div&gt;&lt;h4&gt;&lt;span class=&quot;caps&quot;&gt;POST&lt;/span&gt; Request&lt;/h4&gt;
 &lt;p&gt;Make sure to pass the authenticity_token in the url to keep a valid xml structure.&lt;/p&gt;
-&lt;pre class=&quot;brush: as3;&quot;&gt;    
-  // HTTPService POST Request
-  private function handleShiftCreated(event:ShiftControllerEvent):void {
-    svcShiftsCreate.url = &quot;/schedules/&quot; + scheduleId + 
-                          &quot;/shifts.xml?authenticity_token=&quot;+authenticityToken;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;c1&quot;&gt;// HTTPService POST Request&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleShiftCreated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ShiftControllerEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/schedules/&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scheduleId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
+                          &lt;span class=&quot;s2&quot;&gt;&amp;quot;/shifts.xml?authenticity_token=&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;authenticityToken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-    var xmlParams:XML = XML(
-      '&amp;lt;shift&amp;gt;'+
-        '&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;'+
-      '&amp;lt;/shift&amp;gt;'
-    );
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xmlParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;shift&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/shift&amp;gt;&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-    svcShiftsCreate.send(xmlParams);
-    ShiftSequencer.reDrawShifts();
-  }  
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xmlParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ShiftSequencer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reDrawShifts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
 &lt;/pre&gt;
-
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;mx:HTTPService id=&quot;svcShiftsUpdate&quot;
-      contentType=&quot;application/xml&quot;  
-      resultFormat=&quot;e4x&quot;
-      result=&quot;handleShiftsUpdateResult(event)&quot;
-      fault=&quot;handleShiftsUpdateFaultResult(event)&quot;
-    /&amp;gt;    
+&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:HTTPService&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;svcShiftsUpdate&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;contentType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;application/xml&amp;quot;&lt;/span&gt;  
+      &lt;span class=&quot;na&quot;&gt;resultFormat=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;e4x&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;result=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;handleShiftsUpdateResult(event)&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;fault=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;handleShiftsUpdateFaultResult(event)&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;    
 &lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Ressources:&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Ressources:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;&lt;a href=&quot;http://blog.dt.org/index.php/tag/flex/&quot;&gt;blog.dt.org&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;http://tinyurl.com/yde2k8z&quot;&gt;Adobe&lt;/a&gt;&lt;/li&gt;
@@ -159,6 +141,10 @@ private function handleShiftChanged(event:*):void{
    <id>http://kallesaas.com/2009/09/29/javascript-localization</id>
    <content type="html">
 &lt;p class=&quot;time-stamp&quot;&gt;29 SEPTEMBER 2009&lt;/p&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;  
+&lt;/div&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/09/29/javascript-localization.html&quot;&gt;How to do localization with Javascript&lt;/a&gt;&lt;/h1&gt;
 
 &lt;p&gt;
@@ -170,13 +156,13 @@ private function handleShiftChanged(event:*):void{
 &lt;p&gt;Any JavaScript code that needed to use a string would reference the LOCALIZATION object rather then embedding a string:&lt;/p&gt;
 &lt;p&gt;You can pass a string with an &lt;strong&gt;&quot;%s&quot;&lt;/strong&gt; inside which can be used for string substitution.&lt;/p&gt;
 
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  LOCALIZATION.WARNING: 'Achtung vor dem %s, er ist gefährlich !'
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nx&quot;&gt;LOCALIZATION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;WARNING&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Achtung vor dem %s, er ist gefährlich !&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  alert(translate(LOCALIZATION.WARNING, &quot;Zauberer&quot;));
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LOCALIZATION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Zauberer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;/pre&gt;
+&lt;/div&gt;
 
 
 &lt;h3&gt;The &lt;code&gt;localization.[de|en|fr|...].js&lt;/code&gt;&lt;/h3&gt;
@@ -190,74 +176,75 @@ private function handleShiftChanged(event:*):void{
 
 &lt;p&gt;&lt;code&gt;localization.de.js&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  // Example
-  var LOCALIZATION = {
-    LANGUAGE: 'GERMAN',
-    WARNING: 'Achtung vor dem %s, er ist gefährlich !',
-    LOADING: 'Bitte warten, Daten werden geladen',
-    WELCOME: 'Hallo %s, wie geht\'s dir ?'
-  };
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;c1&quot;&gt;// Example&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LOCALIZATION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;LANGUAGE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;GERMAN&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;WARNING&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Achtung vor dem %s, er ist gefährlich !&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;LOADING&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Bitte warten, Daten werden geladen&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;WELCOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Hallo %s, wie geht\&amp;#39;s dir ?&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Make sure that this file is loaded before any other file, which uses the localization.&lt;/p&gt;
   
 &lt;h3&gt;&lt;code&gt;translate.js&lt;/code&gt;&lt;/h3&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;                
-  (function () {
-    if (!window.translate) {
-      /** 
-       * this global function is for string substitution
-       * @property {string} string to translate.
-       * @property {string} as much 
-       * return STRING
-       */         
-      window.translate = function(){
-        var html = [ ];
-        var arguments = arguments;
-        var string = arguments[0];
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;                
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;cm&quot;&gt;/** &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;       * this global function is for string substitution&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;       * @property {string} string to translate.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;       * @property {string} as much &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;       * return STRING&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;       */&lt;/span&gt;         
+      &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;translate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arguments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 
-        var objIndex = 0;
-        var reg = /%s/;
-        var parts = [ ];
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;objIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/%s/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 
-        /** 
-         * analyze the string, extract the parts with the %s identifier.
-         */               
-        for ( var m = reg.exec(string); m; m = reg.exec(string) ) {  
-          // m[0][0] gives undefined in IE
-          parts.push(string.substr(0, m[0][0] === &quot;%&quot; ? m.index : m.index));
-          parts.push(&quot;%s&quot;);
-          string = string.substr( m.index+m[0].length );
-        }
-        parts.push(string);
+        &lt;span class=&quot;cm&quot;&gt;/** &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;         * analyze the string, extract the parts with the %s identifier.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;         */&lt;/span&gt;               
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+          &lt;span class=&quot;c1&quot;&gt;// m[0][0] gives undefined in IE&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;parts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;parts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;%s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;parts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-        /** 
-         * analyze the parts, replace the %s with the given arguments. 
-         * beware of undefined!
-         */               
-        for (var i = 0; i &lt; parts.length; ++i){
-            var part = parts[i];
-            if (part &amp;&amp; part == &quot;%s&quot;){
-              var object = arguments[++objIndex];
-              if (object == undefined) {
-                html.push(&quot;%s&quot;);
-              }else{
-                html.push(object);
-              };
-            }else{
-              html.push(part);
-            }            
-        }
+        &lt;span class=&quot;cm&quot;&gt;/** &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;         * analyze the parts, replace the %s with the given arguments. &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;         * beware of undefined!&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;         */&lt;/span&gt;               
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;part&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;part&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;part&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+              &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;objIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+              &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;%s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;            
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-        /** 
-         * Join the array and return as string.
-         */
-        return html.join('');
-      }
-    };
-  })();
+        &lt;span class=&quot;cm&quot;&gt;/** &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;         * Join the array and return as string.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;         */&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
 &lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;
   You can find a test page &lt;a target=&quot;_new&quot; href=&quot;/examples/translate/&quot;&gt;here&lt;/a&gt; and the translate.js file &lt;a target=&quot;_new&quot; href=&quot;/code/translate.js&quot;&gt;here&lt;/a&gt;.
@@ -274,6 +261,10 @@ private function handleShiftChanged(event:*):void{
    <id>http://kallesaas.com/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo</id>
    <content type="html">
 &lt;p class=&quot;time-stamp&quot;&gt;24 SEPTEMBER 2009&lt;/p&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;  
+&lt;/div&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/09/24/subdomains-or-subfolders-which-are-better-for-blogging-seo.html&quot;&gt;Subdomains or Subfolders which are Better for Blogging (SEO) ?&lt;/a&gt;&lt;/h1&gt;
 
 &lt;p&gt;
@@ -320,38 +311,39 @@ private function handleShiftChanged(event:*):void{
    <updated>2009-09-17T00:00:00+02:00</updated>
    <id>http://kallesaas.com/2009/09/17/rails-asset-host</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;17 &lt;span class=&quot;caps&quot;&gt;SEPTEMBER&lt;/span&gt; 2009&lt;/p&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/09/17/rails-asset-host.html&quot;&gt;Keep up with the assets on the production machine &amp;#8211; Asset Host in Rails&lt;/a&gt;&lt;/h1&gt; 
 &lt;p&gt;Sometimes you reach a point with a Website where it gets difficult to properly style the site if you don&amp;#8217;t have the right assets on your local machine. The database and the assets are always changing and growing due to user input.&lt;/p&gt;
 &lt;p&gt;You could alway download the latest assets, but sometimes there are to big to download or you just don&amp;#8217;t want to keep the assets on your local machine.&lt;/p&gt;
 &lt;p&gt;One solution to this problem is to set up an &lt;a href=&quot;http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html&quot;&gt;Asset Host&lt;/a&gt;. You can easily add an Asset Host in the &lt;code&gt;environments/development.rb&lt;/code&gt;&lt;/p&gt;
-&lt;pre class=&quot;brush: ruby;&quot;&gt;
-    ActionController::Base.asset_host = &quot;assets.example.com&quot;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;    &lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asset_host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;assets.example.com&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Every single asset comes from the &lt;code&gt;assets.example.com&lt;/code&gt; host. Thats fine, until you realize that the javascript and css files comes from the host too (Yes, it took me about 15 min to realize why my changes in the css didnt&amp;#8217;t work ;).&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Every single asset comes from the &lt;code&gt;assets.example.com&lt;/code&gt; host. Thats fine, until you realize that the javascript and css files comes from the host too (Yes, it took me about 15 min to realize why my changes in the css didnt&amp;#8217;t work ;).&lt;/p&gt;
 &lt;p&gt;So here is the solution for the problem:&lt;/p&gt;
-&lt;pre class=&quot;brush: ruby;&quot;&gt;
-ActionController::Base.asset_host = Proc.new { |source|
-     if source.starts_with?('/assets')
-       &quot;gameone.de&quot;
-     else
-       &quot;http://localhost:3000&quot;
-     end
-   }
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asset_host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;starts_with?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/assets&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;s2&quot;&gt;&amp;quot;gameone.de&amp;quot;&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+       &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://localhost:3000&amp;quot;&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;I put the code in an initializers and ignored it from git.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;I put the code in an initializers and ignored it from git.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;initializers/config_local_asset_host.rb&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&quot;brush: ruby;&quot;&gt;
-  if Rails.env == &quot;development&quot;
-    ActionController::Base.asset_host = Proc.new { |source|
-         if source.starts_with?('/assets')
-           &quot;gameone.de&quot;
-         else
-           &quot;http://localhost:3000&quot;
-         end
-       }
-  end
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;development&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asset_host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;starts_with?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/assets&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+           &lt;span class=&quot;s2&quot;&gt;&amp;quot;gameone.de&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+           &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://localhost:3000&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Thx to &lt;a href=&quot;http://twitter.com/Soph&quot;&gt;@Soph&lt;/a&gt; to point me in the right direction !&lt;/p&gt;</content>
+&lt;/div&gt;&lt;p&gt;Thx to &lt;a href=&quot;http://twitter.com/Soph&quot;&gt;@Soph&lt;/a&gt; to point me in the right direction !&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -360,20 +352,23 @@ ActionController::Base.asset_host = Proc.new { |source|
    <updated>2009-08-18T00:00:00+02:00</updated>
    <id>http://kallesaas.com/2009/08/18/web-fonts</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;18 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
 &lt;h1&gt;&lt;a href=&quot;/2009/08/18/web-fonts.html&quot;&gt;Web Fonts&lt;/a&gt;&lt;/h1&gt; 
 &lt;p&gt;We all know about the possibility to include fonts via &lt;code&gt;CSS&lt;/code&gt; in our web site:&lt;/p&gt;
-&lt;pre class=&quot;brush: css;&quot;&gt;
-  @font-face {
-    font-family: &quot;Watusi&quot;;
-    src: url(&quot;http://www.example.com/fonts/watusi.ttf&quot;);
-    format(&quot;truetype&quot;);
-  }
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;k&quot;&gt;@font-face&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Watusi&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://www.example.com/fonts/watusi.ttf&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;truetype&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-  h1 {
-    font-family: &quot;Watusi&quot;, sans-serif;
-  }
+  &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Watusi&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;So, why don&amp;#8217;t we use this technique ?&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;So, why don&amp;#8217;t we use this technique ?&lt;/p&gt;
 &lt;p&gt;There are a few reasons:&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;&lt;strong&gt;You may be violating&lt;/strong&gt; your End User Licensing Agreement (&lt;span class=&quot;caps&quot;&gt;EULA&lt;/span&gt;) with the font foundry.&lt;/li&gt;
@@ -399,260 +394,254 @@ ActionController::Base.asset_host = Proc.new { |source|
    <updated>2009-08-17T00:00:00+02:00</updated>
    <id>http://kallesaas.com/2009/08/17/flex-for-rails-how-to-collection</id>
    <content type="html">&lt;p class=&quot;time-stamp&quot;&gt;17 &lt;span class=&quot;caps&quot;&gt;AUGUST&lt;/span&gt; 2009&lt;/p&gt;
-&lt;h1&gt;&lt;a href=&quot;/2009/08/17/flex-for-rails-how-to-collection.html&quot;&gt;Flex for Rails, how to collection&lt;/a&gt;&lt;/h1&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&quot;tweetme-iframe&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_service = 'bit.ly';&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;h1&gt;
+&lt;a href=&quot;/2009/08/17/flex-for-rails-how-to-collection.html&quot;&gt;Flex for Rails, how to collection&lt;/a&gt;
+&lt;/h1&gt;
 &lt;p class=&quot;warning&quot;&gt;
 This post is work in progress.
 &lt;/p&gt;
 &lt;h2&gt;Fixing the rails &lt;code&gt;to_xml&lt;/code&gt; Method.&lt;/h2&gt;
 &lt;p&gt;If you want to access &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; Object you want to use the correct &lt;strong&gt;E4X&lt;/strong&gt; syntax such &lt;code&gt;rp.currentItem.asset_file_name&lt;/code&gt; and not &lt;code&gt;rp.currentItem['asset_file_name']&lt;/code&gt;. If you debug your Flex code and trace an &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; Object delivered from Rails you will see sth. like this:&lt;/p&gt;
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;elements type=&quot;array&quot;&amp;gt;
-    &amp;lt;element&amp;gt;
-      &amp;lt;asset-file-name&amp;gt;oberer-streifen-light-blue.png&amp;lt;/asset-file-name&amp;gt;
-      &amp;lt;id type=&quot;integer&quot;&amp;gt;1&amp;lt;/id&amp;gt;
-    &amp;lt;/element&amp;gt;
-  &amp;lt;/elements&amp;gt;  
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;elements&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;array&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;element&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;asset-file-name&amp;gt;&lt;/span&gt;oberer-streifen-light-blue.png&lt;span class=&quot;nt&quot;&gt;&amp;lt;/asset-file-name&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;id&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;integer&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/element&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/elements&amp;gt;&lt;/span&gt;  
 &lt;/pre&gt;
-&lt;p&gt;Unfortunately you can not access the &lt;code&gt;asset-file-name&lt;/code&gt; with the E4X &lt;code&gt;rp.currentItem.asset-file-name&lt;/code&gt; syntax because Flex try&amp;#8217;s to do a calculation (because of the &amp;#8220;-&amp;#8221;).&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Unfortunately you can not access the &lt;code&gt;asset-file-name&lt;/code&gt; with the E4X &lt;code&gt;rp.currentItem.asset-file-name&lt;/code&gt; syntax because Flex try&amp;#8217;s to do a calculation (because of the &amp;#8220;-&amp;#8221;).&lt;/p&gt;
 &lt;p&gt;The solution is to fix the &lt;code&gt;to_xml&lt;/code&gt; Method. We can accomplish that by adding a file to  &lt;code&gt;config/initializers&lt;/code&gt; called &lt;code&gt;to_xml_fix.rb&lt;/code&gt;. The content of the file can be found &lt;a href=&quot;/code/to_xml_fix.rb.txt&quot;&gt;here&lt;/a&gt;. What it does is simply overwrite the &lt;code&gt;to_xml&lt;/code&gt; method with the same method but with an additional parameter: &lt;code&gt;to_xml(:dasherize =&amp;gt; false)&lt;/code&gt;. Restart the server and &lt;span class=&quot;caps&quot;&gt;BAM&lt;/span&gt;! It (should!) works just fine!&lt;/p&gt;
 &lt;h2&gt;Call JavaScript Function within FLex Applications&lt;/h2&gt;
 &lt;p&gt;A Simple way to call an JavaScript Function is to import the &lt;code&gt;ExternalInterface&lt;/code&gt;  ( &lt;a href=&quot;http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html&quot;&gt;liveDoc&lt;/a&gt; ) and call the javaScript function&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CDATA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;external&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*;&lt;/span&gt;
 
-&lt;pre class=&quot;brush: as3;&quot;&gt;
-  &amp;lt;mx:Script&amp;gt;
-    &amp;lt;![CDATA[
-      import flash.external.*;
-
-      public function debug(message:String) : void{       
-        if (ExternalInterface.available) {
-          ExternalInterface.call('console.log', message);
-        }
-      }
-    ]]&amp;gt;
-  &amp;lt;/mx:Script&amp;gt;
+      &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;       
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ExternalInterface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;available&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nb&quot;&gt;ExternalInterface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;console.log&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h2&gt;Basic &lt;span class=&quot;caps&quot;&gt;HTTP&lt;/span&gt; requests from Flex to Rails&lt;/h2&gt;
+&lt;/div&gt;&lt;h2&gt;Basic &lt;span class=&quot;caps&quot;&gt;HTTP&lt;/span&gt; requests from Flex to Rails&lt;/h2&gt;
 &lt;p&gt;Call the Fuction &lt;code&gt;listCompositions()&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class=&quot;brush: as3;&quot;&gt;
-  private function handleShiftChanged(event:*):void{
-    svcShiftsUpdate.url = 	&quot;/schedules/&quot; + scheduleId + &quot;/shifts/&quot; + event.shift.shiftId + '.xml' + 
-    '?authenticity_token='+authenticityToken + 
-    '&amp;amp;_method=PUT';
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleShiftChanged&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 	&lt;span class=&quot;s2&quot;&gt;&amp;quot;/schedules/&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scheduleId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/shifts/&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shiftId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.xml&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
+    &lt;span class=&quot;s1&quot;&gt;&amp;#39;?authenticity_token=&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;authenticityToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
+    &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;amp;_method=PUT&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-    var xmlParams:XML = XML('&amp;lt;shift&amp;gt;'+
-      '&amp;lt;starts_at&amp;gt;&amp;lt;/starts_at&amp;gt;' +
-      '&amp;lt;ends_at&amp;gt;&amp;lt;/ends_at&amp;gt;' +
-      '&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;'+
-      '&amp;lt;/shift&amp;gt;');
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xmlParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;shift&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;starts_at&amp;gt;&amp;lt;/starts_at&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;ends_at&amp;gt;&amp;lt;/ends_at&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;category_id&amp;gt;1&amp;lt;/category_id&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/shift&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-    svcShiftsUpdate.method = 'POST';
-    svcShiftsUpdate.headers = {X_HTTP_METHOD_OVERRIDE: 'PUT'};										
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;X_HTTP_METHOD_OVERRIDE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;PUT&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;										
 
-    svcShiftsUpdate.send(xmlParams);
-    ShiftSequencer.reDrawShifts();	
-  }			
+    &lt;span class=&quot;nx&quot;&gt;svcShiftsUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xmlParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ShiftSequencer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reDrawShifts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;	
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;			
 
-private function handleShiftCreated(event:ShiftControllerEvent):void {
-svcShiftsCreate.url = &quot;/schedules/&quot; + scheduleId + &quot;/shifts.xml?authenticity_token=&quot;+authenticityToken;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleShiftCreated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ShiftControllerEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;svcShiftsCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/schedules/&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scheduleId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/shifts.xml?authenticity_token=&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;authenticityToken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-var xmlParams:XML = XML('&amp;lt;shift&amp;gt;'+
-'&amp;lt;starts_at&amp;gt;'+DateHelper.minutesToRubyDate(event.shift.startTime, event.shift.cwday, this.scheduleBop)+'&amp;lt;/starts_at&amp;gt;' +
-'&amp;lt;ends_at&amp;gt;'+DateHelper.minutesToRubyDate(event.shift.endTime, event.shift.cwday, this.scheduleBop)+'&amp;lt;/ends_at&amp;gt;' +
-'&amp;lt;category_id&amp;gt;'+1+'&amp;lt;/category_id&amp;gt;'+
-'&amp;lt;/shift&amp;gt;');
+&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xmlParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;shift&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;starts_at&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DateHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;minutesToRubyDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cwday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scheduleBop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/starts_at&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;ends_at&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DateHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;minutesToRubyDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cwday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scheduleBop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/ends_at&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;category_id&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/category_id&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/shift&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-svcShiftsCreate.send(xmlParams);
-ShiftSequencer.reDrawShifts();
-}
+&lt;span class=&quot;nx&quot;&gt;svcShiftsCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xmlParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;ShiftSequencer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reDrawShifts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;mx:HTTPService id=&quot;svcCompositionsList&quot; 
-      url=&quot;/editorial/compositions.xml&quot; 
-      resultFormat=&quot;e4x&quot; 
-      result=&quot;handleCompositionsListResult(event)&quot; /&amp;gt;
-
+&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:HTTPService&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;svcCompositionsList&amp;quot;&lt;/span&gt; 
+      &lt;span class=&quot;na&quot;&gt;url=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/editorial/compositions.xml&amp;quot;&lt;/span&gt; 
+      &lt;span class=&quot;na&quot;&gt;resultFormat=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;e4x&amp;quot;&lt;/span&gt; 
+      &lt;span class=&quot;na&quot;&gt;result=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;handleCompositionsListResult(event)&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h2&gt;Controlling the Cursor&lt;/h2&gt;
+&lt;/div&gt;&lt;h2&gt;Controlling the Cursor&lt;/h2&gt;
 &lt;p&gt;Use the &lt;code&gt;buttonMode&lt;/code&gt; to get an &amp;#8220;Hand&amp;#8221; for the cursor.&lt;/p&gt;
-&lt;pre class=&quot;brush: as3;&quot;&gt;
-  private function onMouseOver(event:MouseEvent):void {
-  	currentElement.buttonMode = true;
-  }
-  private function onMouseOut(event:MouseEvent):void {
-  	currentElement.buttonMode = false;
-  }
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onMouseOver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;MouseEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;nx&quot;&gt;currentElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;buttonMode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onMouseOut&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;MouseEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;nx&quot;&gt;currentElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;buttonMode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h2&gt;Custom Events with Components&lt;/h2&gt;
+&lt;/div&gt;&lt;h2&gt;Custom Events with Components&lt;/h2&gt;
 &lt;h3&gt;&lt;code&gt;Dialog.mxml&lt;/code&gt;&lt;/h3&gt;
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;     
-  &amp;lt;mx:TitleWindow xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot;&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;     
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:TitleWindow&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:mx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 
-  &amp;lt;mx:Metadata&amp;gt;
-    [Event(name=&quot;changeColour&quot;, type=&quot;com.too_many_colours.events.DialogEvent&quot;)]
-  &amp;lt;/mx:Metadata&amp;gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Metadata&amp;gt;&lt;/span&gt;
+    [Event(name=&amp;quot;changeColour&amp;quot;, type=&amp;quot;com.too_many_colours.events.DialogEvent&amp;quot;)]
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Metadata&amp;gt;&lt;/span&gt;
 
-  &amp;lt;mx:Script&amp;gt;
-    &amp;lt;![CDATA[
-      import flash.events.Event;
-      import flash.events.EventDispatcher;
-      import com.too_many_colours.events.DialogEvent;    		
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;cp&quot;&gt;&amp;lt;![CDATA[&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      import flash.events.Event;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      import flash.events.EventDispatcher;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      import com.too_many_colours.events.DialogEvent;    		&lt;/span&gt;
 
-      private function changeColour(event:MouseEvent):void{    			            	
-        dispatchEvent(new DialogEvent( DialogEvent.CHANGE_COLOUR ));
-      }
-    ]]&amp;gt;
-  &amp;lt;/mx:Script&amp;gt;
+&lt;span class=&quot;cp&quot;&gt;      private function changeColour(event:MouseEvent):void{    			            	&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        dispatchEvent(new DialogEvent( DialogEvent.CHANGE_COLOUR ));&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      }&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;    ]]&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
 
-  &amp;lt;mx:Button label=&quot;Change Colour&quot; click=&quot;changeColour(event)&quot; /&amp;gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Change Colour&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;changeColour(event)&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 
-  &amp;lt;/mx:TitleWindow&amp;gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:TitleWindow&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h3&gt;&lt;code&gt;application.mxml&lt;/code&gt;&lt;/h3&gt;
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
-  &amp;lt;mx:Application xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; xmlns:comp=&quot;com.too_many_colours.components.*&quot;&amp;gt;
-  	&amp;lt;mx:Script&amp;gt;
-  		&amp;lt;![CDATA[  		  
-  			import com.too_many_colours.components.Dialog;
-        import mx.containers.TitleWindow;
-        
-        // import custom events
-        import com.too_many_colours.events.DialogEvent;
+&lt;/div&gt;&lt;h3&gt;&lt;code&gt;application.mxml&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Application&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:mx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:comp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;com.too_many_colours.components.*&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+  		&lt;span class=&quot;cp&quot;&gt;&amp;lt;![CDATA[  		  &lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  			import com.too_many_colours.components.Dialog;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        import mx.containers.TitleWindow;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        &lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        // import custom events&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        import com.too_many_colours.events.DialogEvent;&lt;/span&gt;
 
-  			private function changeColour(event:DialogEvent) : void {
-  				debug(isChanged.toString())
-  			}
+&lt;span class=&quot;cp&quot;&gt;  			private function changeColour(event:DialogEvent) : void {&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  				debug(isChanged.toString())&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  			}&lt;/span&gt;
 
-  			private var dialogWindow:Dialog;
-  			
-  			private function showDialog():void {
-  			  dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
-  			  
-  			  // add event listener
-  				dialogWindow.addEventListener( DialogEvent.CHANGE_COLOUR, changeColour);					
-        }
-  		]]&amp;gt;
-  	&amp;lt;/mx:Script&amp;gt;
-  &amp;lt;/mx:Application&amp;gt;
+&lt;span class=&quot;cp&quot;&gt;  			private var dialogWindow:Dialog;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  			&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  			private function showDialog():void {&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  			  dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  			  &lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  			  // add event listener&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  				dialogWindow.addEventListener( DialogEvent.CHANGE_COLOUR, changeColour);					&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        }&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;  		]]&amp;gt;&lt;/span&gt;
+  	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Application&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h3&gt;&lt;code&gt;DialogEvent.as&lt;/code&gt;&lt;/h3&gt;
-&lt;pre class=&quot;brush: as3;&quot;&gt;
-  package com.too_many_colours.events{
-  	import flash.events.Event;
+&lt;/div&gt;&lt;h3&gt;&lt;code&gt;DialogEvent.as&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;kd&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;too_many_colours&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-  	public class DialogEvent extends Event{
-  		public static const CHANGE_COLOUR:String = &quot;changeColour&quot;;
+  	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DialogEvent&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CHANGE_COLOUR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;changeColour&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-  		public function DialogEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false){
-  			super(CHANGE_COLOUR, bubbles, cancelable);
-  		}
-  	}
-  }
+  		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DialogEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bubbles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cancelable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  			&lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CHANGE_COLOUR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bubbles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cancelable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h2&gt;Passing a reference to the calling component.&lt;/h2&gt;
+&lt;/div&gt;&lt;h2&gt;Passing a reference to the calling component.&lt;/h2&gt;
 &lt;h3&gt;The main &lt;span class=&quot;caps&quot;&gt;MXML&lt;/span&gt; Document:&lt;/h3&gt;
-&lt;pre class=&quot;brush: as3;&quot;&gt;
-  [Bindable]
-  public var currentElementId:String;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Bindable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentElementId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
   
-  private function onMouseUp(event:MouseEvent) : void {
-		currentElementId = event.currentTarget.id		
-		showDialog();
-	}
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onMouseUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;MouseEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;currentElementId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;		
+		&lt;span class=&quot;nx&quot;&gt;showDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   
-  private function showDialog():void {
-  	dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
-  	dialogWindow.currentElementId = currentElementId; 
-  }
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;nx&quot;&gt;dialogWindow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Dialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PopUpManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createPopUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Dialog&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  	&lt;span class=&quot;nx&quot;&gt;dialogWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentElementId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentElementId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h3&gt;The &lt;code&gt;dialogWindow&lt;/code&gt; Component.&lt;/h3&gt;
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
-  &amp;lt;mx:TitleWindow xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; &amp;gt;
-    &amp;lt;mx:Script&amp;gt;
-      &amp;lt;![CDATA[
-      [Bindable]
-      public var currentElementId:String;
-      ]]&amp;gt;
-    &amp;lt;/mx:Script&amp;gt;
-    &amp;lt;mx:Label text=&quot;{currentElementId}&quot; /&amp;gt;
-  &amp;lt;/mx:TitleWindow&amp;gt;
+&lt;/div&gt;&lt;h3&gt;The &lt;code&gt;dialogWindow&lt;/code&gt; Component.&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:TitleWindow&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:mx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;cp&quot;&gt;&amp;lt;![CDATA[&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      [Bindable]&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      public var currentElementId:String;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      ]]&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{currentElementId}&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:TitleWindow&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Reference: &lt;a href=&quot;http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html&quot;&gt;Passing a reference to the calling component&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Reference: &lt;a href=&quot;http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html&quot;&gt;Passing a reference to the calling component&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Using the Repeater component to display elements from &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; object.&lt;/h2&gt;
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
-  &amp;lt;mx:TitleWindow xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; &amp;gt;
-    &amp;lt;mx:Script&amp;gt;
-      &amp;lt;![CDATA[
-      [Bindable]
-			private var XMLBuendchenElements:XML = 
-				&amp;lt;elements&amp;gt;
-					&amp;lt;element&amp;gt;
-						&amp;lt;pos-x&amp;gt;200&amp;lt;/pos-x&amp;gt;
-						&amp;lt;pos-y&amp;gt;300&amp;lt;/pos-y&amp;gt;
-						&amp;lt;name&amp;gt;body&amp;lt;/name&amp;gt;
-						&amp;lt;source&amp;gt;/images/dummys/buendchen.png&amp;lt;/source&amp;gt;
-						&amp;lt;scale-x&amp;gt;0.1&amp;lt;/scale-x&amp;gt;
-						&amp;lt;scale-y&amp;gt;0.1&amp;lt;/scale-y&amp;gt;
-					&amp;lt;/element&amp;gt;
-					&amp;lt;element&amp;gt;
-						&amp;lt;pos-x&amp;gt;200&amp;lt;/pos-x&amp;gt;
-						&amp;lt;pos-y&amp;gt;300&amp;lt;/pos-y&amp;gt;
-						&amp;lt;name&amp;gt;body&amp;lt;/name&amp;gt;
-						&amp;lt;source&amp;gt;/images/dummys/buendchen-rot.png&amp;lt;/source&amp;gt;
-						&amp;lt;scale-x&amp;gt;0.1&amp;lt;/scale-x&amp;gt;
-						&amp;lt;scale-y&amp;gt;0.1&amp;lt;/scale-y&amp;gt;
-					&amp;lt;/element&amp;gt;
-				&amp;lt;/elements&amp;gt;;
-      ]]&amp;gt;
-    &amp;lt;/mx:Script&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:TitleWindow&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:mx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;cp&quot;&gt;&amp;lt;![CDATA[&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      [Bindable]&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;			private var XMLBuendchenElements:XML = &lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;				&amp;lt;elements&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;					&amp;lt;element&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;pos-x&amp;gt;200&amp;lt;/pos-x&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;pos-y&amp;gt;300&amp;lt;/pos-y&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;name&amp;gt;body&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;source&amp;gt;/images/dummys/buendchen.png&amp;lt;/source&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;scale-x&amp;gt;0.1&amp;lt;/scale-x&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;scale-y&amp;gt;0.1&amp;lt;/scale-y&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;					&amp;lt;/element&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;					&amp;lt;element&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;pos-x&amp;gt;200&amp;lt;/pos-x&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;pos-y&amp;gt;300&amp;lt;/pos-y&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;name&amp;gt;body&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;source&amp;gt;/images/dummys/buendchen-rot.png&amp;lt;/source&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;scale-x&amp;gt;0.1&amp;lt;/scale-x&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;						&amp;lt;scale-y&amp;gt;0.1&amp;lt;/scale-y&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;					&amp;lt;/element&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;				&amp;lt;/elements&amp;gt;;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      ]]&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
 
-    &amp;lt;mx:VBox&amp;gt;
-    	&amp;lt;mx:Repeater id=&quot;rp&quot; dataProvider=&quot;{XMLBuendchenElements.element}&quot;&amp;gt;
-    		&amp;lt;mx:Image click=&quot;changeColour(event)&quot; source=&quot;{String(rp.currentItem.source)}&quot; scaleX=&quot;{String(rp.currentItem.scale-x)}&quot; scaleY=&quot;{String(rp.currentItem.scale-y)}&quot;  /&amp;gt;    	
-    	&amp;lt;/mx:Repeater&amp;gt;
-    &amp;lt;/mx:VBox&amp;gt;
-  &amp;lt;/mx:TitleWindow&amp;gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:VBox&amp;gt;&lt;/span&gt;
+    	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Repeater&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;rp&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;dataProvider=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{XMLBuendchenElements.element}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    		&lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Image&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;changeColour(event)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{String(rp.currentItem.source)}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scaleX=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{String(rp.currentItem.scale-x)}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scaleY=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{String(rp.currentItem.scale-y)}&amp;quot;&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;    	
+    	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Repeater&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:VBox&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:TitleWindow&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h2&gt;Passing request data with flashVars properties.&lt;/h2&gt;
+&lt;/div&gt;&lt;h2&gt;Passing request data with flashVars properties.&lt;/h2&gt;
 &lt;p&gt;How can i communicate between javascript and my &lt;span class=&quot;caps&quot;&gt;FLEX&lt;/span&gt; app ?&lt;/p&gt;
 &lt;p&gt;One solution it to pass flashvars within the swfobject creation.&lt;/p&gt;
 &lt;h3&gt;The Javascript&lt;/h3&gt;
-&lt;pre class=&quot;brush: js;&quot;&gt;
-  var flashvars = {
-    category: 2,      
-  };
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flashvars&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;      
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
   
-  var params = false;    
-  var attributes = false;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;attributes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-  var width = '936';
-  var height = '400';
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;936&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;400&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-  swfobject.embedSWF('/flash/design_studio.swf', 'flash_design_studio', width, height, '9.0.0', '/flash/expressInstall.swf', flashvars, params, attributes);    
+  &lt;span class=&quot;nx&quot;&gt;swfobject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;embedSWF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/flash/design_studio.swf&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;flash_design_studio&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;9.0.0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/flash/expressInstall.swf&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flashvars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    
 &lt;/pre&gt;
-&lt;h3&gt;The Flex app:&lt;/h3&gt;
-&lt;pre class=&quot;brush: xml;&quot;&gt;
-  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
-  &amp;lt;mx:Application 
-  	xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot;
-  	initialize=&quot;{init()}&quot;
-  	viewSourceURL=&quot;srcview/index.html&quot;&amp;gt;
-  	&amp;lt;mx:Script&amp;gt;
-      &amp;lt;![CDATA[
-        public var currentCategoryId:Number;
-        private function init () : void {
-        	// now you cann acces the flashvars:
-        	currentCategoryId = Application.application.parameters.category;
-        }
-      ]]&amp;gt;
-    &amp;lt;/mx:Script&amp;gt;
- &amp;lt;/mx:Application&amp;gt;
+&lt;/div&gt;&lt;h3&gt;The Flex app:&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Application&lt;/span&gt; 
+  	&lt;span class=&quot;na&quot;&gt;xmlns:mx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt;
+  	&lt;span class=&quot;na&quot;&gt;initialize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{init()}&amp;quot;&lt;/span&gt;
+  	&lt;span class=&quot;na&quot;&gt;viewSourceURL=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;srcview/index.html&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  	&lt;span class=&quot;nt&quot;&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;cp&quot;&gt;&amp;lt;![CDATA[&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        public var currentCategoryId:Number;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        private function init () : void {&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        	// now you cann acces the flashvars:&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        	currentCategoryId = Application.application.parameters.category;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;        }&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;      ]]&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mx:Application&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Thats it!&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Thats it!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;There are more possibility&amp;#8217;s to communicate between javascript and flex, but thats one of the basics examples.&lt;/p&gt;
 &lt;h3&gt;Ressources&lt;/h3&gt;
 &lt;ul&gt;
@@ -663,40 +652,37 @@ ShiftSequencer.reDrawShifts();
 &lt;p&gt;&lt;strong&gt;Long Headline but short solution:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The CustomImageLoader extends the Loader and accepts an image as &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CustomImageLoader.as&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
-  package com.too_many_colours.loader{
-  	import flash.display.Loader;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;kd&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;too_many_colours&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Loader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-  	public class CustomImageLoader extends Loader {
-  	    public var image:XML;
+  	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CustomImageLoader&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Loader&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-  	    public function CustomImageLoader(image:XML= null) {
-  	            this.image = image;
-  	    }
-  	}
-  }
+  	    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CustomImageLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  	    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Now you can simply use the CustomImageLoader as followed:&lt;/p&gt;
-&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
-  var loader: CustomImageLoader = new CustomImageLoader(image);
-  loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
-  loader.image = &quot;some xml data&quot;;
-  loader.contentLoaderInfo.addEventListener(Event.COMPLETE, pngOnLoaded);
+&lt;/div&gt;&lt;p&gt;Now you can simply use the CustomImageLoader as followed:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CustomImageLoader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CustomImageLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;URLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/assets/elements/&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;asset_file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)));&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;some xml data&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;contentLoaderInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;COMPLETE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pngOnLoaded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;And access the additional Parameters in the &lt;code&gt;handleImageLoaded&lt;/code&gt; function:&lt;/p&gt;
-&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
-  private function handleImageLoaded(event:Event):void {
-    // access the additional parameter:
-  	var image:XML = (event.target.loader as CustomImageLoader).image;
+&lt;/div&gt;&lt;p&gt;And access the additional Parameters in the &lt;code&gt;handleImageLoaded&lt;/code&gt; function:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleImageLoaded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// access the additional parameter:&lt;/span&gt;
+  	&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;XML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CustomImageLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
   	
-  	var element:Image = new Image();
-  	element.id = image.id;
+  	&lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  	&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
   	
-  	// access the usual content
-  	element.source = event.currentTarget.content				
-  }
+  	&lt;span class=&quot;c1&quot;&gt;// access the usual content&lt;/span&gt;
+  	&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt;				
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h3&gt;Ressources&lt;/h3&gt;
+&lt;/div&gt;&lt;h3&gt;Ressources&lt;/h3&gt;
 &lt;ul&gt;
 	&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/762521/custom-as3-loader-class-that-uses-a-custom-loaderinfo-class&quot;&gt;stackoverflow 1&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/758322/how-do-i-modify-existing-as3-events-so-that-i-can-pass-data&quot;&gt;stackoverflow 2&lt;/a&gt;&lt;/li&gt;
@@ -742,18 +728,17 @@ ie:function btnOver(evt:MouseEvent):void{&lt;br /&gt;
 &lt;h2&gt;Simple draw example in flex&lt;/h2&gt;
 &lt;p&gt;Important to note that you have to create an &lt;code&gt;UIComponent&lt;/code&gt; and add the Shape to it. Than you&lt;br /&gt;
 can add it to the stage&amp;#8230;&lt;/p&gt;
-&lt;pre class=&quot;brush: actionscript3;&quot;&gt;
-  var materialColor:Shape = new Shape();				
-  var uiComponent:UIComponent = new UIComponent();
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;materialColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;				
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uiComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;UIComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;UIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-  materialColor.graphics.clear();
-  materialColor.graphics.beginFill(0x007AAB);
-  materialColor.graphics.drawRoundRect(0, 0, 200, 200, 0, 0);
-  materialColor.graphics.endFill();
-  uiComponent.addChild(materialColor); 
-  testatelier.addChild(uiComponent);
+  &lt;span class=&quot;nx&quot;&gt;materialColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;materialColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beginFill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x007&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AAB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;materialColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;drawRoundRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;materialColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endFill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;uiComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;materialColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+  &lt;span class=&quot;nx&quot;&gt;testatelier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uiComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/pre&gt;
-&lt;h2&gt;Complex Masking in flex&lt;/h2&gt;
+&lt;/div&gt;&lt;h2&gt;Complex Masking in flex&lt;/h2&gt;
 &lt;p&gt;&lt;span class=&quot;caps&quot;&gt;SVG&lt;/span&gt; ? nope, not working dynamicly !&lt;br /&gt;
 http://www.adobe.com/devnet/flex/quickstart/embedding_assets/#EmbeddingSvgFiles&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;caps&quot;&gt;SWF&lt;/span&gt; ?&lt;br /&gt;

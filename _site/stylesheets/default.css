@@ -21,3 +21,22 @@
 
 /* ---------->>> COMMENTS <<<---------- */
 @import url(modules/comments.css);
+
+/* ---------->>> Code <<<---------- */
+@import url(pygments/autumn.css);
+
+div.highlight  {
+	background-color:#F8F8FF !important;
+	border:1px solid #DEDEDE !important;
+	color:#444444 !important;
+	font-size:90% !important;
+	line-height:1.5em !important;
+	margin:1em 0 !important;
+	overflow:auto !important;
+	padding:0.5em !important;
+}
+
+pre {
+	margin: 0;
+	white-space:pre;
+}

@@ -7,29 +7,18 @@
 	<title>Restful Communication Between Flex And Rails  (GET, POST, PUT)</title>
 	
   <meta content="Kalle Saas" name="author"/>
+  <meta name="description" content=" This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
   
-  <meta name="description" content="This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
+  
+
+  <meta content="Kalle Saas" name="author"/>
   
   <link type="application/atom+xml" title="Kalle Saas Client Site Blog" rel="alternate" href="http://feeds.feedburner.com/kalle-saas"/>
   
-  
-  <script src="/javascripts/shCore.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushAS3.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushCss.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushXml.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushRuby.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushJScript.js" type="text/javascript" charset="utf-8"></script>      
 	<script src="/javascripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/jquery.tweet.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
-	
-	<script type="text/javascript">
-  var addthis_config = {
-       username: "fluxsaas"
-  }
-  </script>
+
   
 	<link rel="stylesheet" href="/stylesheets/default.css" type="text/css" media="screen" charset="utf-8" />
 </head>
@@ -49,88 +38,64 @@
 <ul class="posts">
   <li class="post">
     <p class="time-stamp">22 <span class="caps">NOVEMBER</span> 2009</p>
+<div id="tweetme-iframe">
+<script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+<script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+</div>
 <h1><a href="/2009/11/22/flex-and-rails-communication.html">Restful Communication Between Flex And Rails  (<span class="caps">GET</span>, <span class="caps">POST</span>, <span class="caps">PUT</span>)</a></h1>
 <h3>Some working examples of HTTPService Requests:</h3>
 <h4><span class="caps">GET</span> Request</h4>
-<pre class="brush: as3;">  
-  // HTTPService GET Request
-  private function getShiftList():void{
-    svcShiftsIndex.url = "/schedules/"+scheduleId+"/shifts.xml";
-    svcShiftsIndex.send();
-  }
+<div class="highlight"><pre>  <span class="c1">// HTTPService GET Request</span>
+  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">getShiftList</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span><span class="p">{</span>
+    <span class="nx">svcShiftsIndex</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;/schedules/&quot;</span><span class="o">+</span><span class="nx">scheduleId</span><span class="o">+</span><span class="s2">&quot;/shifts.xml&quot;</span><span class="o">;</span>
+    <span class="nx">svcShiftsIndex</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+  <span class="p">}</span>
 </pre>
-
-<pre class="brush: xml;">
-  &lt;mx:HTTPService id="svcShiftsIndex"
-      resultFormat="e4x"
-      method="GET"
-      fault="handleShiftsIndexFaultResult(event)"
-      result="handleShiftsIndexResult(event)" 
-    /&gt;  
+</div><div class="highlight"><pre>  <span class="nt">&lt;mx:HTTPService</span> <span class="na">id=</span><span class="s">&quot;svcShiftsIndex&quot;</span>
+      <span class="na">resultFormat=</span><span class="s">&quot;e4x&quot;</span>
+      <span class="na">method=</span><span class="s">&quot;GET&quot;</span>
+      <span class="na">fault=</span><span class="s">&quot;handleShiftsIndexFaultResult(event)&quot;</span>
+      <span class="na">result=</span><span class="s">&quot;handleShiftsIndexResult(event)&quot;</span> 
+    <span class="nt">/&gt;</span>  
 </pre>
-<h4><span class="caps">PUT</span> Request</h4>
+</div><h4><span class="caps">PUT</span> Request</h4>
 <p>Make sure to pass the <code>authenticity_token</code> in the url to keep a valid xml structure.</p>
-<pre class="brush: as3;">    
-// HTTPService PUT Request
-private function handleShiftChanged(event:*):void{
-  svcShiftsUpdate.url = "/schedules/" + scheduleId + 
-                        "/shifts/" + event.shift.shiftId + '.xml' + 
-                        '?authenticity_token='+authenticityToken;
+</notextile>
 
-  var params:XML = XML(
-    '&lt;shift&gt;'+
-      '&lt;category_id&gt;1&lt;/category_id&gt;'+
-    '&lt;/shift&gt;'
-  );
 
-  svcShiftsUpdate.method  = 'POST';
-  
-  // IMPORTANT TO CONNECT TO THE PUT ACTION IN RAILS
-  svcShiftsUpdate.headers = {
-    X_HTTP_METHOD_OVERRIDE: 'PUT'
-  };
-
-  svcShiftsUpdate.send(params);
-}     
+<notextile><div class="highlight"><pre>  <span class="nt">&lt;mx:HTTPService</span> <span class="na">id=</span><span class="s">&quot;svcShiftsCreate&quot;</span>
+      <span class="na">contentType=</span><span class="s">&quot;application/xml&quot;</span>
+      <span class="na">resultFormat=</span><span class="s">&quot;e4x&quot;</span>
+      <span class="na">method=</span><span class="s">&quot;POST&quot;</span>
+      <span class="na">fault=</span><span class="s">&quot;handleShiftsCreateFaultResult(event)&quot;</span>
+      <span class="na">result=</span><span class="s">&quot;handleShiftsCreateResult(event)&quot;</span> 
+    <span class="nt">/&gt;</span>  
 </pre>
-
-<pre class="brush: xml;">  
-  &lt;mx:HTTPService id="svcShiftsCreate"
-      contentType="application/xml"
-      resultFormat="e4x"
-      method="POST"
-      fault="handleShiftsCreateFaultResult(event)"
-      result="handleShiftsCreateResult(event)" 
-    /&gt;  
-</pre>
-<h4><span class="caps">POST</span> Request</h4>
+</div><h4><span class="caps">POST</span> Request</h4>
 <p>Make sure to pass the authenticity_token in the url to keep a valid xml structure.</p>
-<pre class="brush: as3;">    
-  // HTTPService POST Request
-  private function handleShiftCreated(event:ShiftControllerEvent):void {
-    svcShiftsCreate.url = "/schedules/" + scheduleId + 
-                          "/shifts.xml?authenticity_token="+authenticityToken;
+<div class="highlight"><pre>  <span class="c1">// HTTPService POST Request</span>
+  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">handleShiftCreated</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nx">ShiftControllerEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span> <span class="p">{</span>
+    <span class="nx">svcShiftsCreate</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;/schedules/&quot;</span> <span class="o">+</span> <span class="nx">scheduleId</span> <span class="o">+</span> 
+                          <span class="s2">&quot;/shifts.xml?authenticity_token=&quot;</span><span class="o">+</span><span class="nx">authenticityToken</span><span class="o">;</span>
 
-    var xmlParams:XML = XML(
-      '&lt;shift&gt;'+
-        '&lt;category_id&gt;1&lt;/category_id&gt;'+
-      '&lt;/shift&gt;'
-    );
+    <span class="k">var</span> <span class="nx">xmlParams</span><span class="o">:</span><span class="nb">XML</span> <span class="o">=</span> <span class="nb">XML</span><span class="p">(</span>
+      <span class="s1">&#39;&lt;shift&gt;&#39;</span><span class="o">+</span>
+        <span class="s1">&#39;&lt;category_id&gt;1&lt;/category_id&gt;&#39;</span><span class="o">+</span>
+      <span class="s1">&#39;&lt;/shift&gt;&#39;</span>
+    <span class="p">);</span>
 
-    svcShiftsCreate.send(xmlParams);
-    ShiftSequencer.reDrawShifts();
-  }  
+    <span class="nx">svcShiftsCreate</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">xmlParams</span><span class="p">);</span>
+    <span class="nx">ShiftSequencer</span><span class="p">.</span><span class="nx">reDrawShifts</span><span class="p">();</span>
+  <span class="p">}</span>  
 </pre>
-
-<pre class="brush: xml;">
-  &lt;mx:HTTPService id="svcShiftsUpdate"
-      contentType="application/xml"  
-      resultFormat="e4x"
-      result="handleShiftsUpdateResult(event)"
-      fault="handleShiftsUpdateFaultResult(event)"
-    /&gt;    
+</div><div class="highlight"><pre>  <span class="nt">&lt;mx:HTTPService</span> <span class="na">id=</span><span class="s">&quot;svcShiftsUpdate&quot;</span>
+      <span class="na">contentType=</span><span class="s">&quot;application/xml&quot;</span>  
+      <span class="na">resultFormat=</span><span class="s">&quot;e4x&quot;</span>
+      <span class="na">result=</span><span class="s">&quot;handleShiftsUpdateResult(event)&quot;</span>
+      <span class="na">fault=</span><span class="s">&quot;handleShiftsUpdateFaultResult(event)&quot;</span>
+    <span class="nt">/&gt;</span>    
 </pre>
-<p><strong>Ressources:</strong></p>
+</div><p><strong>Ressources:</strong></p>
 <ul>
 	<li><a href="http://blog.dt.org/index.php/tag/flex/">blog.dt.org</a></li>
 	<li><a href="http://tinyurl.com/yde2k8z">Adobe</a></li>
@@ -138,35 +103,39 @@ private function handleShiftChanged(event:*):void{
 <li>
   </li>
   <li>
-    <p class="postmetadata alt">
-		  <span class="addthis_toolbox addthis_default_style">
-			  <a class="addthis_button_facebook">
-			   <img src="/images/addthis/facebook_16.png"/>
-			  </a>
-        <a class="addthis_button_twitter">
-          <img src="/images/addthis/twitter_16.png"/>
-        </a>
-        <a class="addthis_button_misterwong_de"></a>
-        <a class="addthis_button_myspace">
-          <img src="/images/addthis/myspace_16.png"/>
-        </a>
-        <a class="addthis_button_wordpress">
-          <img src="/images/addthis/wordpress_16.png"/>
-        </a>
-        <a class="addthis_button_digg">
-          <img src="/images/addthis/digg_16.png"/>
-        </a>
-        <span class="addthis_separator">|</span>
-        <a class="addthis_button_expanded">More</a>
-        <span class="spezial">
-          <a class="addthis_button_email"></a>
-          <a class="addthis_button_print"></a>
-        </span>
-      </span>
-    </p>
+    <div class="postmetadata alt">
+      <div class="share fb">
+        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+      </div>
+      
+      <div class="share tweet">
+        <a title="Post on Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="small-count"></a>
+        <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
+      </div>
+      
+      <div class="share tweet">
+        <script type="text/javascript">
+        tweetmeme_service = 'bit.ly';
+        tweetmeme_style = 'compact';
+        </script>
+        <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>        
+      </div>
+    </div>
   </li>
   <li>
-    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kallesaas/embed.js"></script><noscript><a href="http://kallesaas.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /**
+        * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+        */
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://kallesaas.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=kallesaas">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </li>
 </ul>
 
@@ -231,12 +200,26 @@ private function handleShiftChanged(event:*):void{
 
   <h2>Twitter</h2>
   <div id="tweet">Please Enable your Javascript</div>
-
 </div>
 </div>
 
 <div id="footer">
 </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -247,23 +230,6 @@ try {
 var pageTracker = _gat._getTracker("UA-3399121-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-
-<script type="text/javascript">
-//<![CDATA[
-(function() {
-var links = document.getElementsByTagName('a');
-var query = '?';
-for(var i = 0; i < links.length; i++) {
-if(links[i].href.indexOf('#disqus_thread') >= 0) {
-query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-}
-}
-document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
-})();
-//]]>
-</script>
-
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
 
 </body>
 </html>

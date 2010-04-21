@@ -7,29 +7,18 @@
 	<title>How to do localization with Javascript</title>
 	
   <meta content="Kalle Saas" name="author"/>
+  <meta name="description" content=" This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
   
-  <meta name="description" content="This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
+  
+
+  <meta content="Kalle Saas" name="author"/>
   
   <link type="application/atom+xml" title="Kalle Saas Client Site Blog" rel="alternate" href="http://feeds.feedburner.com/kalle-saas"/>
   
-  
-  <script src="/javascripts/shCore.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushAS3.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushCss.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushXml.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushRuby.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushJScript.js" type="text/javascript" charset="utf-8"></script>      
 	<script src="/javascripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/jquery.tweet.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
-	
-	<script type="text/javascript">
-  var addthis_config = {
-       username: "fluxsaas"
-  }
-  </script>
+
   
 	<link rel="stylesheet" href="/stylesheets/default.css" type="text/css" media="screen" charset="utf-8" />
 </head>
@@ -50,6 +39,10 @@
   <li class="post">
     
 <p class="time-stamp">29 SEPTEMBER 2009</p>
+<div id="tweetme-iframe">
+  <script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>  
+</div>
 <h1><a href="/2009/09/29/javascript-localization.html">How to do localization with Javascript</a></h1>
 
 <p>
@@ -61,13 +54,13 @@
 <p>Any JavaScript code that needed to use a string would reference the LOCALIZATION object rather then embedding a string:</p>
 <p>You can pass a string with an <strong>"%s"</strong> inside which can be used for string substitution.</p>
 
-<pre class="brush: js;">
-  LOCALIZATION.WARNING: 'Achtung vor dem %s, er ist gefährlich !'
+<div class="highlight"><pre>  <span class="nx">LOCALIZATION</span><span class="p">.</span><span class="nx">WARNING</span><span class="o">:</span> <span class="s1">&#39;Achtung vor dem %s, er ist gefährlich !&#39;</span>
 </pre>
+</div>
 
-<pre class="brush: js;">
-  alert(translate(LOCALIZATION.WARNING, "Zauberer"));
+<div class="highlight"><pre>  <span class="nx">alert</span><span class="p">(</span><span class="nx">translate</span><span class="p">(</span><span class="nx">LOCALIZATION</span><span class="p">.</span><span class="nx">WARNING</span><span class="p">,</span> <span class="s2">&quot;Zauberer&quot;</span><span class="p">));</span>
 </pre>
+</div>
 
 
 <h3>The <code>localization.[de|en|fr|...].js</code></h3>
@@ -81,74 +74,75 @@
 
 <p><code>localization.de.js</code></p>
 
-<pre class="brush: js;">
-  // Example
-  var LOCALIZATION = {
-    LANGUAGE: 'GERMAN',
-    WARNING: 'Achtung vor dem %s, er ist gefährlich !',
-    LOADING: 'Bitte warten, Daten werden geladen',
-    WELCOME: 'Hallo %s, wie geht\'s dir ?'
-  };
+<div class="highlight"><pre>  <span class="c1">// Example</span>
+  <span class="kd">var</span> <span class="nx">LOCALIZATION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">LANGUAGE</span><span class="o">:</span> <span class="s1">&#39;GERMAN&#39;</span><span class="p">,</span>
+    <span class="nx">WARNING</span><span class="o">:</span> <span class="s1">&#39;Achtung vor dem %s, er ist gefährlich !&#39;</span><span class="p">,</span>
+    <span class="nx">LOADING</span><span class="o">:</span> <span class="s1">&#39;Bitte warten, Daten werden geladen&#39;</span><span class="p">,</span>
+    <span class="nx">WELCOME</span><span class="o">:</span> <span class="s1">&#39;Hallo %s, wie geht\&#39;s dir ?&#39;</span>
+  <span class="p">};</span>
 </pre>
+</div>
 
 <p>Make sure that this file is loaded before any other file, which uses the localization.</p>
   
 <h3><code>translate.js</code></h3>
-<pre class="brush: js;">                
-  (function () {
-    if (!window.translate) {
-      /** 
-       * this global function is for string substitution
-       * @property {string} string to translate.
-       * @property {string} as much 
-       * return STRING
-       */         
-      window.translate = function(){
-        var html = [ ];
-        var arguments = arguments;
-        var string = arguments[0];
+<div class="highlight"><pre>                
+  <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">window</span><span class="p">.</span><span class="nx">translate</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/** </span>
+<span class="cm">       * this global function is for string substitution</span>
+<span class="cm">       * @property {string} string to translate.</span>
+<span class="cm">       * @property {string} as much </span>
+<span class="cm">       * return STRING</span>
+<span class="cm">       */</span>         
+      <span class="nb">window</span><span class="p">.</span><span class="nx">translate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="p">[</span> <span class="p">];</span>
+        <span class="kd">var</span> <span class="nx">arguments</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 
-        var objIndex = 0;
-        var reg = /%s/;
-        var parts = [ ];
+        <span class="kd">var</span> <span class="nx">objIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">reg</span> <span class="o">=</span> <span class="sr">/%s/</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">parts</span> <span class="o">=</span> <span class="p">[</span> <span class="p">];</span>
 
-        /** 
-         * analyze the string, extract the parts with the %s identifier.
-         */               
-        for ( var m = reg.exec(string); m; m = reg.exec(string) ) {  
-          // m[0][0] gives undefined in IE
-          parts.push(string.substr(0, m[0][0] === "%" ? m.index : m.index));
-          parts.push("%s");
-          string = string.substr( m.index+m[0].length );
-        }
-        parts.push(string);
+        <span class="cm">/** </span>
+<span class="cm">         * analyze the string, extract the parts with the %s identifier.</span>
+<span class="cm">         */</span>               
+        <span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span> <span class="nx">m</span><span class="p">;</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>  
+          <span class="c1">// m[0][0] gives undefined in IE</span>
+          <span class="nx">parts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">string</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="s2">&quot;%&quot;</span> <span class="o">?</span> <span class="nx">m</span><span class="p">.</span><span class="nx">index</span> <span class="o">:</span> <span class="nx">m</span><span class="p">.</span><span class="nx">index</span><span class="p">));</span>
+          <span class="nx">parts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;%s&quot;</span><span class="p">);</span>
+          <span class="nx">string</span> <span class="o">=</span> <span class="nx">string</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span> <span class="nx">m</span><span class="p">.</span><span class="nx">index</span><span class="o">+</span><span class="nx">m</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span> <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">parts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
 
-        /** 
-         * analyze the parts, replace the %s with the given arguments. 
-         * beware of undefined!
-         */               
-        for (var i = 0; i < parts.length; ++i){
-            var part = parts[i];
-            if (part && part == "%s"){
-              var object = arguments[++objIndex];
-              if (object == undefined) {
-                html.push("%s");
-              }else{
-                html.push(object);
-              };
-            }else{
-              html.push(part);
-            }            
-        }
+        <span class="cm">/** </span>
+<span class="cm">         * analyze the parts, replace the %s with the given arguments. </span>
+<span class="cm">         * beware of undefined!</span>
+<span class="cm">         */</span>               
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">parts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+            <span class="kd">var</span> <span class="nx">part</span> <span class="o">=</span> <span class="nx">parts</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">part</span> <span class="o">&amp;&amp;</span> <span class="nx">part</span> <span class="o">==</span> <span class="s2">&quot;%s&quot;</span><span class="p">){</span>
+              <span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="o">++</span><span class="nx">objIndex</span><span class="p">];</span>
+              <span class="k">if</span> <span class="p">(</span><span class="nx">object</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">html</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;%s&quot;</span><span class="p">);</span>
+              <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="nx">html</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
+              <span class="p">};</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+              <span class="nx">html</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">part</span><span class="p">);</span>
+            <span class="p">}</span>            
+        <span class="p">}</span>
 
-        /** 
-         * Join the array and return as string.
-         */
-        return html.join('');
-      }
-    };
-  })();
+        <span class="cm">/** </span>
+<span class="cm">         * Join the array and return as string.</span>
+<span class="cm">         */</span>
+        <span class="k">return</span> <span class="nx">html</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">})();</span>
 </pre>
+</div>
 
 <p>
   You can find a test page <a target="_new" href="/examples/translate/">here</a> and the translate.js file <a target="_new" href="/code/translate.js">here</a>.
@@ -158,35 +152,39 @@
 </p>
   </li>
   <li>
-    <p class="postmetadata alt">
-		  <span class="addthis_toolbox addthis_default_style">
-			  <a class="addthis_button_facebook">
-			   <img src="/images/addthis/facebook_16.png"/>
-			  </a>
-        <a class="addthis_button_twitter">
-          <img src="/images/addthis/twitter_16.png"/>
-        </a>
-        <a class="addthis_button_misterwong_de"></a>
-        <a class="addthis_button_myspace">
-          <img src="/images/addthis/myspace_16.png"/>
-        </a>
-        <a class="addthis_button_wordpress">
-          <img src="/images/addthis/wordpress_16.png"/>
-        </a>
-        <a class="addthis_button_digg">
-          <img src="/images/addthis/digg_16.png"/>
-        </a>
-        <span class="addthis_separator">|</span>
-        <a class="addthis_button_expanded">More</a>
-        <span class="spezial">
-          <a class="addthis_button_email"></a>
-          <a class="addthis_button_print"></a>
-        </span>
-      </span>
-    </p>
+    <div class="postmetadata alt">
+      <div class="share fb">
+        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+      </div>
+      
+      <div class="share tweet">
+        <a title="Post on Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="small-count"></a>
+        <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
+      </div>
+      
+      <div class="share tweet">
+        <script type="text/javascript">
+        tweetmeme_service = 'bit.ly';
+        tweetmeme_style = 'compact';
+        </script>
+        <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>        
+      </div>
+    </div>
   </li>
   <li>
-    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kallesaas/embed.js"></script><noscript><a href="http://kallesaas.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /**
+        * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+        */
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://kallesaas.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=kallesaas">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </li>
 </ul>
 
@@ -251,12 +249,26 @@
 
   <h2>Twitter</h2>
   <div id="tweet">Please Enable your Javascript</div>
-
 </div>
 </div>
 
 <div id="footer">
 </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -267,23 +279,6 @@ try {
 var pageTracker = _gat._getTracker("UA-3399121-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-
-<script type="text/javascript">
-//<![CDATA[
-(function() {
-var links = document.getElementsByTagName('a');
-var query = '?';
-for(var i = 0; i < links.length; i++) {
-if(links[i].href.indexOf('#disqus_thread') >= 0) {
-query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-}
-}
-document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
-})();
-//]]>
-</script>
-
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
 
 </body>
 </html>

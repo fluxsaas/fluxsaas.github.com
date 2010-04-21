@@ -7,35 +7,39 @@ layout: default
     {{ content }}
   </li>
   <li>
-    <p class="postmetadata alt">
-		  <span class="addthis_toolbox addthis_default_style">
-			  <a class="addthis_button_facebook">
-			   <img src="/images/addthis/facebook_16.png"/>
-			  </a>
-        <a class="addthis_button_twitter">
-          <img src="/images/addthis/twitter_16.png"/>
-        </a>
-        <a class="addthis_button_misterwong_de"></a>
-        <a class="addthis_button_myspace">
-          <img src="/images/addthis/myspace_16.png"/>
-        </a>
-        <a class="addthis_button_wordpress">
-          <img src="/images/addthis/wordpress_16.png"/>
-        </a>
-        <a class="addthis_button_digg">
-          <img src="/images/addthis/digg_16.png"/>
-        </a>
-        <span class="addthis_separator">|</span>
-        <a class="addthis_button_expanded">More</a>
-        <span class="spezial">
-          <a class="addthis_button_email"></a>
-          <a class="addthis_button_print"></a>
-        </span>
-      </span>
-    </p>
+    <div class="postmetadata alt">
+      <div class="share fb">
+        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+      </div>
+      
+      <div class="share tweet">
+        <a title="Post on Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="small-count"></a>
+        <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
+      </div>
+      
+      <div class="share tweet">
+        <script type="text/javascript">
+        tweetmeme_service = 'bit.ly';
+        tweetmeme_style = 'compact';
+        </script>
+        <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>        
+      </div>
+    </div>
   </li>
   <li>
-    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kallesaas/embed.js"></script><noscript><a href="http://kallesaas.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /**
+        * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+        */
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://kallesaas.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=kallesaas">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </li>
 </ul>
 
@@ -100,5 +104,4 @@ layout: default
 
   <h2>Twitter</h2>
   <div id="tweet">Please Enable your Javascript</div>
-
 </div>

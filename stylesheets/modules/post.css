@@ -1,3 +1,14 @@
+.share{
+	display: block;
+	float: left;
+	width: 130px;
+}
+
+#tweetme-iframe{
+	float:right;
+	margin-left:10px;
+}
+
 ul.posts{
   border-top: 5px solid #BEC6C6;  
   padding-top: 5px;
@@ -20,6 +31,16 @@ ul.posts li p.time-stamp{
   color: #CC3300;
   font-weight: bold;
   margin: 0;
+} 
+
+ul.posts li p.time-stamp a{
+	color: #444444;
+	text-decoration: none;	
+} 
+
+ul.posts li p.time-stamp a:hover{
+	color: #444444;
+	text-decoration: underline;	
 } 
 
 
@@ -188,9 +209,7 @@ body.readable-blog-post #wrapper{
 
 .postmetadata{
   padding: 10px;
-  -moz-border-radius: 6px;
-  -webkit-border: 6px;
-  background-color:#ddd;
+	clear: both;
 }
 
 .postmetadata .addthis_toolbox{

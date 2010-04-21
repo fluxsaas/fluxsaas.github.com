@@ -7,29 +7,18 @@
 	<title>Flex for Rails, how to collection</title>
 	
   <meta content="Kalle Saas" name="author"/>
+  <meta name="description" content=" This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
   
-  <meta name="description" content="This Blog is about HTML, CSS, Javascript, SEO, Rails, Flex and all the other good stuff you have to deal with as a Frontend Web Developer">
+  
+
+  <meta content="Kalle Saas" name="author"/>
   
   <link type="application/atom+xml" title="Kalle Saas Client Site Blog" rel="alternate" href="http://feeds.feedburner.com/kalle-saas"/>
   
-  
-  <script src="/javascripts/shCore.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushAS3.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushCss.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/javascripts/shBrushXml.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushRuby.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script src="/javascripts/shBrushJScript.js" type="text/javascript" charset="utf-8"></script>      
 	<script src="/javascripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/jquery.tweet.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8"></script>
-	
-	<script type="text/javascript">
-  var addthis_config = {
-       username: "fluxsaas"
-  }
-  </script>
+
   
 	<link rel="stylesheet" href="/stylesheets/default.css" type="text/css" media="screen" charset="utf-8" />
 </head>
@@ -49,260 +38,254 @@
 <ul class="posts">
   <li class="post">
     <p class="time-stamp">17 <span class="caps">AUGUST</span> 2009</p>
-<h1><a href="/2009/08/17/flex-for-rails-how-to-collection.html">Flex for Rails, how to collection</a></h1>
+<div id="tweetme-iframe">
+<script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+<script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+</div>
+<div id="tweetme-iframe">
+<script type="text/javascript">tweetmeme_service = 'bit.ly';</script>
+<script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+</div>
+<h1>
+<a href="/2009/08/17/flex-for-rails-how-to-collection.html">Flex for Rails, how to collection</a>
+</h1>
 <p class="warning">
 This post is work in progress.
 </p>
 <h2>Fixing the rails <code>to_xml</code> Method.</h2>
 <p>If you want to access <span class="caps">XML</span> Object you want to use the correct <strong>E4X</strong> syntax such <code>rp.currentItem.asset_file_name</code> and not <code>rp.currentItem['asset_file_name']</code>. If you debug your Flex code and trace an <span class="caps">XML</span> Object delivered from Rails you will see sth. like this:</p>
-<pre class="brush: xml;">
-  &lt;elements type="array"&gt;
-    &lt;element&gt;
-      &lt;asset-file-name&gt;oberer-streifen-light-blue.png&lt;/asset-file-name&gt;
-      &lt;id type="integer"&gt;1&lt;/id&gt;
-    &lt;/element&gt;
-  &lt;/elements&gt;  
+<div class="highlight"><pre>  <span class="nt">&lt;elements</span> <span class="na">type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element&gt;</span>
+      <span class="nt">&lt;asset-file-name&gt;</span>oberer-streifen-light-blue.png<span class="nt">&lt;/asset-file-name&gt;</span>
+      <span class="nt">&lt;id</span> <span class="na">type=</span><span class="s">&quot;integer&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+  <span class="nt">&lt;/elements&gt;</span>  
 </pre>
-<p>Unfortunately you can not access the <code>asset-file-name</code> with the E4X <code>rp.currentItem.asset-file-name</code> syntax because Flex try&#8217;s to do a calculation (because of the &#8220;-&#8221;).</p>
+</div><p>Unfortunately you can not access the <code>asset-file-name</code> with the E4X <code>rp.currentItem.asset-file-name</code> syntax because Flex try&#8217;s to do a calculation (because of the &#8220;-&#8221;).</p>
 <p>The solution is to fix the <code>to_xml</code> Method. We can accomplish that by adding a file to  <code>config/initializers</code> called <code>to_xml_fix.rb</code>. The content of the file can be found <a href="/code/to_xml_fix.rb.txt">here</a>. What it does is simply overwrite the <code>to_xml</code> method with the same method but with an additional parameter: <code>to_xml(:dasherize =&gt; false)</code>. Restart the server and <span class="caps">BAM</span>! It (should!) works just fine!</p>
 <h2>Call JavaScript Function within FLex Applications</h2>
 <p>A Simple way to call an JavaScript Function is to import the <code>ExternalInterface</code>  ( <a href="http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html">liveDoc</a> ) and call the javaScript function</p>
+<div class="highlight"><pre>  <span class="o">&lt;</span><span class="nx">mx</span><span class="o">:</span><span class="nx">Script</span><span class="o">&gt;</span>
+    <span class="o">&lt;!</span><span class="p">[</span><span class="nx">CDATA</span><span class="p">[</span>
+      <span class="kd">import</span> <span class="nx">flash</span><span class="p">.</span><span class="nx">external</span><span class="p">.</span><span class="o">*;</span>
 
-<pre class="brush: as3;">
-  &lt;mx:Script&gt;
-    &lt;![CDATA[
-      import flash.external.*;
-
-      public function debug(message:String) : void{       
-        if (ExternalInterface.available) {
-          ExternalInterface.call('console.log', message);
-        }
-      }
-    ]]&gt;
-  &lt;/mx:Script&gt;
+      <span class="kd">public</span> <span class="kd">function</span> <span class="nx">debug</span><span class="p">(</span><span class="nx">message</span><span class="o">:</span><span class="nb">String</span><span class="p">)</span> <span class="o">:</span> <span class="nx">void</span><span class="p">{</span>       
+        <span class="k">if</span> <span class="p">(</span><span class="nb">ExternalInterface</span><span class="p">.</span><span class="nx">available</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nb">ExternalInterface</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;console.log&#39;</span><span class="o">,</span> <span class="nx">message</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">]]</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="nx">mx</span><span class="o">:</span><span class="nx">Script</span><span class="o">&gt;</span>
 </pre>
-<h2>Basic <span class="caps">HTTP</span> requests from Flex to Rails</h2>
+</div><h2>Basic <span class="caps">HTTP</span> requests from Flex to Rails</h2>
 <p>Call the Fuction <code>listCompositions()</code>.</p>
-<pre class="brush: as3;">
-  private function handleShiftChanged(event:*):void{
-    svcShiftsUpdate.url = 	"/schedules/" + scheduleId + "/shifts/" + event.shift.shiftId + '.xml' + 
-    '?authenticity_token='+authenticityToken + 
-    '&amp;_method=PUT';
+<div class="highlight"><pre>  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">handleShiftChanged</span><span class="p">(</span><span class="nx">event</span><span class="o">:*</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span><span class="p">{</span>
+    <span class="nx">svcShiftsUpdate</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> 	<span class="s2">&quot;/schedules/&quot;</span> <span class="o">+</span> <span class="nx">scheduleId</span> <span class="o">+</span> <span class="s2">&quot;/shifts/&quot;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">shift</span><span class="p">.</span><span class="nx">shiftId</span> <span class="o">+</span> <span class="s1">&#39;.xml&#39;</span> <span class="o">+</span> 
+    <span class="s1">&#39;?authenticity_token=&#39;</span><span class="o">+</span><span class="nx">authenticityToken</span> <span class="o">+</span> 
+    <span class="s1">&#39;&amp;_method=PUT&#39;</span><span class="o">;</span>
 
-    var xmlParams:XML = XML('&lt;shift&gt;'+
-      '&lt;starts_at&gt;&lt;/starts_at&gt;' +
-      '&lt;ends_at&gt;&lt;/ends_at&gt;' +
-      '&lt;category_id&gt;1&lt;/category_id&gt;'+
-      '&lt;/shift&gt;');
+    <span class="k">var</span> <span class="nx">xmlParams</span><span class="o">:</span><span class="nb">XML</span> <span class="o">=</span> <span class="nb">XML</span><span class="p">(</span><span class="s1">&#39;&lt;shift&gt;&#39;</span><span class="o">+</span>
+      <span class="s1">&#39;&lt;starts_at&gt;&lt;/starts_at&gt;&#39;</span> <span class="o">+</span>
+      <span class="s1">&#39;&lt;ends_at&gt;&lt;/ends_at&gt;&#39;</span> <span class="o">+</span>
+      <span class="s1">&#39;&lt;category_id&gt;1&lt;/category_id&gt;&#39;</span><span class="o">+</span>
+      <span class="s1">&#39;&lt;/shift&gt;&#39;</span><span class="p">);</span>
 
-    svcShiftsUpdate.method = 'POST';
-    svcShiftsUpdate.headers = {X_HTTP_METHOD_OVERRIDE: 'PUT'};										
+    <span class="nx">svcShiftsUpdate</span><span class="p">.</span><span class="nx">method</span> <span class="o">=</span> <span class="s1">&#39;POST&#39;</span><span class="o">;</span>
+    <span class="nx">svcShiftsUpdate</span><span class="p">.</span><span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span><span class="nx">X_HTTP_METHOD_OVERRIDE</span><span class="o">:</span> <span class="s1">&#39;PUT&#39;</span><span class="p">};</span>										
 
-    svcShiftsUpdate.send(xmlParams);
-    ShiftSequencer.reDrawShifts();	
-  }			
+    <span class="nx">svcShiftsUpdate</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">xmlParams</span><span class="p">);</span>
+    <span class="nx">ShiftSequencer</span><span class="p">.</span><span class="nx">reDrawShifts</span><span class="p">();</span>	
+  <span class="p">}</span>			
 
-private function handleShiftCreated(event:ShiftControllerEvent):void {
-svcShiftsCreate.url = "/schedules/" + scheduleId + "/shifts.xml?authenticity_token="+authenticityToken;
+<span class="kd">private</span> <span class="kd">function</span> <span class="nx">handleShiftCreated</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nx">ShiftControllerEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span> <span class="p">{</span>
+<span class="nx">svcShiftsCreate</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;/schedules/&quot;</span> <span class="o">+</span> <span class="nx">scheduleId</span> <span class="o">+</span> <span class="s2">&quot;/shifts.xml?authenticity_token=&quot;</span><span class="o">+</span><span class="nx">authenticityToken</span><span class="o">;</span>
 
-var xmlParams:XML = XML('&lt;shift&gt;'+
-'&lt;starts_at&gt;'+DateHelper.minutesToRubyDate(event.shift.startTime, event.shift.cwday, this.scheduleBop)+'&lt;/starts_at&gt;' +
-'&lt;ends_at&gt;'+DateHelper.minutesToRubyDate(event.shift.endTime, event.shift.cwday, this.scheduleBop)+'&lt;/ends_at&gt;' +
-'&lt;category_id&gt;'+1+'&lt;/category_id&gt;'+
-'&lt;/shift&gt;');
+<span class="k">var</span> <span class="nx">xmlParams</span><span class="o">:</span><span class="nb">XML</span> <span class="o">=</span> <span class="nb">XML</span><span class="p">(</span><span class="s1">&#39;&lt;shift&gt;&#39;</span><span class="o">+</span>
+<span class="s1">&#39;&lt;starts_at&gt;&#39;</span><span class="o">+</span><span class="nx">DateHelper</span><span class="p">.</span><span class="nx">minutesToRubyDate</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">shift</span><span class="p">.</span><span class="nx">startTime</span><span class="o">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">shift</span><span class="p">.</span><span class="nx">cwday</span><span class="o">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">scheduleBop</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&lt;/starts_at&gt;&#39;</span> <span class="o">+</span>
+<span class="s1">&#39;&lt;ends_at&gt;&#39;</span><span class="o">+</span><span class="nx">DateHelper</span><span class="p">.</span><span class="nx">minutesToRubyDate</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">shift</span><span class="p">.</span><span class="nx">endTime</span><span class="o">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">shift</span><span class="p">.</span><span class="nx">cwday</span><span class="o">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">scheduleBop</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&lt;/ends_at&gt;&#39;</span> <span class="o">+</span>
+<span class="s1">&#39;&lt;category_id&gt;&#39;</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="s1">&#39;&lt;/category_id&gt;&#39;</span><span class="o">+</span>
+<span class="s1">&#39;&lt;/shift&gt;&#39;</span><span class="p">);</span>
 
-svcShiftsCreate.send(xmlParams);
-ShiftSequencer.reDrawShifts();
-}
+<span class="nx">svcShiftsCreate</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">xmlParams</span><span class="p">);</span>
+<span class="nx">ShiftSequencer</span><span class="p">.</span><span class="nx">reDrawShifts</span><span class="p">();</span>
+<span class="p">}</span>
 </pre>
-
-<pre class="brush: xml;">
-  &lt;mx:HTTPService id="svcCompositionsList" 
-      url="/editorial/compositions.xml" 
-      resultFormat="e4x" 
-      result="handleCompositionsListResult(event)" /&gt;
-
+</div><div class="highlight"><pre>  <span class="nt">&lt;mx:HTTPService</span> <span class="na">id=</span><span class="s">&quot;svcCompositionsList&quot;</span> 
+      <span class="na">url=</span><span class="s">&quot;/editorial/compositions.xml&quot;</span> 
+      <span class="na">resultFormat=</span><span class="s">&quot;e4x&quot;</span> 
+      <span class="na">result=</span><span class="s">&quot;handleCompositionsListResult(event)&quot;</span> <span class="nt">/&gt;</span>
 </pre>
-<h2>Controlling the Cursor</h2>
+</div><h2>Controlling the Cursor</h2>
 <p>Use the <code>buttonMode</code> to get an &#8220;Hand&#8221; for the cursor.</p>
-<pre class="brush: as3;">
-  private function onMouseOver(event:MouseEvent):void {
-  	currentElement.buttonMode = true;
-  }
-  private function onMouseOut(event:MouseEvent):void {
-  	currentElement.buttonMode = false;
-  }
+<div class="highlight"><pre>  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">onMouseOver</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">MouseEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span> <span class="p">{</span>
+  	<span class="nx">currentElement</span><span class="p">.</span><span class="nx">buttonMode</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="p">}</span>
+  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">onMouseOut</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">MouseEvent</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span> <span class="p">{</span>
+  	<span class="nx">currentElement</span><span class="p">.</span><span class="nx">buttonMode</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+  <span class="p">}</span>
 </pre>
-<h2>Custom Events with Components</h2>
+</div><h2>Custom Events with Components</h2>
 <h3><code>Dialog.mxml</code></h3>
-<pre class="brush: xml;">
-  &lt;?xml version="1.0" encoding="utf-8"?&gt;     
-  &lt;mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml"&gt;
+<div class="highlight"><pre>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>     
+  <span class="nt">&lt;mx:TitleWindow</span> <span class="na">xmlns:mx=</span><span class="s">&quot;http://www.adobe.com/2006/mxml&quot;</span><span class="nt">&gt;</span>
 
-  &lt;mx:Metadata&gt;
-    [Event(name="changeColour", type="com.too_many_colours.events.DialogEvent")]
-  &lt;/mx:Metadata&gt;
+  <span class="nt">&lt;mx:Metadata&gt;</span>
+    [Event(name=&quot;changeColour&quot;, type=&quot;com.too_many_colours.events.DialogEvent&quot;)]
+  <span class="nt">&lt;/mx:Metadata&gt;</span>
 
-  &lt;mx:Script&gt;
-    &lt;![CDATA[
-      import flash.events.Event;
-      import flash.events.EventDispatcher;
-      import com.too_many_colours.events.DialogEvent;    		
+  <span class="nt">&lt;mx:Script&gt;</span>
+    <span class="cp">&lt;![CDATA[</span>
+<span class="cp">      import flash.events.Event;</span>
+<span class="cp">      import flash.events.EventDispatcher;</span>
+<span class="cp">      import com.too_many_colours.events.DialogEvent;    		</span>
 
-      private function changeColour(event:MouseEvent):void{    			            	
-        dispatchEvent(new DialogEvent( DialogEvent.CHANGE_COLOUR ));
-      }
-    ]]&gt;
-  &lt;/mx:Script&gt;
+<span class="cp">      private function changeColour(event:MouseEvent):void{    			            	</span>
+<span class="cp">        dispatchEvent(new DialogEvent( DialogEvent.CHANGE_COLOUR ));</span>
+<span class="cp">      }</span>
+<span class="cp">    ]]&gt;</span>
+  <span class="nt">&lt;/mx:Script&gt;</span>
 
-  &lt;mx:Button label="Change Colour" click="changeColour(event)" /&gt;
+  <span class="nt">&lt;mx:Button</span> <span class="na">label=</span><span class="s">&quot;Change Colour&quot;</span> <span class="na">click=</span><span class="s">&quot;changeColour(event)&quot;</span> <span class="nt">/&gt;</span>
 
-  &lt;/mx:TitleWindow&gt;
+  <span class="nt">&lt;/mx:TitleWindow&gt;</span>
 </pre>
-<h3><code>application.mxml</code></h3>
-<pre class="brush: xml;">
-  &lt;?xml version="1.0" encoding="utf-8"?&gt;
-  &lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:comp="com.too_many_colours.components.*"&gt;
-  	&lt;mx:Script&gt;
-  		&lt;![CDATA[  		  
-  			import com.too_many_colours.components.Dialog;
-        import mx.containers.TitleWindow;
-        
-        // import custom events
-        import com.too_many_colours.events.DialogEvent;
+</div><h3><code>application.mxml</code></h3>
+<div class="highlight"><pre>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+  <span class="nt">&lt;mx:Application</span> <span class="na">xmlns:mx=</span><span class="s">&quot;http://www.adobe.com/2006/mxml&quot;</span> <span class="na">xmlns:comp=</span><span class="s">&quot;com.too_many_colours.components.*&quot;</span><span class="nt">&gt;</span>
+  	<span class="nt">&lt;mx:Script&gt;</span>
+  		<span class="cp">&lt;![CDATA[  		  </span>
+<span class="cp">  			import com.too_many_colours.components.Dialog;</span>
+<span class="cp">        import mx.containers.TitleWindow;</span>
+<span class="cp">        </span>
+<span class="cp">        // import custom events</span>
+<span class="cp">        import com.too_many_colours.events.DialogEvent;</span>
 
-  			private function changeColour(event:DialogEvent) : void {
-  				debug(isChanged.toString())
-  			}
+<span class="cp">  			private function changeColour(event:DialogEvent) : void {</span>
+<span class="cp">  				debug(isChanged.toString())</span>
+<span class="cp">  			}</span>
 
-  			private var dialogWindow:Dialog;
-  			
-  			private function showDialog():void {
-  			  dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
-  			  
-  			  // add event listener
-  				dialogWindow.addEventListener( DialogEvent.CHANGE_COLOUR, changeColour);					
-        }
-  		]]&gt;
-  	&lt;/mx:Script&gt;
-  &lt;/mx:Application&gt;
+<span class="cp">  			private var dialogWindow:Dialog;</span>
+<span class="cp">  			</span>
+<span class="cp">  			private function showDialog():void {</span>
+<span class="cp">  			  dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));</span>
+<span class="cp">  			  </span>
+<span class="cp">  			  // add event listener</span>
+<span class="cp">  				dialogWindow.addEventListener( DialogEvent.CHANGE_COLOUR, changeColour);					</span>
+<span class="cp">        }</span>
+<span class="cp">  		]]&gt;</span>
+  	<span class="nt">&lt;/mx:Script&gt;</span>
+  <span class="nt">&lt;/mx:Application&gt;</span>
 </pre>
-<h3><code>DialogEvent.as</code></h3>
-<pre class="brush: as3;">
-  package com.too_many_colours.events{
-  	import flash.events.Event;
+</div><h3><code>DialogEvent.as</code></h3>
+<div class="highlight"><pre>  <span class="kd">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">too_many_colours</span><span class="p">.</span><span class="nx">events</span><span class="p">{</span>
+  	<span class="kd">import</span> <span class="nx">flash</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nb">Event</span><span class="o">;</span>
 
-  	public class DialogEvent extends Event{
-  		public static const CHANGE_COLOUR:String = "changeColour";
+  	<span class="kd">public</span> <span class="kd">class</span> <span class="nx">DialogEvent</span> <span class="kd">extends</span> <span class="nb">Event</span><span class="p">{</span>
+  		<span class="kd">public</span> <span class="kd">static</span> <span class="kd">const</span> <span class="nx">CHANGE_COLOUR</span><span class="o">:</span><span class="nb">String</span> <span class="o">=</span> <span class="s2">&quot;changeColour&quot;</span><span class="o">;</span>
 
-  		public function DialogEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false){
-  			super(CHANGE_COLOUR, bubbles, cancelable);
-  		}
-  	}
-  }
+  		<span class="kd">public</span> <span class="kd">function</span> <span class="nx">DialogEvent</span><span class="p">(</span><span class="nx">type</span><span class="o">:</span><span class="nb">String</span><span class="o">,</span> <span class="nx">bubbles</span><span class="o">:</span><span class="nb">Boolean</span><span class="o">=</span><span class="kc">false</span><span class="o">,</span> <span class="nx">cancelable</span><span class="o">:</span><span class="nb">Boolean</span><span class="o">=</span><span class="kc">false</span><span class="p">){</span>
+  			<span class="kd">super</span><span class="p">(</span><span class="nx">CHANGE_COLOUR</span><span class="o">,</span> <span class="nx">bubbles</span><span class="o">,</span> <span class="nx">cancelable</span><span class="p">);</span>
+  		<span class="p">}</span>
+  	<span class="p">}</span>
+  <span class="p">}</span>
 </pre>
-<h2>Passing a reference to the calling component.</h2>
+</div><h2>Passing a reference to the calling component.</h2>
 <h3>The main <span class="caps">MXML</span> Document:</h3>
-<pre class="brush: as3;">
-  [Bindable]
-  public var currentElementId:String;
+<div class="highlight"><pre>  <span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
+  <span class="kd">public</span> <span class="k">var</span> <span class="nx">currentElementId</span><span class="o">:</span><span class="nb">String</span><span class="o">;</span>
   
-  private function onMouseUp(event:MouseEvent) : void {
-		currentElementId = event.currentTarget.id		
-		showDialog();
-	}
+  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">onMouseUp</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">MouseEvent</span><span class="p">)</span> <span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
+		<span class="nx">currentElementId</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">id</span>		
+		<span class="nx">showDialog</span><span class="p">();</span>
+	<span class="p">}</span>
   
-  private function showDialog():void {
-  	dialogWindow = Dialog(PopUpManager.createPopUp( this, Dialog , false));
-  	dialogWindow.currentElementId = currentElementId; 
-  }
+  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">showDialog</span><span class="p">()</span><span class="o">:</span><span class="nx">void</span> <span class="p">{</span>
+  	<span class="nx">dialogWindow</span> <span class="o">=</span> <span class="nx">Dialog</span><span class="p">(</span><span class="nx">PopUpManager</span><span class="p">.</span><span class="nx">createPopUp</span><span class="p">(</span> <span class="k">this</span><span class="o">,</span> <span class="nx">Dialog</span> <span class="o">,</span> <span class="kc">false</span><span class="p">));</span>
+  	<span class="nx">dialogWindow</span><span class="p">.</span><span class="nx">currentElementId</span> <span class="o">=</span> <span class="nx">currentElementId</span><span class="o">;</span> 
+  <span class="p">}</span>
 </pre>
-<h3>The <code>dialogWindow</code> Component.</h3>
-<pre class="brush: xml;">
-  &lt;?xml version="1.0" encoding="utf-8"?&gt;
-  &lt;mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" &gt;
-    &lt;mx:Script&gt;
-      &lt;![CDATA[
-      [Bindable]
-      public var currentElementId:String;
-      ]]&gt;
-    &lt;/mx:Script&gt;
-    &lt;mx:Label text="{currentElementId}" /&gt;
-  &lt;/mx:TitleWindow&gt;
+</div><h3>The <code>dialogWindow</code> Component.</h3>
+<div class="highlight"><pre>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+  <span class="nt">&lt;mx:TitleWindow</span> <span class="na">xmlns:mx=</span><span class="s">&quot;http://www.adobe.com/2006/mxml&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;mx:Script&gt;</span>
+      <span class="cp">&lt;![CDATA[</span>
+<span class="cp">      [Bindable]</span>
+<span class="cp">      public var currentElementId:String;</span>
+<span class="cp">      ]]&gt;</span>
+    <span class="nt">&lt;/mx:Script&gt;</span>
+    <span class="nt">&lt;mx:Label</span> <span class="na">text=</span><span class="s">&quot;{currentElementId}&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/mx:TitleWindow&gt;</span>
 </pre>
-<p>Reference: <a href="http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html">Passing a reference to the calling component</a></p>
+</div><p>Reference: <a href="http://www.adobe.com/livedocs/flex/3/html/help.html?content=mxmlcomponents_advanced_3.html">Passing a reference to the calling component</a></p>
 <h2>Using the Repeater component to display elements from <span class="caps">XML</span> object.</h2>
-<pre class="brush: xml;">
-  &lt;?xml version="1.0" encoding="utf-8"?&gt;
-  &lt;mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" &gt;
-    &lt;mx:Script&gt;
-      &lt;![CDATA[
-      [Bindable]
-			private var XMLBuendchenElements:XML = 
-				&lt;elements&gt;
-					&lt;element&gt;
-						&lt;pos-x&gt;200&lt;/pos-x&gt;
-						&lt;pos-y&gt;300&lt;/pos-y&gt;
-						&lt;name&gt;body&lt;/name&gt;
-						&lt;source&gt;/images/dummys/buendchen.png&lt;/source&gt;
-						&lt;scale-x&gt;0.1&lt;/scale-x&gt;
-						&lt;scale-y&gt;0.1&lt;/scale-y&gt;
-					&lt;/element&gt;
-					&lt;element&gt;
-						&lt;pos-x&gt;200&lt;/pos-x&gt;
-						&lt;pos-y&gt;300&lt;/pos-y&gt;
-						&lt;name&gt;body&lt;/name&gt;
-						&lt;source&gt;/images/dummys/buendchen-rot.png&lt;/source&gt;
-						&lt;scale-x&gt;0.1&lt;/scale-x&gt;
-						&lt;scale-y&gt;0.1&lt;/scale-y&gt;
-					&lt;/element&gt;
-				&lt;/elements&gt;;
-      ]]&gt;
-    &lt;/mx:Script&gt;
+<div class="highlight"><pre>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+  <span class="nt">&lt;mx:TitleWindow</span> <span class="na">xmlns:mx=</span><span class="s">&quot;http://www.adobe.com/2006/mxml&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;mx:Script&gt;</span>
+      <span class="cp">&lt;![CDATA[</span>
+<span class="cp">      [Bindable]</span>
+<span class="cp">			private var XMLBuendchenElements:XML = </span>
+<span class="cp">				&lt;elements&gt;</span>
+<span class="cp">					&lt;element&gt;</span>
+<span class="cp">						&lt;pos-x&gt;200&lt;/pos-x&gt;</span>
+<span class="cp">						&lt;pos-y&gt;300&lt;/pos-y&gt;</span>
+<span class="cp">						&lt;name&gt;body&lt;/name&gt;</span>
+<span class="cp">						&lt;source&gt;/images/dummys/buendchen.png&lt;/source&gt;</span>
+<span class="cp">						&lt;scale-x&gt;0.1&lt;/scale-x&gt;</span>
+<span class="cp">						&lt;scale-y&gt;0.1&lt;/scale-y&gt;</span>
+<span class="cp">					&lt;/element&gt;</span>
+<span class="cp">					&lt;element&gt;</span>
+<span class="cp">						&lt;pos-x&gt;200&lt;/pos-x&gt;</span>
+<span class="cp">						&lt;pos-y&gt;300&lt;/pos-y&gt;</span>
+<span class="cp">						&lt;name&gt;body&lt;/name&gt;</span>
+<span class="cp">						&lt;source&gt;/images/dummys/buendchen-rot.png&lt;/source&gt;</span>
+<span class="cp">						&lt;scale-x&gt;0.1&lt;/scale-x&gt;</span>
+<span class="cp">						&lt;scale-y&gt;0.1&lt;/scale-y&gt;</span>
+<span class="cp">					&lt;/element&gt;</span>
+<span class="cp">				&lt;/elements&gt;;</span>
+<span class="cp">      ]]&gt;</span>
+    <span class="nt">&lt;/mx:Script&gt;</span>
 
-    &lt;mx:VBox&gt;
-    	&lt;mx:Repeater id="rp" dataProvider="{XMLBuendchenElements.element}"&gt;
-    		&lt;mx:Image click="changeColour(event)" source="{String(rp.currentItem.source)}" scaleX="{String(rp.currentItem.scale-x)}" scaleY="{String(rp.currentItem.scale-y)}"  /&gt;    	
-    	&lt;/mx:Repeater&gt;
-    &lt;/mx:VBox&gt;
-  &lt;/mx:TitleWindow&gt;
+    <span class="nt">&lt;mx:VBox&gt;</span>
+    	<span class="nt">&lt;mx:Repeater</span> <span class="na">id=</span><span class="s">&quot;rp&quot;</span> <span class="na">dataProvider=</span><span class="s">&quot;{XMLBuendchenElements.element}&quot;</span><span class="nt">&gt;</span>
+    		<span class="nt">&lt;mx:Image</span> <span class="na">click=</span><span class="s">&quot;changeColour(event)&quot;</span> <span class="na">source=</span><span class="s">&quot;{String(rp.currentItem.source)}&quot;</span> <span class="na">scaleX=</span><span class="s">&quot;{String(rp.currentItem.scale-x)}&quot;</span> <span class="na">scaleY=</span><span class="s">&quot;{String(rp.currentItem.scale-y)}&quot;</span>  <span class="nt">/&gt;</span>    	
+    	<span class="nt">&lt;/mx:Repeater&gt;</span>
+    <span class="nt">&lt;/mx:VBox&gt;</span>
+  <span class="nt">&lt;/mx:TitleWindow&gt;</span>
 </pre>
-<h2>Passing request data with flashVars properties.</h2>
+</div><h2>Passing request data with flashVars properties.</h2>
 <p>How can i communicate between javascript and my <span class="caps">FLEX</span> app ?</p>
 <p>One solution it to pass flashvars within the swfobject creation.</p>
 <h3>The Javascript</h3>
-<pre class="brush: js;">
-  var flashvars = {
-    category: 2,      
-  };
+<div class="highlight"><pre>  <span class="kd">var</span> <span class="nx">flashvars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">category</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>      
+  <span class="p">};</span>
   
-  var params = false;    
-  var attributes = false;
+  <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>    
+  <span class="kd">var</span> <span class="nx">attributes</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-  var width = '936';
-  var height = '400';
+  <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="s1">&#39;936&#39;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">height</span> <span class="o">=</span> <span class="s1">&#39;400&#39;</span><span class="p">;</span>
 
-  swfobject.embedSWF('/flash/design_studio.swf', 'flash_design_studio', width, height, '9.0.0', '/flash/expressInstall.swf', flashvars, params, attributes);    
+  <span class="nx">swfobject</span><span class="p">.</span><span class="nx">embedSWF</span><span class="p">(</span><span class="s1">&#39;/flash/design_studio.swf&#39;</span><span class="p">,</span> <span class="s1">&#39;flash_design_studio&#39;</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="s1">&#39;9.0.0&#39;</span><span class="p">,</span> <span class="s1">&#39;/flash/expressInstall.swf&#39;</span><span class="p">,</span> <span class="nx">flashvars</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="nx">attributes</span><span class="p">);</span>    
 </pre>
-<h3>The Flex app:</h3>
-<pre class="brush: xml;">
-  &lt;?xml version="1.0" encoding="utf-8"?&gt;
-  &lt;mx:Application 
-  	xmlns:mx="http://www.adobe.com/2006/mxml"
-  	initialize="{init()}"
-  	viewSourceURL="srcview/index.html"&gt;
-  	&lt;mx:Script&gt;
-      &lt;![CDATA[
-        public var currentCategoryId:Number;
-        private function init () : void {
-        	// now you cann acces the flashvars:
-        	currentCategoryId = Application.application.parameters.category;
-        }
-      ]]&gt;
-    &lt;/mx:Script&gt;
- &lt;/mx:Application&gt;
+</div><h3>The Flex app:</h3>
+<div class="highlight"><pre>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+  <span class="nt">&lt;mx:Application</span> 
+  	<span class="na">xmlns:mx=</span><span class="s">&quot;http://www.adobe.com/2006/mxml&quot;</span>
+  	<span class="na">initialize=</span><span class="s">&quot;{init()}&quot;</span>
+  	<span class="na">viewSourceURL=</span><span class="s">&quot;srcview/index.html&quot;</span><span class="nt">&gt;</span>
+  	<span class="nt">&lt;mx:Script&gt;</span>
+      <span class="cp">&lt;![CDATA[</span>
+<span class="cp">        public var currentCategoryId:Number;</span>
+<span class="cp">        private function init () : void {</span>
+<span class="cp">        	// now you cann acces the flashvars:</span>
+<span class="cp">        	currentCategoryId = Application.application.parameters.category;</span>
+<span class="cp">        }</span>
+<span class="cp">      ]]&gt;</span>
+    <span class="nt">&lt;/mx:Script&gt;</span>
+ <span class="nt">&lt;/mx:Application&gt;</span>
 </pre>
-<p><strong>Thats it!</strong></p>
+</div><p><strong>Thats it!</strong></p>
 <p>There are more possibility&#8217;s to communicate between javascript and flex, but thats one of the basics examples.</p>
 <h3>Ressources</h3>
 <ul>
@@ -313,40 +296,37 @@ ShiftSequencer.reDrawShifts();
 <p><strong>Long Headline but short solution:</strong></p>
 <p>The CustomImageLoader extends the Loader and accepts an image as <span class="caps">XML</span>.</p>
 <p><strong>CustomImageLoader.as</strong></p>
-<pre class="brush: actionscript3;">
-  package com.too_many_colours.loader{
-  	import flash.display.Loader;
+<div class="highlight"><pre>  <span class="kd">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">too_many_colours</span><span class="p">.</span><span class="nx">loader</span><span class="p">{</span>
+  	<span class="kd">import</span> <span class="nx">flash</span><span class="p">.</span><span class="nx">display</span><span class="p">.</span><span class="nb">Loader</span><span class="o">;</span>
 
-  	public class CustomImageLoader extends Loader {
-  	    public var image:XML;
+  	<span class="kd">public</span> <span class="kd">class</span> <span class="nx">CustomImageLoader</span> <span class="kd">extends</span> <span class="nb">Loader</span> <span class="p">{</span>
+  	    <span class="kd">public</span> <span class="k">var</span> <span class="nx">image</span><span class="o">:</span><span class="nb">XML</span><span class="o">;</span>
 
-  	    public function CustomImageLoader(image:XML= null) {
-  	            this.image = image;
-  	    }
-  	}
-  }
+  	    <span class="kd">public</span> <span class="kd">function</span> <span class="nx">CustomImageLoader</span><span class="p">(</span><span class="nx">image</span><span class="o">:</span><span class="nb">XML</span><span class="o">=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+  	            <span class="k">this</span><span class="p">.</span><span class="nx">image</span> <span class="o">=</span> <span class="nx">image</span><span class="o">;</span>
+  	    <span class="p">}</span>
+  	<span class="p">}</span>
+  <span class="p">}</span>
 </pre>
-<p>Now you can simply use the CustomImageLoader as followed:</p>
-<pre class="brush: actionscript3;">
-  var loader: CustomImageLoader = new CustomImageLoader(image);
-  loader.load(new URLRequest( '/assets/elements/' + String(image.id)  + '/' + String(image.asset_file_name)));
-  loader.image = "some xml data";
-  loader.contentLoaderInfo.addEventListener(Event.COMPLETE, pngOnLoaded);
+</div><p>Now you can simply use the CustomImageLoader as followed:</p>
+<div class="highlight"><pre>  <span class="k">var</span> <span class="nx">loader</span><span class="o">:</span> <span class="nx">CustomImageLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CustomImageLoader</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
+  <span class="nx">loader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="k">new</span> <span class="nb">URLRequest</span><span class="p">(</span> <span class="s1">&#39;/assets/elements/&#39;</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>  <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">asset_file_name</span><span class="p">)));</span>
+  <span class="nx">loader</span><span class="p">.</span><span class="nx">image</span> <span class="o">=</span> <span class="s2">&quot;some xml data&quot;</span><span class="o">;</span>
+  <span class="nx">loader</span><span class="p">.</span><span class="nx">contentLoaderInfo</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nb">Event</span><span class="p">.</span><span class="nx">COMPLETE</span><span class="o">,</span> <span class="nx">pngOnLoaded</span><span class="p">);</span>
 </pre>
-<p>And access the additional Parameters in the <code>handleImageLoaded</code> function:</p>
-<pre class="brush: actionscript3;">
-  private function handleImageLoaded(event:Event):void {
-    // access the additional parameter:
-  	var image:XML = (event.target.loader as CustomImageLoader).image;
+</div><p>And access the additional Parameters in the <code>handleImageLoaded</code> function:</p>
+<div class="highlight"><pre>  <span class="kd">private</span> <span class="kd">function</span> <span class="nx">handleImageLoaded</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="nb">Event</span><span class="p">)</span><span class="o">:</span><span class="nx">void</span> <span class="p">{</span>
+    <span class="c1">// access the additional parameter:</span>
+  	<span class="k">var</span> <span class="nx">image</span><span class="o">:</span><span class="nb">XML</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">loader</span> <span class="nx">as</span> <span class="nx">CustomImageLoader</span><span class="p">).</span><span class="nx">image</span><span class="o">;</span>
   	
-  	var element:Image = new Image();
-  	element.id = image.id;
+  	<span class="k">var</span> <span class="nx">element</span><span class="o">:</span><span class="nx">Image</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+  	<span class="nx">element</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">id</span><span class="o">;</span>
   	
-  	// access the usual content
-  	element.source = event.currentTarget.content				
-  }
+  	<span class="c1">// access the usual content</span>
+  	<span class="nx">element</span><span class="p">.</span><span class="nx">source</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">content</span>				
+  <span class="p">}</span>
 </pre>
-<h3>Ressources</h3>
+</div><h3>Ressources</h3>
 <ul>
 	<li><a href="http://stackoverflow.com/questions/762521/custom-as3-loader-class-that-uses-a-custom-loaderinfo-class">stackoverflow 1</a></li>
 	<li><a href="http://stackoverflow.com/questions/758322/how-do-i-modify-existing-as3-events-so-that-i-can-pass-data">stackoverflow 2</a></li>
@@ -392,18 +372,17 @@ ie:function btnOver(evt:MouseEvent):void{<br />
 <h2>Simple draw example in flex</h2>
 <p>Important to note that you have to create an <code>UIComponent</code> and add the Shape to it. Than you<br />
 can add it to the stage&#8230;</p>
-<pre class="brush: actionscript3;">
-  var materialColor:Shape = new Shape();				
-  var uiComponent:UIComponent = new UIComponent();
+<div class="highlight"><pre>  <span class="k">var</span> <span class="nx">materialColor</span><span class="o">:</span><span class="nb">Shape</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Shape</span><span class="p">();</span>				
+  <span class="k">var</span> <span class="nx">uiComponent</span><span class="o">:</span><span class="nx">UIComponent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UIComponent</span><span class="p">();</span>
 
-  materialColor.graphics.clear();
-  materialColor.graphics.beginFill(0x007AAB);
-  materialColor.graphics.drawRoundRect(0, 0, 200, 200, 0, 0);
-  materialColor.graphics.endFill();
-  uiComponent.addChild(materialColor); 
-  testatelier.addChild(uiComponent);
+  <span class="nx">materialColor</span><span class="p">.</span><span class="nx">graphics</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+  <span class="nx">materialColor</span><span class="p">.</span><span class="nx">graphics</span><span class="p">.</span><span class="nx">beginFill</span><span class="p">(</span><span class="mh">0x007</span><span class="nx">AAB</span><span class="p">);</span>
+  <span class="nx">materialColor</span><span class="p">.</span><span class="nx">graphics</span><span class="p">.</span><span class="nx">drawRoundRect</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">200</span><span class="o">,</span> <span class="mi">200</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="nx">materialColor</span><span class="p">.</span><span class="nx">graphics</span><span class="p">.</span><span class="nx">endFill</span><span class="p">();</span>
+  <span class="nx">uiComponent</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">materialColor</span><span class="p">);</span> 
+  <span class="nx">testatelier</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">uiComponent</span><span class="p">);</span>
 </pre>
-<h2>Complex Masking in flex</h2>
+</div><h2>Complex Masking in flex</h2>
 <p><span class="caps">SVG</span> ? nope, not working dynamicly !<br />
 http://www.adobe.com/devnet/flex/quickstart/embedding_assets/#EmbeddingSvgFiles</p>
 <p><span class="caps">SWF</span> ?<br />
@@ -445,35 +424,39 @@ new DebugMessage(hittest.toString());					<br />
 elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);</p>
   </li>
   <li>
-    <p class="postmetadata alt">
-		  <span class="addthis_toolbox addthis_default_style">
-			  <a class="addthis_button_facebook">
-			   <img src="/images/addthis/facebook_16.png"/>
-			  </a>
-        <a class="addthis_button_twitter">
-          <img src="/images/addthis/twitter_16.png"/>
-        </a>
-        <a class="addthis_button_misterwong_de"></a>
-        <a class="addthis_button_myspace">
-          <img src="/images/addthis/myspace_16.png"/>
-        </a>
-        <a class="addthis_button_wordpress">
-          <img src="/images/addthis/wordpress_16.png"/>
-        </a>
-        <a class="addthis_button_digg">
-          <img src="/images/addthis/digg_16.png"/>
-        </a>
-        <span class="addthis_separator">|</span>
-        <a class="addthis_button_expanded">More</a>
-        <span class="spezial">
-          <a class="addthis_button_email"></a>
-          <a class="addthis_button_print"></a>
-        </span>
-      </span>
-    </p>
+    <div class="postmetadata alt">
+      <div class="share fb">
+        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+      </div>
+      
+      <div class="share tweet">
+        <a title="Post on Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="small-count"></a>
+        <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
+      </div>
+      
+      <div class="share tweet">
+        <script type="text/javascript">
+        tweetmeme_service = 'bit.ly';
+        tweetmeme_style = 'compact';
+        </script>
+        <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>        
+      </div>
+    </div>
   </li>
   <li>
-    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kallesaas/embed.js"></script><noscript><a href="http://kallesaas.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /**
+        * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+        */
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://kallesaas.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=kallesaas">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </li>
 </ul>
 
@@ -538,12 +521,26 @@ elementImage.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);</p>
 
   <h2>Twitter</h2>
   <div id="tweet">Please Enable your Javascript</div>
-
 </div>
 </div>
 
 <div id="footer">
 </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -554,23 +551,6 @@ try {
 var pageTracker = _gat._getTracker("UA-3399121-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-
-<script type="text/javascript">
-//<![CDATA[
-(function() {
-var links = document.getElementsByTagName('a');
-var query = '?';
-for(var i = 0; i < links.length; i++) {
-if(links[i].href.indexOf('#disqus_thread') >= 0) {
-query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-}
-}
-document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/kallesaas/get_num_replies.js' + query + '"></' + 'script>');
-})();
-//]]>
-</script>
-
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
 
 </body>
 </html>
